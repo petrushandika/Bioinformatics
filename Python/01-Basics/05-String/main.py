@@ -51,3 +51,38 @@ print(text.count("o"))  # Output: 2
 
 # Find to find the index of a substring
 print(text.find("Python"))  # Output: 7
+
+# Escape Characters in Python
+# Escape characters are special characters that are used to represent certain whitespace or control characters within strings.
+# They are preceded by a backslash (\) and have specific meanings.
+# Common Escape Characters:
+# \n - New Line: Moves the cursor to the next line.
+# \t - Tab: Inserts a horizontal tab space.
+# \\ - Backslash: Inserts a backslash character.
+# \' - Single Quote: Inserts a single quote character.
+# \" - Double Quote: Inserts a double quote character.
+
+# Escape Character Examples
+print("Hello,\nWorld!")  # New Line
+
+print("Hello, \tWorld!")  # Tab Space
+
+print("This is a backslash: \\")  # Backslash
+
+print('It\'s a beautiful day!')  # Single Quote
+
+print("She said, \"Hello!\"")  # Double Quote
+
+# String Interpolation in Python
+# String interpolation allows you to embed expressions inside string literals, using a specific syntax.
+# There are several ways to perform string interpolation in Python:
+
+# f-Strings
+profile = f"Hello, My name is {name} and I am {age} years old."
+print(profile)
+
+# f-Strings with expressions
+calculation = f"In five years, I will be {age + 5} years old."
+print(calculation)
+
+# .format() Method
