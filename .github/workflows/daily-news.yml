@@ -2,8 +2,7 @@ name: Daily Bioinformatics News
 
 on:
   schedule:
-    # Setiap hari jam 08:00 WIB (01:00 UTC)
-    - cron: "0 1 * * *"
+    - cron: "0 1 * * *"   # 08:00 WIB
   workflow_dispatch:
 
 permissions:
@@ -15,10 +14,11 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Checkout repository
+      - name: Checkout (latest commit)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,20 +26,17 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: |
-          pip install anthropic || true
+        run: pip install anthropic --quiet || true
 
-      - name: Fetch & summarize latest papers
+      - name: Run news update
         env:
           GROQ_API_KEY:      ${{ secrets.GROQ_API_KEY }}
           MISTRAL_API_KEY:   ${{ secrets.MISTRAL_API_KEY }}
           GEMINI_API_KEY:    ${{ secrets.GEMINI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          cd scripts
-          python news_update.py
+        run: python scripts/news_update.py
 
-      - name: Summary
+      - name: Result
         run: |
-          echo "### Berita Terbaru ✅" >> $GITHUB_STEP_SUMMARY
+          echo "### Update Selesai" >> $GITHUB_STEP_SUMMARY
           echo "Cek [News/LATEST.md](../blob/main/News/LATEST.md)" >> $GITHUB_STEP_SUMMARY
