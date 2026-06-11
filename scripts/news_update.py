@@ -7,7 +7,9 @@ Fetch paper terbaru dari PubMed, rangkum dengan AI gratis, commit ke GitHub.
 import json
 import os
 import sys
+import time
 import urllib.request
+import urllib.error
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
@@ -21,6 +23,10 @@ NEWS_DIR = ROOT / "News"
 LATEST_NEWS = NEWS_DIR / "LATEST.md"
 ARCHIVE_DIR = NEWS_DIR / "Archive"
 
+# PubMed memerlukan email & tool agar tidak di-rate-limit
+PUBMED_EMAIL = "petrushandikasinaga@gmail.com"
+PUBMED_TOOL  = "bioinformatics-learning-journal"
+
 SYSTEM = (
     "Kamu adalah mentor bioinformatika yang merangkum paper ilmiah menjadi mudah dipahami "
     "oleh mahasiswa pemula. Gunakan Bahasa Indonesia yang jelas dan sertakan konteks yang "
@@ -28,30 +34,53 @@ SYSTEM = (
 )
 
 
+def _pubmed_get(url: str, retries: int = 3) -> bytes:
+    """GET dengan retry + backoff untuk menghindari 429."""
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": PUBMED_TOOL})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < retries - 1:
+                wait = 5 * (attempt + 1)   # 5s, 10s, 15s
+                print(f"  Rate limited, tunggu {wait}s...")
+                time.sleep(wait)
+            else:
+                raise
+    return b""
+
+
 def fetch_pubmed_papers(query: str, max_results: int = 3) -> list[dict]:
     base = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
-    yesterday = (datetime.now(timezone.utc) - timedelta(days=7)).strftime("%Y/%m/%d")
+    common = {"email": PUBMED_EMAIL, "tool": PUBMED_TOOL}
+    week_ago = (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y/%m/%d")
 
-    # Coba dengan filter tanggal dulu
+    # Coba dengan filter tanggal, fallback tanpa filter
+    ids: list[str] = []
     for term in [
-        f"{query}[Title/Abstract] AND {yesterday}[PDAT]:3000[PDAT]",
+        f"{query}[Title/Abstract] AND {week_ago}[PDAT]:3000[PDAT]",
         f"{query}[Title/Abstract]",
     ]:
-        params = urllib.parse.urlencode({
+        params = urllib.parse.urlencode({**common,
             "db": "pubmed", "term": term,
             "retmax": max_results, "sort": "pub+date", "retmode": "json",
         })
-        with urllib.request.urlopen(f"{base}esearch.fcgi?{params}") as r:
-            ids = json.loads(r.read()).get("esearchresult", {}).get("idlist", [])
+        data = _pubmed_get(f"{base}esearch.fcgi?{params}")
+        ids = json.loads(data).get("esearchresult", {}).get("idlist", [])
         if ids:
             break
+        time.sleep(1)   # jeda antar request
 
     if not ids:
         return []
 
-    params = urllib.parse.urlencode({"db": "pubmed", "id": ",".join(ids), "retmode": "xml"})
-    with urllib.request.urlopen(f"{base}efetch.fcgi?{params}") as r:
-        root = ET.fromstring(r.read())
+    time.sleep(1)   # jeda sebelum efetch
+    params = urllib.parse.urlencode({**common,
+        "db": "pubmed", "id": ",".join(ids), "retmode": "xml",
+    })
+    xml_data = _pubmed_get(f"{base}efetch.fcgi?{params}")
+    root = ET.fromstring(xml_data)
 
     papers = []
     for article in root.findall(".//PubmedArticle"):
@@ -152,7 +181,10 @@ def main() -> None:
     print(f"=== News Update: {date_str} ===")
 
     all_papers, seen = [], set()
-    for q in ["bioinformatics machine learning", "genomics sequencing", "protein structure"]:
+    queries = ["bioinformatics", "genomics sequencing", "protein structure prediction"]
+    for i, q in enumerate(queries):
+        if i > 0:
+            time.sleep(3)   # jeda 3 detik antar query agar tidak kena rate limit
         print(f"Fetching: '{q}'...")
         for p in fetch_pubmed_papers(q, max_results=2):
             if p["pmid"] not in seen:
