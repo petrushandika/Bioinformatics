@@ -1,0 +1,260 @@
+{
+  "curriculum": [
+    {
+      "id": "BIO-01-HISTORY",
+      "title": "Sejarah Biologi & Bioinformatika",
+      "folder": "Biology/01-History",
+      "category": "Biology",
+      "year": 1,
+      "status": "done"
+    },
+    {
+      "id": "BIO-02-CELL",
+      "title": "Struktur Sel",
+      "folder": "Biology/02-Cell-Structure",
+      "category": "Biology",
+      "year": 1,
+      "status": "done"
+    },
+    {
+      "id": "BIO-03-MOLBIO",
+      "title": "Biologi Molekuler & Dogma Sentral",
+      "folder": "Biology/03-Molecular-Biology",
+      "category": "Biology",
+      "year": 1,
+      "status": "done"
+    },
+    {
+      "id": "BIO-04-GENETICS",
+      "title": "Genetika & Hukum Mendel",
+      "folder": "Biology/04-Genetics",
+      "category": "Biology",
+      "year": 1,
+      "status": "done"
+    },
+    {
+      "id": "BIO-05-BIOCHEM",
+      "title": "Biokimia Dasar",
+      "folder": "Biology/05-Biochemistry",
+      "category": "Biology",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "BIO-06-PROTEIN",
+      "title": "Struktur & Fungsi Protein",
+      "folder": "Biology/06-Protein",
+      "category": "Biology",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "BIO-07-ENZYME",
+      "title": "Enzim & Kinetika Enzim",
+      "folder": "Biology/07-Enzyme",
+      "category": "Biology",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "BIO-08-METABOLISM",
+      "title": "Metabolisme Seluler (Glikolisis & Respirasi)",
+      "folder": "Biology/08-Metabolism",
+      "category": "Biology",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "BIO-09-EVOLUTION",
+      "title": "Evolusi & Seleksi Alam",
+      "folder": "Biology/09-Evolution",
+      "category": "Biology",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "BIO-10-TAXONOMY",
+      "title": "Taksonomi & Klasifikasi Makhluk Hidup",
+      "folder": "Biology/10-Taxonomy",
+      "category": "Biology",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "PY-08-FUNCTION",
+      "title": "Fungsi & Modul dalam Python",
+      "folder": "Python/01-Basics/08-Function",
+      "category": "Python",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "PY-09-FILEIO",
+      "title": "File I/O dalam Python",
+      "folder": "Python/01-Basics/09-File-IO",
+      "category": "Python",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "PY-10-LIST",
+      "title": "List & Tuple dalam Python",
+      "folder": "Python/01-Basics/10-List-Tuple",
+      "category": "Python",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "PY-11-DICT",
+      "title": "Dictionary & Set dalam Python",
+      "folder": "Python/01-Basics/11-Dict-Set",
+      "category": "Python",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "PY-12-LOOP",
+      "title": "Loop (For & While) dalam Python",
+      "folder": "Python/01-Basics/12-Loop",
+      "category": "Python",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "PY-13-OOP",
+      "title": "Pemrograman Berorientasi Objek (OOP)",
+      "folder": "Python/01-Basics/13-OOP",
+      "category": "Python",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "PY-14-EXCEPTION",
+      "title": "Error Handling & Exception",
+      "folder": "Python/01-Basics/14-Exception",
+      "category": "Python",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "PY-15-COMPREHENSION",
+      "title": "List Comprehension & Lambda",
+      "folder": "Python/01-Basics/15-Comprehension",
+      "category": "Python",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "MATH-01-ALGEBRA",
+      "title": "Aljabar Dasar untuk Bioinformatika",
+      "folder": "Mathematics/01-Algebra",
+      "category": "Mathematics",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "MATH-02-STATS",
+      "title": "Statistika Deskriptif",
+      "folder": "Mathematics/02-Statistics",
+      "category": "Mathematics",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "MATH-03-PROBABILITY",
+      "title": "Probabilitas & Distribusi",
+      "folder": "Mathematics/03-Probability",
+      "category": "Mathematics",
+      "year": 1,
+      "status": "pending"
+    },
+    {
+      "id": "MATH-04-MATRIX",
+      "title": "Aljabar Linear & Matriks",
+      "folder": "Mathematics/04-Linear-Algebra",
+      "category": "Mathematics",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "BIO2-01-SEQDNA",
+      "title": "Sekuensing DNA & NGS",
+      "folder": "Biology/11-DNA-Sequencing",
+      "category": "Biology",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-01-BLAST",
+      "title": "BLAST & Sequence Alignment",
+      "folder": "Bioinformatics/01-BLAST",
+      "category": "Bioinformatics",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-02-BIOPYTHON",
+      "title": "Pengenalan BioPython",
+      "folder": "Bioinformatics/02-BioPython",
+      "category": "Bioinformatics",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-03-SEQANALYSIS",
+      "title": "Analisis Sekuens dengan Python",
+      "folder": "Bioinformatics/03-Sequence-Analysis",
+      "category": "Bioinformatics",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-04-PAIRWISE",
+      "title": "Pairwise Sequence Alignment",
+      "folder": "Bioinformatics/04-Pairwise-Alignment",
+      "category": "Bioinformatics",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-05-MSA",
+      "title": "Multiple Sequence Alignment",
+      "folder": "Bioinformatics/05-MSA",
+      "category": "Bioinformatics",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-06-PHYLO",
+      "title": "Analisis Filogenetik",
+      "folder": "Bioinformatics/06-Phylogenetics",
+      "category": "Bioinformatics",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "ML-01-INTRO",
+      "title": "Pengenalan Machine Learning untuk Bioinformatika",
+      "folder": "MachineLearning/01-Intro",
+      "category": "MachineLearning",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "ML-02-SKLEARN",
+      "title": "Scikit-learn untuk Analisis Biologis",
+      "folder": "MachineLearning/02-Sklearn",
+      "category": "MachineLearning",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "ML-03-DEEPLEARNING",
+      "title": "Deep Learning untuk Genomik",
+      "folder": "MachineLearning/03-Deep-Learning",
+      "category": "MachineLearning",
+      "year": 4,
+      "status": "pending"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+name: Daily Learning Update
+
+on:
+  schedule:
+    # Setiap hari jam 07:00 WIB (00:00 UTC)
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    # Bisa dijalankan manual dari tab Actions di GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  daily-update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Run daily update script
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/daily_update.py
+
+      - name: Summary
+        run: |
+          echo "### Update Selesai" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Cek [Daily/LATEST.md](../blob/main/Daily/LATEST.md) untuk materi terbaru." >> $GITHUB_STEP_SUMMARY
