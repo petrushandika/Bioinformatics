@@ -5,7 +5,6 @@ on:
     # Setiap hari jam 07:00 WIB (00:00 UTC)
     - cron: "0 0 * * *"
   workflow_dispatch:
-    # Bisa dijalankan manual dari tab Actions di GitHub
 
 permissions:
   contents: write
@@ -27,15 +26,23 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install anthropic
+        run: |
+          pip install anthropic || true
+          # anthropic hanya dipakai jika ANTHROPIC_API_KEY tersedia
+          # Groq, Mistral, Gemini menggunakan urllib (built-in, tanpa install)
 
-      - name: Run daily update script
+      - name: Run daily update
         env:
+          # Set salah satu saja yang kamu punya (semua gratis kecuali Anthropic):
+          GROQ_API_KEY:      ${{ secrets.GROQ_API_KEY }}
+          MISTRAL_API_KEY:   ${{ secrets.MISTRAL_API_KEY }}
+          GEMINI_API_KEY:    ${{ secrets.GEMINI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/daily_update.py
+        run: |
+          cd scripts
+          python daily_update.py
 
       - name: Summary
         run: |
-          echo "### Update Selesai" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Cek [Daily/LATEST.md](../blob/main/Daily/LATEST.md) untuk materi terbaru." >> $GITHUB_STEP_SUMMARY
+          echo "### Update Selesai ✅" >> $GITHUB_STEP_SUMMARY
+          echo "Cek [Daily/LATEST.md](../blob/main/Daily/LATEST.md)" >> $GITHUB_STEP_SUMMARY
