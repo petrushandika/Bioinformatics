@@ -1,0 +1,39 @@
+name: Daily Bioinformatics News
+
+on:
+  schedule:
+    # Setiap hari jam 08:00 WIB (01:00 UTC)
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Fetch & summarize latest bioinformatics papers
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/news_update.py
+
+      - name: Summary
+        run: |
+          echo "### Berita Bioinformatika Terbaru" >> $GITHUB_STEP_SUMMARY
+          echo "Cek [News/LATEST.md](../blob/main/News/LATEST.md)" >> $GITHUB_STEP_SUMMARY
