@@ -1,48 +1,35 @@
-name: Daily Learning Update
+name: Daily Update
 
 on:
   schedule:
-    # Setiap hari jam 07:00 WIB (00:00 UTC)
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"   # 07:00 WIB setiap hari
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  daily-update:
+  update:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: |
-          pip install anthropic || true
-          # anthropic hanya dipakai jika ANTHROPIC_API_KEY tersedia
-          # Groq, Mistral, Gemini menggunakan urllib (built-in, tanpa install)
+        run: pip install anthropic --quiet || true
 
       - name: Run daily update
         env:
-          # Set salah satu saja yang kamu punya (semua gratis kecuali Anthropic):
           GROQ_API_KEY:      ${{ secrets.GROQ_API_KEY }}
           MISTRAL_API_KEY:   ${{ secrets.MISTRAL_API_KEY }}
           GEMINI_API_KEY:    ${{ secrets.GEMINI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          cd scripts
-          python daily_update.py
-
-      - name: Summary
-        run: |
-          echo "### Update Selesai ✅" >> $GITHUB_STEP_SUMMARY
-          echo "Cek [Daily/LATEST.md](../blob/main/Daily/LATEST.md)" >> $GITHUB_STEP_SUMMARY
+        run: python scripts/daily_update.py
