@@ -1,7 +1,23 @@
-# Materi Terbaru
+# Update Terbaru — 2026-06-12
 
-> File ini diperbarui otomatis setiap hari oleh GitHub Actions.
+**Paper:** 0 paper
 
-Belum ada update harian. Update pertama akan muncul besok setelah GitHub Actions berjalan.
+---
 
-Untuk menjalankan manual: buka tab **Actions** di GitHub → pilih **Daily Learning Update** → klik **Run workflow**.
+[📖 Baca update lengkap hari ini](./2026-06-12.md)
+
+---
+
+### Cuplikan Materi
+
+
+
+...
+
+### Cuplikan Berita
+
+_Rangkuman tidak tersedia hari ini._
+
+...
+
+[→ Selengkapnya](./2026-06-12.md)
