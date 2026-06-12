@@ -2,8 +2,10 @@ name: Daily Update
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # 07:00 WIB setiap hari
-  workflow_dispatch:
+    - cron: "0 0 * * *"      # 07:00 WIB — trigger langsung GitHub
+  workflow_dispatch:           # trigger manual dari GitHub UI
+  repository_dispatch:
+    types: [daily-update]     # trigger dari cron-job.org via API
 
 permissions:
   contents: write
@@ -22,13 +24,13 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Cek API key tersedia
+      - name: Cek API key
         env:
           GROQ_API_KEY:    ${{ secrets.GROQ_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
         run: |
           if [ -z "$GROQ_API_KEY" ] && [ -z "$MISTRAL_API_KEY" ]; then
-            echo "ERROR: Tidak ada API key! Tambahkan GROQ_API_KEY atau MISTRAL_API_KEY di GitHub Secrets."
+            echo "ERROR: Tidak ada API key di GitHub Secrets!"
             exit 1
           fi
           [ -n "$GROQ_API_KEY" ]    && echo "GROQ_API_KEY    : tersedia ✓"
