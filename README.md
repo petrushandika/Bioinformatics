@@ -69,88 +69,97 @@ Bioinformatics/
 
 ## Kurikulum
 
+<!-- CURRICULUM:START -->
 ### Tahun 1 — Fondasi
 
-#### 🧬 Biologi Dasar
-
-| Status | Topik | Folder |
-|--------|-------|--------|
-| ✅ | Sejarah Biologi & Bioinformatika | [Biology/01-History](./Biology/01-History/) |
-| ✅ | Struktur Sel | [Biology/02-Cell-Structure](./Biology/02-Cell-Structure/) |
-| ✅ | Biologi Molekuler | [Biology/03-Molecular-Biology](./Biology/03-Molecular-Biology/) |
-| ✅ | Genetika | [Biology/04-Genetics](./Biology/04-Genetics/) |
-| ✅ | Biokimia Dasar | [Biology/05-Biochemistry](./Biology/05-Biochemistry/) |
-
-#### 💻 Pemrograman Python
-
-| Status | Topik | Folder |
-|--------|-------|--------|
-| ✅ | Intro & Hello World | [Python/01-Basics/01-Intro](./Python/01-Basics/01-Intro/) |
-| ✅ | Komentar | [Python/01-Basics/02-Comment](./Python/01-Basics/02-Comment/) |
-| ✅ | Variable | [Python/01-Basics/03-Variable](./Python/01-Basics/03-Variable/) |
-| ✅ | Tipe Data | [Python/01-Basics/04-Data-Type](./Python/01-Basics/04-Data-Type/) |
-| ✅ | String & Manipulasi | [Python/01-Basics/05-String](./Python/01-Basics/05-String/) |
-| ✅ | Operator | [Python/01-Basics/06-Operator](./Python/01-Basics/06-Operator/) |
-| ✅ | Kontrol Program | [Python/01-Basics/07-Control-Program](./Python/01-Basics/07-Control-Program/) |
-| 🔜 | Fungsi & Modul | Python/01-Basics/08-Function/ |
-| 🔜 | File I/O | Python/01-Basics/09-File-IO/ |
-| 🔜 | List & Tuple | Python/01-Basics/10-List-Tuple/ |
-| 🔜 | Dictionary & Set | Python/01-Basics/11-Dict-Set/ |
-
-#### 📊 Matematika & Statistik
-
-| Status | Topik |
-|--------|-------|
-| 🔜 | Aljabar & Fungsi |
-| 🔜 | Kalkulus Dasar |
-| 🔜 | Statistik dengan R |
-
----
+| Status | Kategori | Topik | Folder |
+|--------|----------|-------|--------|
+| ✅ | 🧬 Biologi | Sejarah Biologi & Bioinformatika | [Biology/01-History](./Biology/01-History/) |
+| ✅ | 🧬 Biologi | Struktur Sel | [Biology/02-Cell-Structure](./Biology/02-Cell-Structure/) |
+| ✅ | 🧬 Biologi | Biologi Molekuler & Dogma Sentral | [Biology/03-Molecular-Biology](./Biology/03-Molecular-Biology/) |
+| ✅ | 🧬 Biologi | Genetika & Hukum Mendel | [Biology/04-Genetics](./Biology/04-Genetics/) |
+| ✅ | 🧬 Biologi | Biokimia Dasar | [Biology/05-Biochemistry](./Biology/05-Biochemistry/) |
+| 🔜 | 🧬 Biologi | Struktur & Fungsi Protein | `Biology/06-Protein/` |
+| 🔜 | 🧬 Biologi | Enzim & Kinetika Enzim | `Biology/07-Enzyme/` |
+| 🔜 | 🧬 Biologi | Metabolisme Seluler (Glikolisis & Respirasi) | `Biology/08-Metabolism/` |
+| 🔜 | 🧬 Biologi | Evolusi & Seleksi Alam | `Biology/09-Evolution/` |
+| 🔜 | 🧬 Biologi | Taksonomi & Klasifikasi Makhluk Hidup | `Biology/10-Taxonomy/` |
+| 🔜 | 💻 Python | Fungsi & Modul dalam Python | `Python/01-Basics/08-Function/` |
+| 🔜 | 💻 Python | File I/O dalam Python | `Python/01-Basics/09-File-IO/` |
+| 🔜 | 💻 Python | List & Tuple dalam Python | `Python/01-Basics/10-List-Tuple/` |
+| 🔜 | 💻 Python | Dictionary & Set dalam Python | `Python/01-Basics/11-Dict-Set/` |
+| 🔜 | 💻 Python | Loop (For & While) dalam Python | `Python/01-Basics/12-Loop/` |
+| 🔜 | 💻 Python | Pemrograman Berorientasi Objek (OOP) | `Python/01-Basics/13-OOP/` |
+| 🔜 | 💻 Python | Error Handling & Exception | `Python/01-Basics/14-Exception/` |
+| 🔜 | 💻 Python | List Comprehension & Lambda | `Python/01-Basics/15-Comprehension/` |
+| 🔜 | 📊 Matematika & Statistik | Aljabar Dasar untuk Bioinformatika | `Mathematics/01-Algebra/` |
+| 🔜 | 📊 Matematika & Statistik | Statistika Deskriptif | `Mathematics/02-Statistics/` |
+| 🔜 | 📊 Matematika & Statistik | Probabilitas & Distribusi | `Mathematics/03-Probability/` |
 
 ### Tahun 2 — Konsep Inti
 
-| Status | Topik |
-|--------|-------|
-| 🔜 | Biokimia Lanjutan (Protein, Enzim) |
-| 🔜 | OOP dengan Java |
-| 🔜 | Database & SQL |
-| 🔜 | Linux & Shell Scripting |
-| 🔜 | BioPython |
-| 🔜 | BLAST & Sequence Analysis |
+| Status | Kategori | Topik | Folder |
+|--------|----------|-------|--------|
+| 🔜 | 📊 Matematika & Statistik | Aljabar Linear & Matriks | `Mathematics/04-Linear-Algebra/` |
+| 🔜 | 🧬 Biologi | Sekuensing DNA & NGS | `Biology/11-DNA-Sequencing/` |
+| 🔜 | 🔬 Bioinformatika | BLAST & Sequence Alignment | `Bioinformatics/01-BLAST/` |
+| 🔜 | 🔬 Bioinformatika | Pengenalan BioPython | `Bioinformatics/02-BioPython/` |
+| 🔜 | 🔬 Bioinformatika | Analisis Sekuens dengan Python | `Bioinformatics/03-Sequence-Analysis/` |
+| 🔜 | 🔬 Bioinformatika | Pairwise Sequence Alignment | `Bioinformatics/04-Pairwise-Alignment/` |
+| 🔜 | 🔬 Bioinformatika | Multiple Sequence Alignment | `Bioinformatics/05-MSA/` |
+| 🔜 | 🖥️ Komputasi | Linux & Shell Scripting untuk Bioinformatika | `Computing/01-Linux-Shell/` |
+| 🔜 | 🖥️ Komputasi | Database & SQL untuk Data Biologis | `Computing/02-Database-SQL/` |
+| 🔜 | 🔬 Bioinformatika | Format File Biologis: FASTA, FASTQ, GenBank, SAM/BAM, VCF | `Bioinformatics/07-File-Formats/` |
+| 🔜 | 🔬 Bioinformatika | Database Biologis: NCBI, UniProt, Ensembl, PDB | `Bioinformatics/08-Biological-Databases/` |
+| 🔜 | 📊 Matematika & Statistik | Uji Hipotesis & p-value | `Mathematics/05-Hypothesis-Testing/` |
+| 🔜 | 📊 Matematika & Statistik | Statistik dengan R | `Mathematics/06-Statistics-with-R/` |
 
----
+### Tahun 3 — Spesialisasi
 
-### Tahun 3 — Topik Spesialisasi
-
-| Status | Topik |
-|--------|-------|
-| 🔜 | Multiple Sequence Alignment |
-| 🔜 | Prediksi Struktur Protein |
-| 🔜 | Machine Learning Dasar |
-| 🔜 | Biostatistik |
-
----
+| Status | Kategori | Topik | Folder |
+|--------|----------|-------|--------|
+| 🔜 | 🔬 Bioinformatika | Analisis Filogenetik | `Bioinformatics/06-Phylogenetics/` |
+| 🔜 | 🤖 Machine Learning | Pengenalan Machine Learning untuk Bioinformatika | `MachineLearning/01-Intro/` |
+| 🔜 | 🤖 Machine Learning | Scikit-learn untuk Analisis Biologis | `MachineLearning/02-Sklearn/` |
+| 🔜 | 🔬 Bioinformatika | Hidden Markov Model untuk Analisis Sekuens | `Bioinformatics/09-Hidden-Markov-Model/` |
+| 🔜 | 🔬 Bioinformatika | Prediksi Struktur Protein & AlphaFold | `Bioinformatics/10-Protein-Structure-Prediction/` |
+| 🔜 | 📊 Matematika & Statistik | Biostatistik: Multiple Testing & False Discovery Rate | `Mathematics/07-Multiple-Testing/` |
+| 🔜 | 🔬 Bioinformatika | RNA-seq & Analisis Ekspresi Gen Diferensial | `Bioinformatics/11-RNA-Seq-Differential-Expression/` |
+| 🔜 | 🔬 Bioinformatika | Genome Assembly | `Bioinformatics/12-Genome-Assembly/` |
+| 🔜 | 🔬 Bioinformatika | Variant Calling & Anotasi Varian | `Bioinformatics/13-Variant-Calling/` |
+| 🔜 | 🔬 Bioinformatika | Gene Ontology & Pathway Enrichment | `Bioinformatics/14-Gene-Ontology-Enrichment/` |
+| 🔜 | 🤖 Machine Learning | Clustering & PCA untuk Data Ekspresi Gen | `MachineLearning/04-Clustering-PCA/` |
 
 ### Tahun 4 — Aplikasi Lanjutan
 
-| Status | Topik |
-|--------|-------|
-| 🔜 | Genomics & Transcriptomics |
-| 🔜 | Next-Generation Sequencing |
-| 🔜 | Deep Learning untuk Genomik |
-| 🔜 | Proyek Capstone |
+| Status | Kategori | Topik | Folder |
+|--------|----------|-------|--------|
+| 🔜 | 🤖 Machine Learning | Deep Learning untuk Genomik | `MachineLearning/03-Deep-Learning/` |
+| 🔜 | 🔬 Bioinformatika | Analisis Single-cell RNA-seq | `Bioinformatics/15-Single-Cell/` |
+| 🔜 | 🔬 Bioinformatika | Metagenomik & Analisis Mikrobioma | `Bioinformatics/16-Metagenomics/` |
+| 🔜 | 🖥️ Komputasi | Workflow Reproducible: Snakemake & Nextflow | `Computing/03-Reproducible-Workflows/` |
+| 🔜 | 🔬 Bioinformatika | Bioinformatika Struktural & Molecular Docking | `Bioinformatics/17-Structural-Bioinformatics/` |
+| 🔜 | 🤖 Machine Learning | Protein Language Models | `MachineLearning/05-Protein-Language-Models/` |
+| 🔜 | 🎓 Capstone | Proyek Capstone: Pipeline Analisis Genomik End-to-end | `Capstone/01-Final-Project/` |
+
+<!-- CURRICULUM:END -->
 
 ---
 
 ## Progress Belajar
 
+<!-- PROGRESS:START -->
 ```
-Biologi         ████░░░░░░  20%
-Python          ███░░░░░░░  30%
-Matematika      ░░░░░░░░░░   0%
-Bioinformatika  ░░░░░░░░░░   0%
-Machine Learning░░░░░░░░░░   0%
+Biologi                 █████░░░░░  5/11  45%
+Python                  ░░░░░░░░░░  0/8    0%
+Matematika & Statistik  ░░░░░░░░░░  0/7    0%
+Bioinformatika          ░░░░░░░░░░  0/17   0%
+Machine Learning        ░░░░░░░░░░  0/5    0%
+Komputasi               ░░░░░░░░░░  0/3    0%
+Capstone                ░░░░░░░░░░  0/1    0%
+Total                   █░░░░░░░░░  5/52  10%
 ```
+<!-- PROGRESS:END -->
 
 ---
 

@@ -1,23 +1,13 @@
-# Update Terbaru — 2026-06-12
+# Update Terbaru — 2026-11-19
 
-**Paper:** 0 paper
+**Materi:** [Biokimia Dasar](../Biology/05-Biochemistry/README.md)
 
----
+Biokimia mempelajari molekul penyusun makhluk hidup, reaksi kimia yang terjadi di dalam sel, serta cara reaksi tersebut mendukung kehidupan. Jika biologi molekuler menjelaskan bagaimana informasi DNA digunakan untuk menghasilkan protein, biokimia membantu menjawab pertanyaan berikut: **Bagaimana struktur molekul menentukan fungsi, dan bagaimana sel memperoleh serta menggunakan energi?**
 
-[📖 Baca update lengkap hari ini](./2026-06-12.md)
+Materi ini menghubungkan pengetahuan tentang struktur sel, dogma sentral, dan genetika dengan proses kimia yang mendasari pertumbuhan, pewarisan sifat, dan respons organisme terhadap lingkungan.
 
----
+## Tujuan Pem…
 
-### Cuplikan Materi
+**Paper:** 4
 
-
-
-...
-
-### Cuplikan Berita
-
-_Rangkuman tidak tersedia hari ini._
-
-...
-
-[→ Selengkapnya](./2026-06-12.md)
+[📖 Baca update lengkap](./2026-11-19.md)
