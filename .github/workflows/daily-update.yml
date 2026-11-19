@@ -2,42 +2,49 @@ name: Daily Update
 
 on:
   schedule:
-    - cron: "0 0 * * *"      # 07:00 WIB — trigger langsung GitHub
-  workflow_dispatch:           # trigger manual dari GitHub UI
+    - cron: "17 23 * * *"     # 06:17 WIB; menit tidak bulat agar tidak tertunda antrean jam penuh
+  workflow_dispatch:
+    inputs:
+      topics:
+        description: "Jumlah topik materi yang dibuat (1-5)"
+        default: "1"
+      force:
+        description: "Buat lagi walau update hari ini sudah ada"
+        type: boolean
+        default: false
   repository_dispatch:
-    types: [daily-update]     # trigger dari cron-job.org via API
+    types: [daily-update]     # cadangan dari cron-job.org
 
 permissions:
   contents: write
 
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: main
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Cek API key
-        env:
-          GROQ_API_KEY:    ${{ secrets.GROQ_API_KEY }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-        run: |
-          if [ -z "$GROQ_API_KEY" ] && [ -z "$MISTRAL_API_KEY" ]; then
-            echo "ERROR: Tidak ada API key di GitHub Secrets!"
-            exit 1
-          fi
-          [ -n "$GROQ_API_KEY" ]    && echo "GROQ_API_KEY    : tersedia ✓"
-          [ -n "$MISTRAL_API_KEY" ] && echo "MISTRAL_API_KEY : tersedia ✓"
-
       - name: Run daily update
         env:
-          GROQ_API_KEY:    ${{ secrets.GROQ_API_KEY }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-        run: python scripts/daily_update.py
+          ROUTER_API_KEY: ${{ secrets.ROUTER_API_KEY }}
+          ROUTER_BASE_URL: ${{ vars.ROUTER_BASE_URL || 'https://9router.ct.astronacci.co.id/v1' }}
+          ROUTER_MODELS: ${{ vars.ROUTER_MODELS || 'cx/gpt-6.1-sol,cx/gpt-6-sol' }}
+          TOPICS_PER_RUN: ${{ inputs.topics || '1' }}
+        run: |
+          if [ -z "$ROUTER_API_KEY" ]; then
+            echo "::error::Secret ROUTER_API_KEY belum diset"
+            exit 1
+          fi
+          python scripts/daily_update.py ${{ inputs.force && '--force' || '' }}

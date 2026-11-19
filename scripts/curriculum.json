@@ -255,6 +255,166 @@
       "category": "MachineLearning",
       "year": 4,
       "status": "pending"
+    },
+    {
+      "id": "COMP-01-LINUX",
+      "title": "Linux & Shell Scripting untuk Bioinformatika",
+      "folder": "Computing/01-Linux-Shell",
+      "category": "Computing",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "COMP-02-SQL",
+      "title": "Database & SQL untuk Data Biologis",
+      "folder": "Computing/02-Database-SQL",
+      "category": "Computing",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-07-FORMATS",
+      "title": "Format File Biologis: FASTA, FASTQ, GenBank, SAM/BAM, VCF",
+      "folder": "Bioinformatics/07-File-Formats",
+      "category": "Bioinformatics",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-08-DATABASES",
+      "title": "Database Biologis: NCBI, UniProt, Ensembl, PDB",
+      "folder": "Bioinformatics/08-Biological-Databases",
+      "category": "Bioinformatics",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "MATH-05-HYPOTHESIS",
+      "title": "Uji Hipotesis & p-value",
+      "folder": "Mathematics/05-Hypothesis-Testing",
+      "category": "Mathematics",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "MATH-06-R",
+      "title": "Statistik dengan R",
+      "folder": "Mathematics/06-Statistics-with-R",
+      "category": "Mathematics",
+      "year": 2,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-09-HMM",
+      "title": "Hidden Markov Model untuk Analisis Sekuens",
+      "folder": "Bioinformatics/09-Hidden-Markov-Model",
+      "category": "Bioinformatics",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-10-STRUCTURE",
+      "title": "Prediksi Struktur Protein & AlphaFold",
+      "folder": "Bioinformatics/10-Protein-Structure-Prediction",
+      "category": "Bioinformatics",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "MATH-07-MULTITEST",
+      "title": "Biostatistik: Multiple Testing & False Discovery Rate",
+      "folder": "Mathematics/07-Multiple-Testing",
+      "category": "Mathematics",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-11-RNASEQ",
+      "title": "RNA-seq & Analisis Ekspresi Gen Diferensial",
+      "folder": "Bioinformatics/11-RNA-Seq-Differential-Expression",
+      "category": "Bioinformatics",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-12-ASSEMBLY",
+      "title": "Genome Assembly",
+      "folder": "Bioinformatics/12-Genome-Assembly",
+      "category": "Bioinformatics",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-13-VARIANT",
+      "title": "Variant Calling & Anotasi Varian",
+      "folder": "Bioinformatics/13-Variant-Calling",
+      "category": "Bioinformatics",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-14-ENRICHMENT",
+      "title": "Gene Ontology & Pathway Enrichment",
+      "folder": "Bioinformatics/14-Gene-Ontology-Enrichment",
+      "category": "Bioinformatics",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "ML-04-UNSUPERVISED",
+      "title": "Clustering & PCA untuk Data Ekspresi Gen",
+      "folder": "MachineLearning/04-Clustering-PCA",
+      "category": "MachineLearning",
+      "year": 3,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-15-SINGLECELL",
+      "title": "Analisis Single-cell RNA-seq",
+      "folder": "Bioinformatics/15-Single-Cell",
+      "category": "Bioinformatics",
+      "year": 4,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-16-METAGENOMICS",
+      "title": "Metagenomik & Analisis Mikrobioma",
+      "folder": "Bioinformatics/16-Metagenomics",
+      "category": "Bioinformatics",
+      "year": 4,
+      "status": "pending"
+    },
+    {
+      "id": "COMP-03-WORKFLOW",
+      "title": "Workflow Reproducible: Snakemake & Nextflow",
+      "folder": "Computing/03-Reproducible-Workflows",
+      "category": "Computing",
+      "year": 4,
+      "status": "pending"
+    },
+    {
+      "id": "BIOINF-17-DOCKING",
+      "title": "Bioinformatika Struktural & Molecular Docking",
+      "folder": "Bioinformatics/17-Structural-Bioinformatics",
+      "category": "Bioinformatics",
+      "year": 4,
+      "status": "pending"
+    },
+    {
+      "id": "ML-05-PROTEIN-LM",
+      "title": "Protein Language Models",
+      "folder": "MachineLearning/05-Protein-Language-Models",
+      "category": "MachineLearning",
+      "year": 4,
+      "status": "pending"
+    },
+    {
+      "id": "CAPSTONE-01",
+      "title": "Proyek Capstone: Pipeline Analisis Genomik End-to-end",
+      "folder": "Capstone/01-Final-Project",
+      "category": "Capstone",
+      "year": 4,
+      "status": "pending"
     }
   ]
 }
