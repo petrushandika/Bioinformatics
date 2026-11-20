@@ -79,7 +79,7 @@ Bioinformatics/
 | ✅ | 🧬 Biologi | Biologi Molekuler & Dogma Sentral | [Biology/03-Molecular-Biology](./Biology/03-Molecular-Biology/) |
 | ✅ | 🧬 Biologi | Genetika & Hukum Mendel | [Biology/04-Genetics](./Biology/04-Genetics/) |
 | ✅ | 🧬 Biologi | Biokimia Dasar | [Biology/05-Biochemistry](./Biology/05-Biochemistry/) |
-| 🔜 | 🧬 Biologi | Struktur & Fungsi Protein | `Biology/06-Protein/` |
+| ✅ | 🧬 Biologi | Struktur & Fungsi Protein | [Biology/06-Protein](./Biology/06-Protein/) |
 | 🔜 | 🧬 Biologi | Enzim & Kinetika Enzim | `Biology/07-Enzyme/` |
 | 🔜 | 🧬 Biologi | Metabolisme Seluler (Glikolisis & Respirasi) | `Biology/08-Metabolism/` |
 | 🔜 | 🧬 Biologi | Evolusi & Seleksi Alam | `Biology/09-Evolution/` |
@@ -150,14 +150,14 @@ Bioinformatics/
 
 <!-- PROGRESS:START -->
 ```
-Biologi                 █████░░░░░  5/11  45%
+Biologi                 █████░░░░░  6/11  55%
 Python                  ░░░░░░░░░░  0/8    0%
 Matematika & Statistik  ░░░░░░░░░░  0/7    0%
 Bioinformatika          ░░░░░░░░░░  0/17   0%
 Machine Learning        ░░░░░░░░░░  0/5    0%
 Komputasi               ░░░░░░░░░░  0/3    0%
 Capstone                ░░░░░░░░░░  0/1    0%
-Total                   █░░░░░░░░░  5/52  10%
+Total                   █░░░░░░░░░  6/52  12%
 ```
 <!-- PROGRESS:END -->
 

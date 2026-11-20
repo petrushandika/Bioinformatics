@@ -1,8 +1,8 @@
-# Berita Terbaru — 2026-11-19
+# Berita Terbaru — 2026-11-20
 
-- [Access to clinical cancer genomics and precision oncology-based care in North America.](https://pubmed.ncbi.nlm.nih.gov/43032513/) — Kumar P, Salawu A, Demichelis-Gómez R et al. · *Lancet regional health. Americas, 2027*
-- [Patient-specific heart rate modulates developmental electrophysiology in transcriptomic-guided in silico models of pediatric human atrial cardiomyocytes.](https://pubmed.ncbi.nlm.nih.gov/43032459/) — Ellks GM, Mendez MJ, Guerrelli D et al. · *Journal of precision medicine (Amsterdam, Netherlands), 2026*
-- [Multi-omics analysis highlights TM4SF4 (+) epithelial cells and the MMP14-associated signaling program in lung adenocarcinoma pathogenesis and microenvironment remodeling.](https://pubmed.ncbi.nlm.nih.gov/43032062/) — Li J, Liu J, Liu G et al. · *Journal of cell communication and signaling, 2026*
-- [Integrative analysis of pooled CRISPR screens provide functional insights into AD GWAS risk genes.](https://pubmed.ncbi.nlm.nih.gov/43032635/) — Wang RY, Wozniak G, Wang X et al. · *iScience, 2026*
+- [An integrative single-cell long noncoding RNA atlas reveals regulatory programs in the pan-cancer tumor microenvironment.](https://pubmed.ncbi.nlm.nih.gov/43050536/) — Wang S, Qian Q, Liu Y et al. · *Science advances, 2026*
+- [GenNA: Conditional generation of nucleotide sequences guided by natural language annotations.](https://pubmed.ncbi.nlm.nih.gov/43050525/) — Shen Y, Cao G, Wu J et al. · *Science advances, 2026*
+- [TLR5 drives metabolic dysfunction-associated steatohepatitis through lipid- and flagellin-induced hepatocyte injury signaling.](https://pubmed.ncbi.nlm.nih.gov/43050520/) — Li W, Wang N, El Abyad D et al. · *Science advances, 2026*
+- [Intestinal BMP SMADs impart the mid-villus pattern through a transcription factor cascade mechanism.](https://pubmed.ncbi.nlm.nih.gov/43050518/) — Logerfo A, Iqbal J, Ofer R et al. · *Science advances, 2026*
 
-[Rangkuman lengkap →](./Archive/2026-11-19.md)
+[Rangkuman lengkap →](./Archive/2026-11-20.md)

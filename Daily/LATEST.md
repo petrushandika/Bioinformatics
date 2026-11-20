@@ -1,13 +1,19 @@
-# Update Terbaru — 2026-11-19
+# Update Terbaru — 2026-11-20
 
-**Materi:** [Biokimia Dasar](../Biology/05-Biochemistry/README.md)
+**Materi:** [Struktur & Fungsi Protein](../Biology/06-Protein/README.md)
 
-Biokimia mempelajari molekul penyusun makhluk hidup, reaksi kimia yang terjadi di dalam sel, serta cara reaksi tersebut mendukung kehidupan. Jika biologi molekuler menjelaskan bagaimana informasi DNA digunakan untuk menghasilkan protein, biokimia membantu menjawab pertanyaan berikut: **Bagaimana struktur molekul menentukan fungsi, dan bagaimana sel memperoleh serta menggunakan energi?**
+## Tujuan Pembelajaran
 
-Materi ini menghubungkan pengetahuan tentang struktur sel, dogma sentral, dan genetika dengan proses kimia yang mendasari pertumbuhan, pewarisan sifat, dan respons organisme terhadap lingkungan.
+Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
 
-## Tujuan Pem…
+1. Menjelaskan hubungan antara sifat kimia asam amino, ikatan peptida, dan pembentukan struktur protein.
+2. Membedakan struktur primer, sekunder, tersier, dan kuartener beserta interaksi yang menstabilkannya.
+3. Menghubungkan bentuk, dinamika, dan lokasi protein dengan fungsi biologisnya.
+4. Menjelaskan dampak mutasi, denaturasi, dan modifikasi pascatranslasi terhadap aktivitas protein.
+5. Mengenali pendekatan bioinformatika untuk menganalisis urutan, struktur, dan fungsi protein beserta keterbatasannya.
+
+## K…
 
 **Paper:** 4
 
-[📖 Baca update lengkap](./2026-11-19.md)
+[📖 Baca update lengkap](./2026-11-20.md)
