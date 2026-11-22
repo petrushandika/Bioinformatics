@@ -81,7 +81,7 @@ Bioinformatics/
 | ✅ | 🧬 Biologi | Biokimia Dasar | [Biology/05-Biochemistry](./Biology/05-Biochemistry/) |
 | ✅ | 🧬 Biologi | Struktur & Fungsi Protein | [Biology/06-Protein](./Biology/06-Protein/) |
 | ✅ | 🧬 Biologi | Enzim & Kinetika Enzim | [Biology/07-Enzyme](./Biology/07-Enzyme/) |
-| 🔜 | 🧬 Biologi | Metabolisme Seluler (Glikolisis & Respirasi) | `Biology/08-Metabolism/` |
+| ✅ | 🧬 Biologi | Metabolisme Seluler (Glikolisis & Respirasi) | [Biology/08-Metabolism](./Biology/08-Metabolism/) |
 | 🔜 | 🧬 Biologi | Evolusi & Seleksi Alam | `Biology/09-Evolution/` |
 | 🔜 | 🧬 Biologi | Taksonomi & Klasifikasi Makhluk Hidup | `Biology/10-Taxonomy/` |
 | 🔜 | 💻 Python | Fungsi & Modul dalam Python | `Python/01-Basics/08-Function/` |
@@ -150,14 +150,14 @@ Bioinformatics/
 
 <!-- PROGRESS:START -->
 ```
-Biologi                 ██████░░░░  7/11  64%
+Biologi                 ███████░░░  8/11  73%
 Python                  ░░░░░░░░░░  0/8    0%
 Matematika & Statistik  ░░░░░░░░░░  0/7    0%
 Bioinformatika          ░░░░░░░░░░  0/17   0%
 Machine Learning        ░░░░░░░░░░  0/5    0%
 Komputasi               ░░░░░░░░░░  0/3    0%
 Capstone                ░░░░░░░░░░  0/1    0%
-Total                   █░░░░░░░░░  7/52  13%
+Total                   ██░░░░░░░░  8/52  15%
 ```
 <!-- PROGRESS:END -->
 

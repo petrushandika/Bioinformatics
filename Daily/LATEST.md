@@ -1,20 +1,21 @@
-# Update Terbaru — 2026-11-21
+# Update Terbaru — 2026-11-22
 
-**Materi:** [Enzim & Kinetika Enzim](../Biology/07-Enzyme/README.md)
+**Materi:** [Metabolisme Seluler (Glikolisis & Respirasi)](../Biology/08-Metabolism/README.md)
 
-## Tujuan Pembelajaran
+## Tujuan Pembelajaran (3–5 poin)
 
 Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
 
-1. Menjelaskan cara enzim mempercepat reaksi serta hubungannya dengan struktur protein, energi aktivasi, dan kesetimbangan.
-2. Menggunakan persamaan Michaelis–Menten untuk menghitung laju reaksi serta menafsirkan \(V_{\max}\), \(K_m\), dan \(k_{\text{cat}}\).
-3. Membedakan pengaruh konsentrasi substrat, suhu, pH, inhibitor, dan regulator alosterik terhadap aktivitas enzim.
-4. Menghubungkan data eksperimen kinetika dengan anotasi fungsi, analisis struktur, dan pemodelan dalam bioinformatika.
+- Menjelaskan hubungan antara katabolisme, transfer elektron, pembentukan gradien proton, dan sintesis ATP.
+- Menguraikan tahapan glikolisis, oksidasi piruvat, siklus asam sitrat, serta fosforilasi oksidatif.
+- Menelusuri perubahan karbon dan pembawa elektron selama pemecahan satu molekul glukosa.
+- Membedakan respirasi aerob, respirasi anaerob, dan fermentasi.
+- Menghubungkan data gen, protein, dan metabolit dengan analisis jalur metabolisme secara kritis.
 
 ## Konsep Utama
 
-#…
+### 1. Metabolisme: meng…
 
 **Paper:** 4
 
-[📖 Baca update lengkap](./2026-11-21.md)
+[📖 Baca update lengkap](./2026-11-22.md)

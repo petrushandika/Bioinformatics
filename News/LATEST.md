@@ -1,8 +1,8 @@
-# Berita Terbaru — 2026-11-21
+# Berita Terbaru — 2026-11-22
 
-- [Exploring the role of HNF1B in the pathogenesis of autosomal dominant polycystic kidney disease (ADPKD): an integrative bioinformatics study.](https://pubmed.ncbi.nlm.nih.gov/43046632/) — Cao W, Yao Y, Chen Y et al. · *Renal failure, 2026*
-- [A public-data spatial transcriptomic framework for invasive lung adenocarcinoma tumor ecosystems and prognosis.](https://pubmed.ncbi.nlm.nih.gov/43056411/) — Zou Q, Chang Y, Qu M et al. · *PloS one, 2026*
-- [Integrating large-scale serum baseline metabolomics and APOE ε4 genotype status for the non-invasive detection of Alzheimer's disease in the Alzheimer's Disease Neuroimaging Initiative (ADNI) cohort.](https://pubmed.ncbi.nlm.nih.gov/43043965/) — Mukesha D, Firat H, Sacco G et al. · *PloS one, 2026*
-- [CASTLE: Cell-type aware SpaTial domain detection via contrastive learning embedding.](https://pubmed.ncbi.nlm.nih.gov/43043946/) — Wei L, Xie A, Cui Y · *PLoS genetics, 2026*
+- [Alcohol impairs liver adaptation to high-cholesterol diet, leading to advanced disease development.](https://pubmed.ncbi.nlm.nih.gov/43056592/) — Mah S, Schonfeld M, Nataraj K et al. · *Hepatology communications, 2026*
+- [Type 1-polarized DC immunotherapeutic contains heterogeneous populations with IL-12p70 production restricted to a rare subset.](https://pubmed.ncbi.nlm.nih.gov/43056166/) — DePuyt AE, Shoucair PEJ, Bilben HA et al. · *JCI insight, 2026*
+- [Microbiome variation across the intestinal dysbiosis landscape is linked to inflammation and transit time.](https://pubmed.ncbi.nlm.nih.gov/43047989/) — Daryoush T, Proost S, Vieira-Silva S et al. · *eGastroenterology, 2026*
+- [Tertiary lymphoid structures in luminal gastrointestinal cancers: biological circuits, spatial architecture, and biomarkers in the perioperative immunotherapy era.](https://pubmed.ncbi.nlm.nih.gov/43054697/) — Sun S, Chen J, Zhong Y et al. · *Frontiers in immunology, 2026*
 
-[Rangkuman lengkap →](./Archive/2026-11-21.md)
+[Rangkuman lengkap →](./Archive/2026-11-22.md)
