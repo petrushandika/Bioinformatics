@@ -1,4 +1,12 @@
+<a id="top"></a>
+
 # Struktur Sel
+
+[Beranda](../../README.md) · [← Sejarah](../01-History/README.md) · [Biologi Molekuler →](../03-Molecular-Biology/README.md)
+
+## Gambaran dan Cara Belajar
+
+Kenali kompartemen sel, fungsi organel, dan transpor membran sebelum mempelajari proses molekuler. Bandingkan tabel prokariota–eukariota dan hubungkan lokasi protein dengan fungsinya.
 
 ## Apa itu Sel?
 
@@ -16,31 +24,22 @@
 
 Sel tanpa membran inti (nukleus tidak terbungkus membran).
 
-```
-Ciri-ciri:
-✔ Tidak memiliki nukleus sejati
-✔ DNA berada bebas di sitoplasma (nukleoid)
-✔ Ukuran lebih kecil (1–10 µm)
-✔ Tidak memiliki organel bermembran
-✔ Contoh: Bakteri & Archaea
-```
+- Tidak memiliki nukleus bermembran; DNA utama berada di wilayah nukleoid.
+- Umumnya berukuran sekitar 1–10 µm, dengan pengecualian.
+- Tidak memiliki organel bermembran khas eukariota.
+- Mencakup bakteri dan arkea.
 
 **Struktur sel prokariotik:**
 
-```
-┌─────────────────────────────────────────┐
-│  Dinding Sel  (peptidoglikan)           │
-│  ┌──────────────────────────────────┐   │
-│  │  Membran Plasma                  │   │
-│  │                                  │   │
-│  │   Nukleoid ⬡  (DNA circular)    │   │
-│  │                                  │   │
-│  │   Ribosom ● ● ●                 │   │
-│  │                                  │   │
-│  │   Sitoplasma                     │   │
-│  └──────────────────────────────────┘   │
-│  Flagela (alat gerak)                   │
-└─────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    P["Sel prokariotik: skema umum"] --> M["Membran plasma membatasi sitoplasma"]
+    M --> N["Nukleoid: kromosom umumnya sirkular"]
+    M --> R["Ribosom: sintesis protein"]
+    P --> W["Dinding sel pada banyak spesies"]
+    W --> B["Bakteri: umumnya peptidoglikan"]
+    W --> A["Arkea: bukan peptidoglikan"]
+    P --> F["Flagela atau struktur gerak pada sebagian spesies"]
 ```
 
 ---
@@ -49,14 +48,10 @@ Ciri-ciri:
 
 Sel dengan membran inti yang nyata dan organel bermembran.
 
-```
-Ciri-ciri:
-✔ Memiliki nukleus sejati (dibungkus membran)
-✔ Memiliki berbagai organel bermembran
-✔ Ukuran lebih besar (10–100 µm)
-✔ DNA linear, terbungkus dalam nukleus
-✔ Contoh: Tumbuhan, Hewan, Fungi, Protista
-```
+- Memiliki nukleus yang dibungkus membran dan berbagai organel bermembran.
+- Umumnya berukuran sekitar 10–100 µm, dengan pengecualian.
+- Kromosom nuklir berupa DNA linear; organel tertentu juga memiliki DNA.
+- Mencakup tumbuhan, hewan, fungi, dan beragam protista.
 
 ---
 
@@ -80,47 +75,35 @@ Ciri-ciri:
 
 ### Mitokondria — "Pembangkit Energi Sel"
 
-```
-Fungsi: Produksi ATP melalui respirasi seluler
-Struktur:
-  - Membran luar: permeabel
-  - Membran dalam: berlipat-lipat (krista)
-  - Matriks: mengandung DNA mitokondria & ribosom
+**Fungsi:** menghasilkan ATP melalui respirasi seluler. Membran luar relatif permeabel terhadap molekul kecil; membran dalam yang selektif membentuk lipatan krista. Matriks mengandung enzim, DNA mitokondria, dan ribosom.
 
-Reaksi: Glukosa + O₂ → CO₂ + H₂O + ATP (36–38 ATP)
-```
+Oksidasi lengkap glukosa menghasilkan sekitar **30–32 ATP per glukosa pada banyak sel eukariotik**, bukan seluruhnya di mitokondria; glikolisis berlangsung di sitosol.
 
 > **Fakta unik:** Mitokondria memiliki DNA sendiri — bukti teori endosimbiosis (dulunya bakteri bebas)
 
-### Kloroplas (hanya sel tumbuhan)
+### Kloroplas (tumbuhan dan alga fotosintetik)
 
-```
-Fungsi: Fotosintesis
-Reaksi: CO₂ + H₂O + cahaya → Glukosa + O₂
+**Fungsi:** fotosintesis. Kloroplas memiliki membran luar dan dalam, tilakoid yang mengandung klorofil, grana berupa tumpukan tilakoid, serta stroma yang mengandung enzim.
 
-Struktur:
-  - Membran luar & dalam
-  - Tilakoid (membran berlipat, mengandung klorofil)
-  - Stroma (cairan mengandung enzim)
-  - Grana (tumpukan tilakoid)
+Persamaan netto yang disederhanakan:
+
+```text
+6 CO₂ + 6 H₂O + cahaya → C₆H₁₂O₆ + 6 O₂
 ```
 
 ### Aparatus Golgi
 
-```
-Fungsi: Modifikasi, pengemasan, dan distribusi protein
-Analogi: "Kantor Pos" sel — menerima dari RE, 
-         memproses, lalu mengirim ke tujuan
+```mermaid
+flowchart LR
+    RE["RE: protein jalur sekretori"] --> G["Golgi: modifikasi dan penyortiran"]
+    G --> V["Vesikel transpor"]
+    V --> M["Membran plasma atau sekresi"]
+    V --> L["Endosom dan lisosom"]
 ```
 
 ### Lisosom
 
-```
-Fungsi: Pencernaan intrasel
-Berisi: Enzim hidrolitik (pH asam ~4.5)
-Peran:  - Mendegradasi molekul besar
-        - Autofagi (mendaur ulang komponen sel tua)
-```
+**Fungsi:** pencernaan intrasel dengan enzim hidrolitik pada pH asam, sekitar 4,5–5. Lisosom mendegradasi makromolekul dan mendaur ulang komponen sel melalui autofagi.
 
 ### Organel Lain
 
@@ -139,11 +122,11 @@ Peran:  - Mendegradasi molekul besar
 | Struktur | Sel Hewan | Sel Tumbuhan |
 |----------|-----------|--------------|
 | Dinding sel | ✗ | ✔ (selulosa) |
-| Kloroplas | ✗ | ✔ |
+| Kloroplas | ✗ | Ada pada sel fotosintetik; tidak pada semua sel tumbuhan |
 | Vakuola tengah | Kecil/tidak ada | Besar |
 | Sentrosom | ✔ | Sebagian besar ✗ |
 | Lisosom | ✔ | Jarang |
-| Bentuk | Tidak tetap | Tetap |
+| Bentuk | Beragam, dipengaruhi sitoskeleton | Cenderung lebih kaku karena dinding sel |
 
 ---
 
@@ -151,21 +134,20 @@ Peran:  - Mendegradasi molekul besar
 
 **Model Mosaik Fluida** (Singer & Nicolson, 1972):
 
-```
-Luar sel
-──────────────────────────────────────────
-  ◈◈◈  glikolipid       ⊕ glikoprotein
- ○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●  ← fosfolipid luar
- ●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○  ← fosfolipid dalam
-            ████  protein integral  ███
-──────────────────────────────────────────
-Dalam sel (sitoplasma)
+```mermaid
+flowchart TD
+    M["Membran plasma: mosaik fluida"] --> B["Lapisan ganda fosfolipid"]
+    B --> H["Kepala hidrofilik menghadap cairan luar dan sitosol"]
+    B --> T["Ekor hidrofobik menghadap bagian dalam bilayer"]
+    M --> P["Protein integral dan perifer: transpor serta sinyal"]
+    M --> C["Kolesterol: mengatur fluiditas membran hewan"]
+    M --> G["Glikolipid dan glikoprotein: karbohidrat di sisi ekstraseluler"]
 ```
 
 **Komposisi membran:**
 - Fosfolipid bilayer (kepala hidrofilik, ekor hidrofobik)
 - Protein integral & perifer
-- Kolesterol (menjaga fluiditas)
+- Kolesterol pada membran hewan (mengatur fluiditas)
 - Glikoprotein & glikolipid (pengenalan sel)
 
 **Fungsi membran plasma:**
@@ -178,19 +160,20 @@ Dalam sel (sitoplasma)
 
 ## Transportasi Melalui Membran
 
-### Transpor Pasif (tanpa energi)
+### Transpor Pasif (tanpa masukan energi metabolik langsung)
 
 | Jenis | Mekanisme | Contoh |
 |-------|-----------|--------|
 | Difusi sederhana | Gerakan dari konsentrasi tinggi → rendah | O₂, CO₂ |
-| Difusi terfasilitasi | Melewati protein kanal | Glukosa, ion |
+| Difusi terfasilitasi | Melalui kanal atau protein pembawa | Glukosa, ion |
 | Osmosis | Difusi air melalui membran semipermeabel | Air |
 
-### Transpor Aktif (butuh ATP)
+### Transpor Aktif dan Vesikular (memerlukan energi)
 
 | Jenis | Contoh |
 |-------|--------|
-| Pompa ion | Pompa Na⁺/K⁺ |
+| Pompa ion: transpor aktif primer | Pompa Na⁺/K⁺ menggunakan ATP |
+| Kotranspor: transpor aktif sekunder | Simport Na⁺/glukosa menggunakan gradien ion |
 | Endositosis | Fagositosis, pinositosis |
 | Eksositosis | Sekresi protein |
 
@@ -216,4 +199,4 @@ Dalam sel (sitoplasma)
 
 ---
 
-_[← Kembali: Sejarah](../01-History/README.md) | [Lanjut: Biologi Molekuler →](../03-Molecular-Biology/README.md)_
+[↑ Atas](#top) · [Beranda](../../README.md) · [← Sejarah](../01-History/README.md) · [Biologi Molekuler →](../03-Molecular-Biology/README.md)

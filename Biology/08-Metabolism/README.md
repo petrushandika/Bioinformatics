@@ -1,6 +1,14 @@
+<a id="top"></a>
+
 # Metabolisme Seluler (Glikolisis & Respirasi)
 
-## Tujuan Pembelajaran (3–5 poin)
+[Beranda](../../README.md) · [← Enzim](../07-Enzyme/README.md) · [Evolusi →](../09-Evolution/README.md)
+
+## Gambaran dan Cara Belajar
+
+Telusuri karbon, elektron, dan ATP dari glukosa hingga respirasi atau fermentasi. Gunakan tabel hasil per glukosa bersama diagram jalur; bedakan kapasitas metabolik yang diprediksi dari fluks yang diukur.
+
+## Tujuan Pembelajaran
 
 Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
 
@@ -152,7 +160,7 @@ NADH sitosolik tidak langsung menembus membran dalam mitokondria; elektronnya di
 
 Bakteri dan arkea tidak memiliki mitokondria; rantai respirasi mereka berada pada membran sel atau sistem membran terkait.
 
-## Tabel atau Diagram
+## Ringkasan Konsep
 
 **Ringkasan per satu molekul glukosa pada respirasi aerob eukariotik:**
 
@@ -165,27 +173,21 @@ Bakteri dan arkea tidak memiliki mitokondria; rantai respirasi mereka berada pad
 
 ATP pada baris terakhir berasal dari pemanfaatan pembawa elektron yang dihasilkan sebelumnya, bukan dari pembentukan NADH baru.
 
-```text
-Glukosa
-   │ glikolisis
-   ▼
-2 Piruvat ──────► Laktat atau etanol
-   │              regenerasi NAD⁺ melalui fermentasi
-   │ oksidasi piruvat
-   ▼
-2 Asetil-KoA
-   │ siklus asam sitrat
-   ▼
-CO₂ + pembawa elektron tereduksi
-                │
-                ▼
-      Rantai transpor elektron ──► O₂ direduksi menjadi H₂O
-                │
-                ▼
-         Gradien proton
-                │ ATP sintase
-                ▼
-               ATP
+```mermaid
+flowchart TD
+    G["Glukosa"] -->|Glikolisis| P["2 piruvat"]
+    G -->|Hasil glikolisis| N["2 ATP bersih dan 2 NADH"]
+    P --> F["Laktat atau etanol dan CO₂, bergantung jalur"]
+    F --> R["Regenerasi NAD⁺ melalui fermentasi"]
+    R -.->|Memungkinkan glikolisis berlanjut| G
+    P -->|Oksidasi piruvat: 2 CO₂ dan 2 NADH| A["2 asetil-KoA"]
+    A --> T["Siklus asam sitrat: 4 CO₂, 6 NADH, 2 ekuivalen FADH₂, 2 GTP/ATP"]
+    N -->|Elektron dari NADH via shuttle| E["Rantai transpor elektron"]
+    A -.->|NADH dari oksidasi piruvat| E
+    T -->|Pembawa elektron tereduksi| E
+    E --> O["O₂ direduksi menjadi H₂O"]
+    E --> H["Gradien proton"]
+    H -->|ATP sintase| ATP["ATP melalui fosforilasi oksidatif"]
 ```
 
 ## Contoh Konkret
@@ -225,7 +227,7 @@ Bioinformatika membantu menghubungkan informasi molekuler dengan kemampuan metab
 - Fermentasi mempertahankan glikolisis dengan meregenerasi NAD⁺; respirasi anaerob tetap menggunakan rantai transpor elektron.
 - Hasil ATP bergantung pada konteks biologis, dan data gen atau ekspresi tidak langsung menunjukkan fluks metabolik.
 
-## Pertanyaan Latihan (5 soal bernomor)
+## Pertanyaan Latihan
 
 1. Jelaskan perbedaan fosforilasi tingkat substrat dan fosforilasi oksidatif, beserta lokasi dan contohnya.
 2. Telusuri jumlah atom karbon dari satu glukosa hingga oksidasi sempurna. Pada tahap mana CO₂ dilepaskan?
@@ -241,3 +243,7 @@ Bioinformatika membantu menghubungkan informasi molekuler dengan kemampuan metab
 - **NCBI Bookshelf** — buku dan bab mengenai biokimia serta metabolisme sel.
 - **UniProt** — anotasi fungsi, lokasi, dan karakteristik protein metabolik.
 - **Protein Data Bank (PDB)** — struktur tiga dimensi enzim dan kompleks protein.
+
+---
+
+[↑ Atas](#top) · [Beranda](../../README.md) · [← Enzim](../07-Enzyme/README.md) · [Evolusi →](../09-Evolution/README.md)

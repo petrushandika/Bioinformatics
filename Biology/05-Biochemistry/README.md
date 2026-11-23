@@ -1,4 +1,12 @@
+<a id="top"></a>
+
 # Biokimia Dasar
+
+[Beranda](../../README.md) · [← Genetika](../04-Genetics/README.md) · [Protein →](../06-Protein/README.md)
+
+## Gambaran dan Cara Belajar
+
+Hubungkan sifat kimia biomolekul dengan fungsi sel dan penggunaan energi. Baca konsep dasar sebelum menelaah contoh laktase dan hemoglobin; gunakan latihan untuk menjelaskan hubungan struktur, reaksi, dan bukti bioinformatika.
 
 Biokimia mempelajari molekul penyusun makhluk hidup, reaksi kimia yang terjadi di dalam sel, serta cara reaksi tersebut mendukung kehidupan. Jika biologi molekuler menjelaskan bagaimana informasi DNA digunakan untuk menghasilkan protein, biokimia membantu menjawab pertanyaan berikut: **Bagaimana struktur molekul menentukan fungsi, dan bagaimana sel memperoleh serta menggunakan energi?**
 
@@ -168,7 +176,7 @@ Pada eukariota, siklus asam sitrat terutama berlangsung di matriks mitokondria, 
 
 Jalur metabolik saling terhubung dan diatur sesuai kebutuhan sel. Misalnya, penghambatan umpan balik memungkinkan produk akhir mengurangi aktivitas enzim pada tahap sebelumnya, sehingga produksi berlebihan dapat dibatasi.
 
-## Tabel atau Diagram
+## Ringkasan Konsep
 
 | Kelompok biomolekul | Penyusun atau komponen utama | Ikatan atau ciri penting | Fungsi utama | Contoh |
 |---|---|---|---|---|
@@ -181,16 +189,15 @@ Nukleotida terdiri atas basa nitrogen, gula pentosa, dan satu atau lebih gugus f
 
 Diagram sederhana hubungan katabolisme dan anabolisme:
 
-```text
-Zat makanan
-    |
-    v
-Katabolisme ----> Bahan antara ----> Anabolisme
-    |                                   |
-    v                                   v
-ATP dan pembawa elektron          Komponen sel baru
-    |
-    +------ mendukung proses yang memerlukan energi
+```mermaid
+flowchart TD
+    Z["Zat makanan"] --> K[Katabolisme]
+    K --> B["Bahan antara"]
+    B --> A[Anabolisme]
+    K --> E["ATP dan pembawa elektron tereduksi"]
+    E -->|Energi dan daya reduksi| A
+    E --> P["Kerja sel lain"]
+    A --> C["Komponen sel baru"]
 ```
 
 ## Contoh Konkret
@@ -200,7 +207,7 @@ ATP dan pembawa elektron          Komponen sel baru
 Laktosa adalah disakarida yang tersusun dari glukosa dan galaktosa. Enzim laktase pada permukaan usus halus mengatalisis hidrolisis laktosa:
 
 ```text
-Laktosa + air --laktase--> glukosa + galaktosa
+Laktosa + air → glukosa + galaktosa
 ```
 
 Jika aktivitas laktase rendah, sebagian laktosa tidak tercerna dan mencapai kolon. Aktivitas mikroba serta efek osmotiknya dapat berkontribusi pada gejala seperti kembung dan diare.
@@ -213,7 +220,12 @@ Pada hemoglobin S, perubahan glutamat menjadi valin pada posisi yang secara konv
 
 Akibatnya, sifat mekanik sel darah merah dapat berubah. Contoh ini memperlihatkan alur hubungan:
 
-**varian DNA → perubahan asam amino → perubahan interaksi protein → perubahan sifat sel.**
+```mermaid
+flowchart LR
+    D["Varian DNA"] --> A["Perubahan asam amino"]
+    A --> P["Perubahan interaksi protein"]
+    P --> S["Perubahan sifat sel"]
+```
 
 ## Hubungan dengan Bioinformatika
 
@@ -258,3 +270,7 @@ Latihan awal yang berguna adalah memilih satu enzim di UniProt, mencatat fungsi 
 - **NCBI Bookshelf.** Koleksi buku dan materi biomedis untuk memperkuat konsep dasar.
 - **UniProt.** Informasi sekuens, fungsi, kofaktor, dan anotasi protein.
 - **Protein Data Bank (PDB).** Struktur tiga dimensi protein, asam nukleat, dan kompleks biomolekul.
+
+---
+
+[↑ Atas](#top) · [Beranda](../../README.md) · [← Genetika](../04-Genetics/README.md) · [Protein →](../06-Protein/README.md)

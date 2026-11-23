@@ -149,7 +149,10 @@ def materi_prompt(topic: dict, recent: list[str]) -> str:
         f"# {topic['title']}\n"
         "## Tujuan Pembelajaran (3–5 poin)\n"
         "## Konsep Utama — beberapa subbagian ### dengan penjelasan mendalam\n"
-        "## Tabel atau Diagram (minimal satu tabel Markdown atau diagram ASCII)\n"
+        "## Tabel dan Diagram (minimal satu diagram bermakna dalam blok ```mermaid, bukan blok kosong; "
+        "gunakan flowchart atau sequenceDiagram untuk menjelaskan hubungan/proses topik, bukan hiasan).\n"
+        "Semua diagram/grafik wajib Mermaid. Dilarang diagram ASCII, kotak/anak panah teks, dan bar karakter. "
+        "Tabel data tetap tabel Markdown; kode, output, sekuens, dan persamaan ilmiah tetap diperbolehkan.\n"
         "## Contoh Konkret\n"
         "## Hubungan dengan Bioinformatika\n"
         "## Ringkasan\n"
@@ -169,8 +172,24 @@ def validate_materi(text: str) -> list[str]:
     for section in REQUIRED_SECTIONS:
         if not re.search(rf"^##\s+.*{re.escape(section)}", text, flags=re.MULTILINE | re.IGNORECASE):
             problems.append(f"bagian '{section}' tidak ada")
-    if not re.search(r"^\|.*\|\s*$", text, flags=re.MULTILINE) and "```" not in text:
-        problems.append("tidak ada tabel/diagram")
+    fences = re.findall(r"^ {0,3}(`{3,}|~{3,})([^\n]*)\n(.*?)^ {0,3}\1[ \t]*$", text,
+                        flags=re.MULTILINE | re.DOTALL)
+    has_mermaid = False
+    for _, language, body in fences:
+        language = language.strip().lower()
+        if language == "mermaid":
+            # Lightweight content check, not a full Mermaid parser: a header alone is not a diagram.
+            lines = [line.strip() for line in body.splitlines() if line.strip() and not line.lstrip().startswith("%%")]
+            if (len(lines) >= 2 and re.match(
+                    r"^(?:flowchart|graph|sequenceDiagram|pie|classDiagram|stateDiagram(?:-v2)?|erDiagram|"
+                    r"journey|gantt|mindmap|timeline|quadrantChart|xychart-beta)\b", lines[0])):
+                has_mermaid = True
+        elif language in {"", "text", "plaintext", "ascii"}:
+            # Target drawing structure, not ordinary output, alignment gaps, or equations such as A -> B.
+            if re.search(r"[┌┐└┘├┤┬┴┼─│]|[█░▓▒]{2,}|\+[-=]{2,}\+|--+>|<--+|\|[-=]{2,}\|", body):
+                problems.append("diagram ASCII/teks tidak diizinkan; gunakan Mermaid")
+    if not has_mermaid:
+        problems.append("diagram Mermaid bermakna dalam blok ```mermaid tidak ada")
     questions = re.search(r"##\s+Pertanyaan Latihan(.*?)(?:\n##\s|\Z)", text, flags=re.DOTALL | re.IGNORECASE)
     if questions and len(re.findall(r"^\s*\d+[.)]", questions.group(1), flags=re.MULTILINE)) < 5:
         problems.append("pertanyaan latihan kurang dari 5")
@@ -327,6 +346,7 @@ def summarize_papers(papers: list[dict], recent: list[str]) -> tuple[str, str]:
     prompt = (f"Rangkum paper berikut untuk pembelajar bioinformatika pemula, dalam Bahasa Indonesia.\n{listing}\n\n"
               "Untuk tiap paper buat subjudul `### <nomor>. <judul singkat Indonesia>` lalu: 3–4 kalimat inti temuan "
               "(hanya dari abstrak, jangan menambah klaim), **Metode/teknologi**, dan **Kenapa penting**. "
+              "Jika menggunakan chart/diagram, wajib blok mermaid, bukan ASCII atau gambar. Tabel tetap Markdown. "
               f"Tutup dengan `### Istilah Kunci` (5 istilah) dan `### Koneksi ke Kurikulum` (kaitkan dengan: {', '.join(recent) or 'dasar bioinformatika'}).")
     text, model = ai_generate(prompt, "Kamu mentor bioinformatika yang merangkum paper secara jujur dan ringkas.", max_tokens=4000)
     return text.strip() + "\n", model
@@ -355,14 +375,16 @@ def render_progress(data: dict) -> str:
         c = counts.setdefault(t["category"], [0, 0])
         c[1] += 1
         c[0] += t["status"] == "done"
-    rows = []
+    rows = ["| Kategori | Tersedia | Total | Progress |", "|----------|---------|-------|----------|"]
     for cat, (done, total) in counts.items():
-        filled = round(done / total * 10)
-        rows.append(f"{CATEGORY_LABELS.get(cat, cat).split(' ', 1)[-1]:<24}{'█' * filled}{'░' * (10 - filled)} {done:>2}/{total:<2} {round(done / total * 100):3d}%")
+        rows.append(f"| {CATEGORY_LABELS.get(cat, cat)} | {done} | {total} | {round(done / total * 100)}% |")
     done = sum(c[0] for c in counts.values())
     total = sum(c[1] for c in counts.values())
-    rows.append(f"{'Total':<24}{'█' * round(done / total * 10)}{'░' * (10 - round(done / total * 10))} {done:>2}/{total:<2} {round(done / total * 100):3d}%")
-    return "<!-- PROGRESS:START -->\n```\n" + "\n".join(rows) + "\n```\n<!-- PROGRESS:END -->"
+    percent = round(done / total * 100) if total else 0
+    rows.append(f"| **Total** | **{done}** | **{total}** | **{percent}%** |")
+    diagram = (f'```mermaid\nflowchart LR\n    Total["Total: {total}"] --> Selesai["Tersedia: {done}"]\n'
+               f'    Total --> Pending["Direncanakan: {total - done}"]\n```')
+    return "<!-- PROGRESS:START -->\n" + diagram + "\n\n" + "\n".join(rows) + "\n<!-- PROGRESS:END -->"
 
 
 def replace_block(text: str, heading: str, next_heading: str, block: str, marker: str) -> str:

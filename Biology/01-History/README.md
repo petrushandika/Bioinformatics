@@ -1,4 +1,12 @@
+<a id="top"></a>
+
 # Sejarah Biologi & Bioinformatika
+
+[Beranda](../../README.md) · [← Indeks materi](../../README.md) · [Struktur Sel →](../02-Cell-Structure/README.md)
+
+## Gambaran dan Cara Belajar
+
+Telusuri bagaimana pengamatan sel berkembang menjadi analisis genom. Gunakan garis waktu untuk mengaitkan penemuan biologis dengan metode komputasi, lalu uji pemahaman melalui pertanyaan latihan.
 
 ## Apa itu Biologi?
 
@@ -40,11 +48,11 @@
 
 | Tokoh | Tahun | Kontribusi |
 |-------|-------|-----------|
-| Thomas Morgan | 1910 | Teori kromosom pewarisan sifat |
-| Oswald Avery | 1944 | DNA adalah materi genetik |
-| Watson & Crick | 1953 | Struktur heliks ganda DNA |
-| Frederick Sanger | 1977 | Metode sekuensing DNA pertama |
-| Human Genome Project | 1990–2003 | Pemetaan seluruh genom manusia |
+| Thomas Hunt Morgan | 1910 | Bukti pewarisan terpaut kromosom melalui penelitian lalat buah |
+| Avery, MacLeod & McCarty | 1944 | Bukti DNA sebagai prinsip transformasi pada pneumokokus |
+| Watson & Crick; data Franklin & Wilkins | 1953 | Model heliks ganda DNA yang didukung data difraksi sinar-X |
+| Frederick Sanger | 1977 | Metode sekuensing DNA terminasi rantai |
+| Human Genome Project | 1990–2003 | Penyusunan sekuens referensi genom manusia; masih menyisakan celah |
 
 ---
 
@@ -56,21 +64,23 @@
 
 ### Garis Waktu Bioinformatika
 
-```
-1956  ──  Margaret Dayhoff membuat database protein pertama
-1970  ──  Needleman-Wunsch: algoritma sequence alignment global
-1976  ──  Database sekuens protein pertama (PIR)
-1982  ──  GenBank didirikan oleh NCBI
-1988  ──  NCBI (National Center for Biotechnology Information) didirikan
-1990  ──  BLAST (Basic Local Alignment Search Tool) dipublikasikan
-1994  ──  ExPASy (Swiss Bioinformatics portal) diluncurkan
-1996  ──  PDB (Protein Data Bank) diperluas signifikan
-2001  ──  Draf genom manusia dipublikasikan (Nature & Science)
-2003  ──  Human Genome Project selesai
-2007  ──  Next-Generation Sequencing (NGS) mulai dominan
-2010  ──  1000 Genomes Project
-2020  ──  AlphaFold2: revolusi prediksi struktur protein dengan AI
-2023  ──  AlphaFold Database: 200 juta struktur protein diprediksi
+```mermaid
+timeline
+    title Tonggak bioinformatika
+    1965 : Dayhoff menerbitkan Atlas of Protein Sequence and Structure
+    1970 : Needleman–Wunsch untuk alignment global
+    1971 : Protein Data Bank didirikan
+    1982 : GenBank mulai beroperasi
+    1984 : Protein Information Resource dibentuk
+    1988 : NCBI didirikan
+    1990 : BLAST dipublikasikan
+    1993 : ExPASy diluncurkan
+    2001 : Draf genom manusia dipublikasikan
+    2003 : Human Genome Project selesai
+    2005 : Sekuensing generasi berikutnya mulai dikomersialkan
+    2010 : Publikasi fase pilot 1000 Genomes Project
+    2020 : AlphaFold2 menunjukkan kemajuan besar pada CASP14
+    2022 : AlphaFold DB diperluas menjadi lebih dari 200 juta prediksi
 ```
 
 ### Tokoh Kunci Bioinformatika
@@ -78,17 +88,17 @@
 | Tokoh | Kontribusi |
 |-------|-----------|
 | Margaret Dayhoff | Pioneer database protein & scoring matrix (PAM) |
-| David Needleman & Christian Wunsch | Algoritma global alignment (1970) |
+| Saul Needleman & Christian Wunsch | Algoritma global alignment (1970) |
 | Temple Smith & Michael Waterman | Algoritma local alignment (1981) |
 | Stephen Altschul | Mengembangkan BLAST (1990) |
-| Eric Lander | Memimpin Human Genome Project |
-| Demis Hassabis | AlphaFold — AI untuk prediksi struktur protein |
+| Eric Lander | Salah satu pemimpin pusat sekuensing Human Genome Project |
+| Demis Hassabis & John Jumper | AlphaFold — AI untuk prediksi struktur protein |
 
 ---
 
 ## Mengapa Bioinformatika Penting?
 
-1. **Data biologis terus tumbuh eksponensial** — GenBank menggandakan ukurannya setiap ~18 bulan
+1. **Data biologis terus bertambah** — laju pertumbuhan berbeda menurut basis data dan teknologi pengukuran
 2. **Analisis manual tidak mungkin** — 1 genom manusia = ~3 miliar pasangan basa
 3. **Aplikasi nyata:**
    - Pengembangan obat & vaksin
@@ -112,5 +122,9 @@
 ## Bacaan Selanjutnya
 
 - [Molecular Biology of the Cell — Alberts et al.](https://www.ncbi.nlm.nih.gov/books/NBK21054/)
-- [NCBI: History of Bioinformatics](https://www.ncbi.nlm.nih.gov/)
+- [NCBI Bookshelf: koleksi buku biomedis](https://www.ncbi.nlm.nih.gov/books/)
 - [Lanjut ke: Struktur Sel →](../02-Cell-Structure/README.md)
+
+---
+
+[↑ Atas](#top) · [Beranda](../../README.md) · [← Indeks materi](../../README.md) · [Struktur Sel →](../02-Cell-Structure/README.md)
