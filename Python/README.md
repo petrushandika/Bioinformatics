@@ -4,10 +4,12 @@
 
 Latihan di folder ini memperkenalkan sintaks Python sebelum mengolah data biologis. Contoh yang tersedia masih bersifat umum; jangan menganggapnya sebagai pipeline analisis sekuens.
 
+**Navigasi:** [Urutan latihan](#urutan-latihan) · [Menjalankan](#menjalankan) · [Cara berlatih](#cara-berlatih)
+
 ## Urutan Latihan
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["Intro"] --> B["Komentar"] --> C["Variabel"]
     C --> D["Tipe data"] --> E["String"] --> F["Operator"] --> G["Control flow"]
 ```

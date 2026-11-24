@@ -1,19 +1,20 @@
 # Update Terbaru — 2026-11-24
 
+[Beranda](../README.md) · [Daily 2026-11-24](./2026-11-24.md) · [News](../News/LATEST.md)
+
+## Materi Terbaru
+
 **Materi:** [Taksonomi & Klasifikasi Makhluk Hidup](../Biology/10-Taxonomy/README.md)
 
-## Tujuan Pembelajaran
+Topik: taksonomi, hierarki takson, penulisan nama ilmiah, serta hubungan klasifikasi dengan evolusi dan filogeni. Materi juga membahas bukti morfologi dan molekuler serta penggunaan sekuens dan basis data bioinformatika untuk identifikasi organisme.
 
-Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
+## Paper Terbaru
 
-1. Membedakan taksonomi, klasifikasi, identifikasi, nomenklatur, dan sistematika.
-2. Menjelaskan hierarki takson serta menerapkan kaidah dasar penulisan nama ilmiah.
-3. Menghubungkan klasifikasi makhluk hidup dengan evolusi, nenek moyang bersama, dan pohon filogenetik.
-4. Membandingkan bukti morfologi, biokimia, ekologi, dan molekuler dalam penentuan hubungan kekerabatan.
-5. Menjelaskan penggunaan data sekuens dan basis data bioinformatika untuk membantu identifikasi serta klasifikasi organisme.
+**Paper:** 4 — [metadata dan rangkuman lengkap](../News/Archive/2026-11-24.md).
 
-## Konsep Uta…
+- [Pemerataan Layanan Kedokteran Superspesialis di India](./2026-11-24.md#1-pemerataan-layanan-kedokteran-superspesialis-di-india)
+- [Hubungan Genetik Diabetes Tipe 1 dan Radang Iris](./2026-11-24.md#2-hubungan-genetik-diabetes-tipe-1-dan-radang-iris)
+- [Bentuk Sel Dipengaruhi Banyak Gen](./2026-11-24.md#3-bentuk-sel-dipengaruhi-banyak-gen)
+- [Respons Sel Endometrium terhadap Progesteron dan Bazedoksifen](./2026-11-24.md#4-respons-sel-endometrium-terhadap-progesteron-dan-bazedoksifen)
 
-**Paper:** 4
-
-[📖 Baca update lengkap](./2026-11-24.md)
+[Baca update lengkap](./2026-11-24.md)

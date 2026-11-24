@@ -4,15 +4,39 @@
 
 [Beranda](../../README.md) · [← Biologi Molekuler](../03-Molecular-Biology/README.md) · [Biokimia →](../05-Biochemistry/README.md)
 
+<details>
+<summary>Daftar isi</summary>
+
+- [Gambaran dan Cara Belajar](#bagian-1)
+- [Apa itu Genetika?](#bagian-2)
+- [Hukum Mendel](#bagian-3)
+- [Terminologi Genetika](#bagian-4)
+- [Kromosom](#bagian-5)
+- [Pola Pewarisan](#bagian-6)
+- [Golongan Darah ABO](#bagian-7)
+- [Mutasi dan Penyakit Genetik](#bagian-8)
+- [Epigenetik](#bagian-9)
+- [Genetika Populasi](#bagian-10)
+- [Relevansi dengan Bioinformatika](#bagian-11)
+- [Pertanyaan Latihan](#bagian-12)
+
+</details>
+
+<a id="bagian-1"></a>
+
 ## Gambaran dan Cara Belajar
 
 Pelajari pewarisan alel dari persilangan hingga populasi. Gunakan bagan dan tabel untuk membedakan genotipe, fenotipe, pola pewarisan, serta asumsi model Mendel dan Hardy–Weinberg.
+
+<a id="bagian-2"></a>
 
 ## Apa itu Genetika?
 
 **Genetika** adalah cabang biologi yang mempelajari gen, pewarisan sifat, dan variasi pada organisme. Kata "genetika" berasal dari bahasa Yunani *genesis* (asal-usul).
 
 ---
+
+<a id="bagian-3"></a>
 
 ## Hukum Mendel
 
@@ -44,7 +68,7 @@ Rasio genotipe 1 TT : 2 Tt : 1 tt dan fenotipe 3 tinggi : 1 pendek merupakan har
 > Alel pada lokus yang tidak terpaut, atau berjarak cukup jauh sehingga tampak tidak terpaut, dapat memilah secara bebas saat pembentukan gamet. Gen terpaut tidak selalu mengikuti pola ini.
 
 ```mermaid
-flowchart LR
+flowchart TD
     P["BBTT × bbtt"] --> F["F1: seluruhnya BbTt"]
     F --> C["Persilangan F1: BbTt × BbTt"]
     C --> R["F2: rasio fenotipe harapan 9:3:3:1"]
@@ -53,6 +77,8 @@ flowchart LR
 Rasio ini mensyaratkan pemilahan bebas kedua lokus, dominansi penuh, dan tidak adanya interaksi gen yang mengubah pengelompokan fenotipe.
 
 ---
+
+<a id="bagian-4"></a>
 
 ## Terminologi Genetika
 
@@ -70,6 +96,8 @@ Rasio ini mensyaratkan pemilahan bebas kedua lokus, dominansi penuh, dan tidak a
 
 ---
 
+<a id="bagian-5"></a>
+
 ## Kromosom
 
 ### Struktur Kromosom
@@ -77,7 +105,7 @@ Rasio ini mensyaratkan pemilahan bebas kedua lokus, dominansi penuh, dan tidak a
 Kromosom eukariotik tersusun atas DNA, histon, dan protein pengorganisasi lainnya.
 
 ```mermaid
-flowchart LR
+flowchart TD
     D[DNA] --> N["Nukleosom: DNA melilit histon"]
     N --> C["Kromatin: organisasi dinamis dan loop"]
     C --> K["Kromosom yang terkondensasi saat pembelahan"]
@@ -101,6 +129,8 @@ Model solenoid bukan tahapan universal pengemasan kromatin di dalam sel.
 Pada manusia, kariotipe **XX** umumnya berkaitan dengan perkembangan perempuan dan **XY** dengan laki-laki. Terdapat variasi kromosom dan perkembangan seks; kromosom bukan satu-satunya faktor penentunya.
 
 ---
+
+<a id="bagian-6"></a>
 
 ## Pola Pewarisan
 
@@ -126,6 +156,8 @@ Pada persilangan dua pembawa `Aa × Aa`, peluang anak `aa` adalah 1/4 pada setia
 
 ---
 
+<a id="bagian-7"></a>
+
 ## Golongan Darah ABO
 
 | Genotip | Golongan |
@@ -136,6 +168,8 @@ Pada persilangan dua pembawa `Aa × Aa`, peluang anak `aa` adalah 1/4 pada setia
 | ii | O |
 
 ---
+
+<a id="bagian-8"></a>
 
 ## Mutasi dan Penyakit Genetik
 
@@ -152,12 +186,14 @@ Pada persilangan dua pembawa `Aa × Aa`, peluang anak `aa` adalah 1/4 pada setia
 
 ---
 
+<a id="bagian-9"></a>
+
 ## Epigenetik
 
 Perubahan keadaan regulasi gen atau kromatin **tanpa perubahan sekuens DNA**, yang dapat dipertahankan melalui pembelahan sel. Istilah epigenetik tidak berarti setiap perubahan ekspresi diwariskan lintas generasi.
 
 ```mermaid
-flowchart LR
+flowchart TD
     E["Regulasi epigenetik dan RNA"] --> D["Metilasi DNA pada promoter: sering terkait penekanan transkripsi"]
     E --> H["Asetilasi histon: sering terkait akses kromatin yang meningkat"]
     E --> R["RNA non-coding: mengatur kromatin atau ekspresi RNA"]
@@ -170,6 +206,8 @@ Efek bergantung pada lokasi dan konteks. Tidak semua regulasi oleh RNA non-codin
 **Fakta menarik:** Kembar identik memiliki DNA sama, tetapi ekspresi gen dapat berbeda karena epigenetik!
 
 ---
+
+<a id="bagian-10"></a>
 
 ## Genetika Populasi
 
@@ -195,10 +233,12 @@ q² = frekuensi aa
 
 ---
 
+<a id="bagian-11"></a>
+
 ## Relevansi dengan Bioinformatika
 
 ```mermaid
-flowchart LR
+flowchart TD
     G["Sekuens gen"] --> A["Anotasi gen dan GenBank"]
     S["Varian SNP"] --> W[GWAS]
     P["Pewarisan sifat"] --> D["Pemodelan silsilah"]
@@ -208,6 +248,8 @@ flowchart LR
 ```
 
 ---
+
+<a id="bagian-12"></a>
 
 ## Pertanyaan Latihan
 

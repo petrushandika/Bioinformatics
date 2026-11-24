@@ -4,9 +4,28 @@
 
 [Beranda](../../README.md) · [← Sejarah](../01-History/README.md) · [Biologi Molekuler →](../03-Molecular-Biology/README.md)
 
+<details>
+<summary>Daftar isi</summary>
+
+- [Gambaran dan Cara Belajar](#bagian-1)
+- [Apa itu Sel?](#bagian-2)
+- [Dua Jenis Sel Utama](#bagian-3)
+- [Organel Sel Eukariotik](#bagian-4)
+- [Perbandingan Sel Hewan vs Sel Tumbuhan](#bagian-5)
+- [Membran Plasma](#bagian-6)
+- [Transportasi Melalui Membran](#bagian-7)
+- [Relevansi dengan Bioinformatika](#bagian-8)
+- [Pertanyaan Latihan](#bagian-9)
+
+</details>
+
+<a id="bagian-1"></a>
+
 ## Gambaran dan Cara Belajar
 
 Kenali kompartemen sel, fungsi organel, dan transpor membran sebelum mempelajari proses molekuler. Bandingkan tabel prokariota–eukariota dan hubungkan lokasi protein dengan fungsinya.
+
+<a id="bagian-2"></a>
 
 ## Apa itu Sel?
 
@@ -17,6 +36,8 @@ Kenali kompartemen sel, fungsi organel, dan transpor membran sebelum mempelajari
 3. Semua sel berasal dari sel yang sudah ada sebelumnya
 
 ---
+
+<a id="bagian-3"></a>
 
 ## Dua Jenis Sel Utama
 
@@ -54,6 +75,8 @@ Sel dengan membran inti yang nyata dan organel bermembran.
 - Mencakup tumbuhan, hewan, fungi, dan beragam protista.
 
 ---
+
+<a id="bagian-4"></a>
 
 ## Organel Sel Eukariotik
 
@@ -94,7 +117,7 @@ Persamaan netto yang disederhanakan:
 ### Aparatus Golgi
 
 ```mermaid
-flowchart LR
+flowchart TD
     RE["RE: protein jalur sekretori"] --> G["Golgi: modifikasi dan penyortiran"]
     G --> V["Vesikel transpor"]
     V --> M["Membran plasma atau sekresi"]
@@ -117,6 +140,8 @@ flowchart LR
 
 ---
 
+<a id="bagian-5"></a>
+
 ## Perbandingan Sel Hewan vs Sel Tumbuhan
 
 | Struktur | Sel Hewan | Sel Tumbuhan |
@@ -129,6 +154,8 @@ flowchart LR
 | Bentuk | Beragam, dipengaruhi sitoskeleton | Cenderung lebih kaku karena dinding sel |
 
 ---
+
+<a id="bagian-6"></a>
 
 ## Membran Plasma
 
@@ -158,6 +185,8 @@ flowchart TD
 
 ---
 
+<a id="bagian-7"></a>
+
 ## Transportasi Melalui Membran
 
 ### Transpor Pasif (tanpa masukan energi metabolik langsung)
@@ -179,6 +208,8 @@ flowchart TD
 
 ---
 
+<a id="bagian-8"></a>
+
 ## Relevansi dengan Bioinformatika
 
 - **Analisis protein membran** — target utama pengembangan obat
@@ -188,6 +219,8 @@ flowchart TD
 - **Genom mitokondria** — digunakan untuk studi filogenetik
 
 ---
+
+<a id="bagian-9"></a>
 
 ## Pertanyaan Latihan
 

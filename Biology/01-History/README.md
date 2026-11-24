@@ -4,15 +4,34 @@
 
 [Beranda](../../README.md) · [← Indeks materi](../../README.md) · [Struktur Sel →](../02-Cell-Structure/README.md)
 
+<details>
+<summary>Daftar isi</summary>
+
+- [Gambaran dan Cara Belajar](#bagian-1)
+- [Apa itu Biologi?](#bagian-2)
+- [Garis Waktu Sejarah Biologi](#bagian-3)
+- [Sejarah Bioinformatika](#bagian-4)
+- [Mengapa Bioinformatika Penting?](#bagian-5)
+- [Pertanyaan Latihan](#bagian-6)
+- [Bacaan Selanjutnya](#bagian-7)
+
+</details>
+
+<a id="bagian-1"></a>
+
 ## Gambaran dan Cara Belajar
 
 Telusuri bagaimana pengamatan sel berkembang menjadi analisis genom. Gunakan garis waktu untuk mengaitkan penemuan biologis dengan metode komputasi, lalu uji pemahaman melalui pertanyaan latihan.
+
+<a id="bagian-2"></a>
 
 ## Apa itu Biologi?
 
 **Biologi** adalah ilmu pengetahuan yang mempelajari makhluk hidup — struktur, fungsi, pertumbuhan, asal-usul, evolusi, dan distribusinya. Kata "biologi" berasal dari bahasa Yunani: *bios* (kehidupan) dan *logos* (ilmu).
 
 ---
+
+<a id="bagian-3"></a>
 
 ## Garis Waktu Sejarah Biologi
 
@@ -56,6 +75,8 @@ Telusuri bagaimana pengamatan sel berkembang menjadi analisis genom. Gunakan gar
 
 ---
 
+<a id="bagian-4"></a>
+
 ## Sejarah Bioinformatika
 
 ### Apa itu Bioinformatika?
@@ -65,22 +86,22 @@ Telusuri bagaimana pengamatan sel berkembang menjadi analisis genom. Gunakan gar
 ### Garis Waktu Bioinformatika
 
 ```mermaid
-timeline
-    title Tonggak bioinformatika
-    1965 : Dayhoff menerbitkan Atlas of Protein Sequence and Structure
-    1970 : Needleman–Wunsch untuk alignment global
-    1971 : Protein Data Bank didirikan
-    1982 : GenBank mulai beroperasi
-    1984 : Protein Information Resource dibentuk
-    1988 : NCBI didirikan
-    1990 : BLAST dipublikasikan
-    1993 : ExPASy diluncurkan
-    2001 : Draf genom manusia dipublikasikan
-    2003 : Human Genome Project selesai
-    2005 : Sekuensing generasi berikutnya mulai dikomersialkan
-    2010 : Publikasi fase pilot 1000 Genomes Project
-    2020 : AlphaFold2 menunjukkan kemajuan besar pada CASP14
-    2022 : AlphaFold DB diperluas menjadi lebih dari 200 juta prediksi
+flowchart TD
+    Y1965["1965 — Dayhoff menerbitkan Atlas of Protein Sequence and Structure"]
+    Y1970["1970 — Needleman–Wunsch untuk alignment global"]
+    Y1971["1971 — Protein Data Bank didirikan"]
+    Y1982["1982 — GenBank mulai beroperasi"]
+    Y1984["1984 — Protein Information Resource dibentuk"]
+    Y1988["1988 — NCBI didirikan"]
+    Y1990["1990 — BLAST dipublikasikan"]
+    Y1993["1993 — ExPASy diluncurkan"]
+    Y2001["2001 — Draf genom manusia dipublikasikan"]
+    Y2003["2003 — Human Genome Project selesai"]
+    Y2005["2005 — Sekuensing generasi berikutnya mulai dikomersialkan"]
+    Y2010["2010 — Publikasi fase pilot 1000 Genomes Project"]
+    Y2020["2020 — AlphaFold2 menunjukkan kemajuan besar pada CASP14"]
+    Y2022["2022 — AlphaFold DB diperluas menjadi lebih dari 200 juta prediksi"]
+    Y1965 --> Y1970 --> Y1971 --> Y1982 --> Y1984 --> Y1988 --> Y1990 --> Y1993 --> Y2001 --> Y2003 --> Y2005 --> Y2010 --> Y2020 --> Y2022
 ```
 
 ### Tokoh Kunci Bioinformatika
@@ -96,6 +117,8 @@ timeline
 
 ---
 
+<a id="bagian-5"></a>
+
 ## Mengapa Bioinformatika Penting?
 
 1. **Data biologis terus bertambah** — laju pertumbuhan berbeda menurut basis data dan teknologi pengukuran
@@ -109,6 +132,8 @@ timeline
 
 ---
 
+<a id="bagian-6"></a>
+
 ## Pertanyaan Latihan
 
 1. Siapa yang pertama kali mengamati sel dan menggunakan istilah "cell"?
@@ -118,6 +143,8 @@ timeline
 5. Mengapa sekuensing DNA membutuhkan komputasi?
 
 ---
+
+<a id="bagian-7"></a>
 
 ## Bacaan Selanjutnya
 

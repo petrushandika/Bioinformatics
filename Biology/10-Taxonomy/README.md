@@ -2,9 +2,28 @@
 
 [Beranda](../../README.md) · [← Evolusi](../09-Evolution/README.md)
 
+<details>
+<summary>Daftar isi</summary>
+
+- [Gambaran dan Cara Belajar](#bagian-1)
+- [Tujuan Pembelajaran](#bagian-2)
+- [Konsep Utama](#bagian-3)
+- [Perbandingan Konsep](#bagian-4)
+- [Contoh Konkret](#bagian-5)
+- [Hubungan dengan Bioinformatika](#bagian-6)
+- [Ringkasan](#bagian-7)
+- [Pertanyaan Latihan](#bagian-8)
+- [Bacaan Lanjutan](#bagian-9)
+
+</details>
+
+<a id="bagian-1"></a>
+
 ## Gambaran dan Cara Belajar
 
 Bandingkan hierarki takson dengan hubungan kekerabatan: keduanya bukan hal yang sama. Gunakan contoh pohon untuk membaca nenek moyang bersama, lalu kerjakan pertanyaan latihan.
+
+<a id="bagian-2"></a>
 
 ## Tujuan Pembelajaran
 
@@ -15,6 +34,8 @@ Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
 3. Menghubungkan klasifikasi makhluk hidup dengan evolusi, nenek moyang bersama, dan pohon filogenetik.
 4. Membandingkan bukti morfologi, biokimia, ekologi, dan molekuler dalam penentuan hubungan kekerabatan.
 5. Menjelaskan penggunaan data sekuens dan basis data bioinformatika untuk membantu identifikasi serta klasifikasi organisme.
+
+<a id="bagian-3"></a>
 
 ## Konsep Utama
 
@@ -138,7 +159,9 @@ Dalam pengertian tradisional yang mengecualikan burung, “reptil” merupakan k
 
 Pohon juga harus dibaca dengan hati-hati. Posisi kiri–kanan ujung tidak menunjukkan tingkat “kemajuan”. Memutar cabang pada suatu simpul tidak mengubah hubungan kekerabatan. Panjang cabang hanya bermakna kuantitatif jika diagram menyediakan skala, misalnya perubahan sekuens atau waktu.
 
-## Tabel atau Diagram
+<a id="bagian-4"></a>
+
+## Perbandingan Konsep
 
 Tabel berikut menunjukkan contoh hierarki klasifikasi manusia.
 
@@ -164,6 +187,8 @@ flowchart TD
 ```
 
 A dan B memiliki nenek moyang bersama yang lebih baru dibandingkan nenek moyang bersama masing-masing dengan C. Karena itu, A dan B disebut **takson saudara**. Diagram ini tidak menyatakan bahwa C lebih primitif.
+
+<a id="bagian-5"></a>
 
 ## Contoh Konkret
 
@@ -195,6 +220,8 @@ Fungi pernah dikelompokkan bersama tumbuhan dalam sistem lama. Namun, fungi memp
 
 Data molekuler menunjukkan bahwa fungi berkerabat lebih dekat dengan hewan daripada dengan tumbuhan. Contoh ini menunjukkan bagaimana bukti baru dapat mengubah klasifikasi.
 
+<a id="bagian-6"></a>
+
 ## Hubungan dengan Bioinformatika
 
 Bioinformatika memungkinkan perbandingan organisme menggunakan ribuan karakter molekuler, bahkan seluruh genom.
@@ -223,6 +250,8 @@ Dalam *DNA barcoding*, penanda tertentu digunakan untuk membantu identifikasi, m
 
 Prinsip pentingnya adalah: **hasil BLAST teratas merupakan petunjuk kemiripan, bukan bukti otomatis identitas spesies**. Cakupan penjajaran, kualitas acuan, dan keterwakilan organisme dalam basis data tetap harus diperiksa.
 
+<a id="bagian-7"></a>
+
 ## Ringkasan
 
 - Taksonomi mengatur deskripsi, penamaan, dan klasifikasi; sistematika mengaitkannya dengan hubungan evolusioner.
@@ -232,6 +261,8 @@ Prinsip pentingnya adalah: **hasil BLAST teratas merupakan petunjuk kemiripan, b
 - Klasifikasi modern mengutamakan kekerabatan dan kelompok monofiletik, bukan sekadar kemiripan bentuk.
 - Data molekuler memperkuat klasifikasi, tetapi harus ditafsirkan bersama kualitas data, metadata, dan bukti biologis lainnya.
 
+<a id="bagian-8"></a>
+
 ## Pertanyaan Latihan
 
 1. Jelaskan perbedaan taksonomi, identifikasi, nomenklatur, dan sistematika menggunakan satu contoh organisme.
@@ -239,6 +270,8 @@ Prinsip pentingnya adalah: **hasil BLAST teratas merupakan petunjuk kemiripan, b
 3. Mengapa konsep spesies biologis sulit diterapkan pada bakteri dan fosil? Jelaskan alternatif bukti yang dapat digunakan.
 4. Pada diagram filogenetik di atas, mengapa A lebih dekat kekerabatannya dengan B daripada dengan C? Apakah memutar posisi A dan B mengubah kesimpulan?
 5. Suatu sekuens memiliki kemiripan tinggi dengan spesies tertentu pada hasil BLAST. Mengapa identitas spesies belum dapat dipastikan? Sebutkan sedikitnya tiga pemeriksaan tambahan.
+
+<a id="bagian-9"></a>
 
 ## Bacaan Lanjutan
 

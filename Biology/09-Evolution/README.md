@@ -4,9 +4,29 @@
 
 [Beranda](../../README.md) · [← Metabolisme](../08-Metabolism/README.md) · [Taksonomi →](../10-Taxonomy/README.md)
 
+<details>
+<summary>Daftar isi</summary>
+
+- [Gambaran dan Cara Belajar](#bagian-1)
+- [Tujuan Pembelajaran](#bagian-2)
+- [Konsep Utama](#bagian-3)
+- [Peta Mekanisme Evolusi](#bagian-4)
+- [Tabel Mekanisme Evolusi](#bagian-5)
+- [Contoh Konkret](#bagian-6)
+- [Hubungan dengan Bioinformatika](#bagian-7)
+- [Ringkasan](#bagian-8)
+- [Pertanyaan Latihan](#bagian-9)
+- [Bacaan Lanjutan](#bagian-10)
+
+</details>
+
+<a id="bagian-1"></a>
+
 ## Gambaran dan Cara Belajar
 
 Bedakan sumber variasi dari proses yang mengubah frekuensi alel. Gunakan contoh resistansi antibiotik, model Hardy–Weinberg, dan alur filogenetika untuk menilai penjelasan evolusi secara kritis.
+
+<a id="bagian-2"></a>
 
 ## Tujuan Pembelajaran
 
@@ -17,6 +37,8 @@ Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
 3. Menghubungkan variasi DNA dengan perubahan protein, fenotipe, dan keberhasilan reproduksi.
 4. Menggunakan prinsip Hardy–Weinberg untuk memahami komposisi genetik populasi secara sederhana.
 5. Menjelaskan bagaimana data sekuens dan metode bioinformatika digunakan untuk mempelajari hubungan evolusioner.
+
+<a id="bagian-3"></a>
 
 ## Konsep Utama
 
@@ -91,23 +113,23 @@ Prinsip Hardy–Weinberg menyediakan model dasar untuk memahami hubungan antara 
 
 Untuk lokus autosomal dengan dua alel, A dan a:
 
-\[
+$$
 p+q=1
-\]
+$$
 
-dengan \(p\) sebagai frekuensi A dan \(q\) sebagai frekuensi a. Dalam kondisi Hardy–Weinberg, frekuensi genotipe yang diharapkan adalah:
+dengan $p$ sebagai frekuensi A dan $q$ sebagai frekuensi a. Dalam kondisi Hardy–Weinberg, frekuensi genotipe yang diharapkan adalah:
 
-\[
+$$
 f(AA)=p^2,\qquad f(Aa)=2pq,\qquad f(aa)=q^2
-\]
+$$
 
 Model ini mengasumsikan perkawinan acak terhadap lokus tersebut, populasi sangat besar, serta tidak ada seleksi, mutasi, atau migrasi yang mengubah frekuensi alel.
 
-Sebagai ilustrasi, jika \(p=0{,}7\) dan \(q=0{,}3\), frekuensi genotipe yang diharapkan adalah:
+Sebagai ilustrasi, jika $p=0{,}7$ dan $q=0{,}3$, frekuensi genotipe yang diharapkan adalah:
 
-- AA: \(0{,}49\)
-- Aa: \(0{,}42\)
-- aa: \(0{,}09\)
+- AA: $0{,}49$
+- Aa: $0{,}42$
+- aa: $0{,}09$
 
 Penyimpangan dari proporsi ini dapat menjadi petunjuk adanya proses biologis, struktur populasi, atau kesalahan data. Namun, penyimpangan **bukan bukti tunggal seleksi**. Perkawinan sekerabat, misalnya, dapat mengubah proporsi genotipe tanpa langsung mengubah frekuensi alel.
 
@@ -136,6 +158,8 @@ Konsep spesies biologis berguna, tetapi tidak mudah diterapkan pada organisme as
 
 Hubungan kekerabatan digambarkan melalui **pohon filogenetik**. Titik percabangan mewakili nenek moyang bersama yang diinferensikan. Spesies modern bukan “tangga kemajuan”; manusia dan simpanse, misalnya, berbagi nenek moyang bersama, bukan berarti manusia berasal dari simpanse modern.
 
+<a id="bagian-4"></a>
+
 ## Peta Mekanisme Evolusi
 
 ```mermaid
@@ -152,6 +176,8 @@ flowchart TD
     F --> E["Evolusi populasi; tidak selalu adaptif"]
 ```
 
+<a id="bagian-5"></a>
+
 ## Tabel Mekanisme Evolusi
 
 | Mekanisme | Proses utama | Hubungan dengan kebugaran | Dampak yang mungkin terjadi |
@@ -163,6 +189,8 @@ flowchart TD
 | Aliran gen | Memindahkan alel antarpopulasi | Tidak selalu bersifat adaptif | Menambah variasi lokal dan sering mengurangi perbedaan antarpopulasi |
 
 **Fiksasi** berarti suatu alel mencapai frekuensi 1 pada populasi yang diamati. Fiksasi dapat terjadi melalui seleksi maupun hanyutan.
+
+<a id="bagian-6"></a>
 
 ## Contoh Konkret
 
@@ -189,6 +217,8 @@ Dalam konteks budaya peternakan dan konsumsi susu, sifat ini dapat memberikan ke
 
 Persistensi laktase tidak berarti semua orang yang dapat mengonsumsi produk susu memiliki varian genetik yang sama. Toleransi terhadap produk susu juga dipengaruhi jumlah konsumsi, pengolahan makanan, dan faktor fisiologis lainnya.
 
+<a id="bagian-7"></a>
+
 ## Hubungan dengan Bioinformatika
 
 Bioinformatika memungkinkan pengujian hipotesis evolusi menggunakan data molekuler.
@@ -206,11 +236,11 @@ Pembedaan ini penting ketika memprediksi fungsi protein. Ortolog sering memperta
 
 ### Deteksi Seleksi pada Gen
 
-Pada gen pengode protein, peneliti dapat membandingkan laju substitusi nonsinonim dan sinonim melalui rasio \(d_N/d_S\):
+Pada gen pengode protein, peneliti dapat membandingkan laju substitusi nonsinonim dan sinonim melalui rasio $d_N/d_S$:
 
-- \(d_N/d_S<1\): sering konsisten dengan **seleksi pemurnian**, yang menyingkirkan perubahan merugikan.
-- \(d_N/d_S\approx1\): dapat konsisten dengan evolusi netral dalam model yang digunakan.
-- \(d_N/d_S>1\): dapat mendukung seleksi positif.
+- $d_N/d_S<1$: sering konsisten dengan **seleksi pemurnian**, yang menyingkirkan perubahan merugikan.
+- $d_N/d_S\approx1$: dapat konsisten dengan evolusi netral dalam model yang digunakan.
+- $d_N/d_S>1$: dapat mendukung seleksi positif.
 
 Interpretasinya memerlukan kehati-hatian. Hasil bergantung pada kualitas penyelarasan, model, dan apakah analisis dilakukan pada seluruh gen, cabang, atau posisi tertentu. Rasio ini bukan diagnosis otomatis seleksi.
 
@@ -227,6 +257,8 @@ flowchart TD
 
 Posisi yang sangat terkonservasi dapat menandakan kendala fungsional atau struktural. Namun, konservasi saja belum membuktikan mekanisme fungsi tertentu.
 
+<a id="bagian-8"></a>
+
 ## Ringkasan
 
 - Evolusi adalah perubahan sifat terwariskan pada populasi lintas generasi.
@@ -237,6 +269,8 @@ Posisi yang sangat terkonservasi dapat menandakan kendala fungsional atau strukt
 - Adaptasi bergantung pada lingkungan serta dibatasi sejarah dan kompromi biologis.
 - Data sekuens membantu merekonstruksi kekerabatan dan menguji hipotesis seleksi, tetapi selalu memerlukan interpretasi kritis.
 
+<a id="bagian-9"></a>
+
 ## Pertanyaan Latihan
 
 1. Jelaskan mengapa perubahan frekuensi alel merupakan bukti evolusi, sedangkan peningkatan massa otot akibat latihan tidak dengan sendirinya menunjukkan evolusi.
@@ -244,6 +278,8 @@ Posisi yang sangat terkonservasi dapat menandakan kendala fungsional atau strukt
 3. Sebuah bencana menyisakan sedikit individu secara acak. Setelah beberapa generasi, satu alel menjadi sangat umum. Mekanisme apa yang paling langsung menjelaskan perubahan awal tersebut? Mengapa belum tentu merupakan adaptasi?
 4. Uraikan evolusi resistansi antibiotik dengan menghubungkan variasi genetik, fungsi protein, tekanan seleksi, dan keberhasilan reproduksi.
 5. Anda menemukan posisi asam amino yang identik pada banyak spesies. Apa kemungkinan penjelasan evolusionernya, dan bukti tambahan apa yang diperlukan sebelum menyimpulkan fungsi posisi tersebut?
+
+<a id="bagian-10"></a>
 
 ## Bacaan Lanjutan
 

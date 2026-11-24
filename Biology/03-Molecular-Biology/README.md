@@ -4,9 +4,30 @@
 
 [Beranda](../../README.md) · [← Struktur Sel](../02-Cell-Structure/README.md) · [Genetika →](../04-Genetics/README.md)
 
+<details>
+<summary>Daftar isi</summary>
+
+- [Gambaran dan Cara Belajar](#bagian-1)
+- [Apa itu Biologi Molekuler?](#bagian-2)
+- [Dogma Sentral Biologi Molekuler](#bagian-3)
+- [DNA (Deoxyribonucleic Acid)](#bagian-4)
+- [RNA (Ribonucleic Acid)](#bagian-5)
+- [Transkripsi](#bagian-6)
+- [Translasi](#bagian-7)
+- [Regulasi Ekspresi Gen](#bagian-8)
+- [Mutasi DNA](#bagian-9)
+- [Relevansi dengan Bioinformatika](#bagian-10)
+- [Pertanyaan Latihan](#bagian-11)
+
+</details>
+
+<a id="bagian-1"></a>
+
 ## Gambaran dan Cara Belajar
 
 Ikuti aliran informasi dari DNA ke RNA dan protein, beserta regulasinya. Gunakan contoh sekuens untuk berlatih menentukan arah transkripsi dan membaca kodon; bedakan proses biologis dari analisis komputasionalnya.
+
+<a id="bagian-2"></a>
 
 ## Apa itu Biologi Molekuler?
 
@@ -14,10 +35,12 @@ Ikuti aliran informasi dari DNA ke RNA dan protein, beserta regulasinya. Gunakan
 
 ---
 
+<a id="bagian-3"></a>
+
 ## Dogma Sentral Biologi Molekuler
 
 ```mermaid
-flowchart LR
+flowchart TD
     D[DNA] -->|Replikasi| D
     D -->|Transkripsi| R[RNA]
     R -->|Translasi| P[Protein]
@@ -28,6 +51,8 @@ flowchart LR
 > **Batas dogma sentral:** informasi sekuens tidak ditransfer kembali dari protein ke asam nukleat. Transkripsi balik tidak melanggar batas ini.
 
 ---
+
+<a id="bagian-4"></a>
 
 ## DNA (Deoxyribonucleic Acid)
 
@@ -75,6 +100,8 @@ Proses penggandaan DNA sebelum pembelahan sel.
 
 ---
 
+<a id="bagian-5"></a>
+
 ## RNA (Ribonucleic Acid)
 
 ### Perbedaan DNA vs RNA
@@ -99,6 +126,8 @@ Proses penggandaan DNA sebelum pembelahan sel.
 | lncRNA | long non-coding RNA | Regulasi genomik |
 
 ---
+
+<a id="bagian-6"></a>
 
 ## Transkripsi
 
@@ -134,6 +163,8 @@ Pemrosesan dapat berlangsung tumpang tindih dengan transkripsi; diagram tidak me
 
 ---
 
+<a id="bagian-7"></a>
+
 ## Translasi
 
 Proses pembuatan protein dari mRNA.
@@ -163,6 +194,8 @@ flowchart TD
 
 ---
 
+<a id="bagian-8"></a>
+
 ## Regulasi Ekspresi Gen
 
 ### Pada Prokariot: Model Operon
@@ -190,6 +223,8 @@ flowchart TD
 
 ---
 
+<a id="bagian-9"></a>
+
 ## Mutasi DNA
 
 Perubahan pada sekuens DNA.
@@ -210,10 +245,12 @@ Perubahan pada sekuens DNA.
 
 ---
 
+<a id="bagian-10"></a>
+
 ## Relevansi dengan Bioinformatika
 
 ```mermaid
-flowchart LR
+flowchart TD
     D["Sekuens DNA"] --> V["Alignment dan pemanggilan varian"]
     R["Sekuens RNA"] --> E["RNA-seq dan ekspresi diferensial"]
     P[Protein] --> S["Prediksi struktur dan anotasi fungsi"]
@@ -222,6 +259,8 @@ flowchart LR
 ```
 
 ---
+
+<a id="bagian-11"></a>
 
 ## Pertanyaan Latihan
 

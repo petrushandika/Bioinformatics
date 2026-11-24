@@ -4,9 +4,28 @@
 
 [Beranda](../../README.md) · [← Enzim](../07-Enzyme/README.md) · [Evolusi →](../09-Evolution/README.md)
 
+<details>
+<summary>Daftar isi</summary>
+
+- [Gambaran dan Cara Belajar](#bagian-1)
+- [Tujuan Pembelajaran](#bagian-2)
+- [Konsep Utama](#bagian-3)
+- [Ringkasan Konsep](#bagian-4)
+- [Contoh Konkret](#bagian-5)
+- [Hubungan dengan Bioinformatika](#bagian-6)
+- [Ringkasan](#bagian-7)
+- [Pertanyaan Latihan](#bagian-8)
+- [Bacaan Lanjutan](#bagian-9)
+
+</details>
+
+<a id="bagian-1"></a>
+
 ## Gambaran dan Cara Belajar
 
 Telusuri karbon, elektron, dan ATP dari glukosa hingga respirasi atau fermentasi. Gunakan tabel hasil per glukosa bersama diagram jalur; bedakan kapasitas metabolik yang diprediksi dari fluks yang diukur.
+
+<a id="bagian-2"></a>
 
 ## Tujuan Pembelajaran
 
@@ -17,6 +36,8 @@ Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
 - Menelusuri perubahan karbon dan pembawa elektron selama pemecahan satu molekul glukosa.
 - Membedakan respirasi aerob, respirasi anaerob, dan fermentasi.
 - Menghubungkan data gen, protein, dan metabolit dengan analisis jalur metabolisme secara kritis.
+
+<a id="bagian-3"></a>
 
 ## Konsep Utama
 
@@ -160,6 +181,8 @@ NADH sitosolik tidak langsung menembus membran dalam mitokondria; elektronnya di
 
 Bakteri dan arkea tidak memiliki mitokondria; rantai respirasi mereka berada pada membran sel atau sistem membran terkait.
 
+<a id="bagian-4"></a>
+
 ## Ringkasan Konsep
 
 **Ringkasan per satu molekul glukosa pada respirasi aerob eukariotik:**
@@ -190,6 +213,8 @@ flowchart TD
     H -->|ATP sintase| ATP["ATP melalui fosforilasi oksidatif"]
 ```
 
+<a id="bagian-5"></a>
+
 ## Contoh Konkret
 
 **1. Eritrosit manusia**
@@ -203,6 +228,8 @@ Ketika kebutuhan ATP meningkat cepat, laju glikolisis dapat melampaui kapasitas 
 **3. Penghambatan respirasi oleh sianida**
 
 Sianida menghambat sitokrom c oksidase pada kompleks IV. Transfer elektron menuju oksigen terganggu, pembentukan gradien proton menurun, dan produksi ATP melalui fosforilasi oksidatif merosot. Contoh ini memperlihatkan keterkaitan antara transfer elektron, gradien proton, dan suplai energi sel.
+
+<a id="bagian-6"></a>
 
 ## Hubungan dengan Bioinformatika
 
@@ -218,6 +245,8 @@ Bioinformatika membantu menghubungkan informasi molekuler dengan kemampuan metab
 
 **Analisis struktur.** Struktur protein dari PDB dapat digunakan untuk mempelajari situs aktif, interaksi inhibitor, atau dampak variasi asam amino pada enzim metabolik.
 
+<a id="bagian-7"></a>
+
 ## Ringkasan
 
 - Glikolisis menghasilkan dua piruvat, dua ATP bersih, dan dua NADH per glukosa.
@@ -227,6 +256,8 @@ Bioinformatika membantu menghubungkan informasi molekuler dengan kemampuan metab
 - Fermentasi mempertahankan glikolisis dengan meregenerasi NAD⁺; respirasi anaerob tetap menggunakan rantai transpor elektron.
 - Hasil ATP bergantung pada konteks biologis, dan data gen atau ekspresi tidak langsung menunjukkan fluks metabolik.
 
+<a id="bagian-8"></a>
+
 ## Pertanyaan Latihan
 
 1. Jelaskan perbedaan fosforilasi tingkat substrat dan fosforilasi oksidatif, beserta lokasi dan contohnya.
@@ -234,6 +265,8 @@ Bioinformatika membantu menghubungkan informasi molekuler dengan kemampuan metab
 3. Mengapa glikolisis akhirnya dapat terhenti jika NADH tidak dapat dioksidasi kembali menjadi NAD⁺? Bagaimana fermentasi membantu?
 4. Prediksi dampak penghambatan kompleks IV terhadap konsumsi oksigen, gradien proton, produksi ATP, dan rasio NADH/NAD⁺.
 5. Data transkriptomik menunjukkan peningkatan ekspresi gen glikolisis. Apakah ini membuktikan peningkatan fluks glikolisis? Jelaskan dan usulkan data tambahan yang diperlukan.
+
+<a id="bagian-9"></a>
 
 ## Bacaan Lanjutan
 

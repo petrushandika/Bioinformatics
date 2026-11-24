@@ -4,9 +4,28 @@
 
 [Beranda](../../README.md) · [← Biokimia](../05-Biochemistry/README.md) · [Enzim →](../07-Enzyme/README.md)
 
+<details>
+<summary>Daftar isi</summary>
+
+- [Gambaran dan Cara Belajar](#bagian-1)
+- [Tujuan Pembelajaran](#bagian-2)
+- [Konsep Utama](#bagian-3)
+- [Ringkasan Konsep](#bagian-4)
+- [Contoh Konkret](#bagian-5)
+- [Hubungan dengan Bioinformatika](#bagian-6)
+- [Ringkasan](#bagian-7)
+- [Pertanyaan Latihan](#bagian-8)
+- [Bacaan Lanjutan](#bagian-9)
+
+</details>
+
+<a id="bagian-1"></a>
+
 ## Gambaran dan Cara Belajar
 
 Pelajari hubungan urutan, pelipatan, dinamika, dan fungsi protein. Gunakan hemoglobin sebagai contoh lintas skala, lalu ikuti alur analisis untuk membedakan hipotesis fungsi dari bukti eksperimen.
+
+<a id="bagian-2"></a>
 
 ## Tujuan Pembelajaran
 
@@ -17,6 +36,8 @@ Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
 3. Menghubungkan bentuk, dinamika, dan lokasi protein dengan fungsi biologisnya.
 4. Menjelaskan dampak mutasi, denaturasi, dan modifikasi pascatranslasi terhadap aktivitas protein.
 5. Mengenali pendekatan bioinformatika untuk menganalisis urutan, struktur, dan fungsi protein beserta keterbatasannya.
+
+<a id="bagian-3"></a>
 
 ## Konsep Utama
 
@@ -29,7 +50,7 @@ Namun, urutan asam amino belum otomatis menghasilkan protein yang berfungsi. Ran
 Prinsip pentingnya adalah:
 
 ```mermaid
-flowchart LR
+flowchart TD
     U["Urutan asam amino"] --> P["Pelipatan dan dinamika"]
     P --> I["Interaksi molekuler"]
     I --> F["Fungsi biologis"]
@@ -129,6 +150,8 @@ Lokasi juga menentukan fungsi. Protein yang aktif secara kimia belum tentu beker
 
 Sebagian protein dapat melipat kembali setelah kondisi dipulihkan. Pada kasus lain, agregasi atau perubahan kimia menyebabkan kehilangan fungsi yang sulit dipulihkan.
 
+<a id="bagian-4"></a>
+
 ## Ringkasan Konsep
 
 | Tingkat struktur | Apa yang dijelaskan? | Penentu atau penstabil utama | Contoh konsekuensi fungsional |
@@ -139,6 +162,8 @@ Sebagian protein dapat melipat kembali setelah kondisi dipulihkan. Pada kasus la
 | Kuartener | Susunan beberapa subunit | Interaksi antarsubunit, kadang ikatan kovalen | Memungkinkan kerja sama antarsubunit pada hemoglobin |
 
 Tingkat-tingkat ini merupakan cara menjelaskan organisasi protein, bukan empat tahap pelipatan yang selalu terjadi secara terpisah dan berurutan.
+
+<a id="bagian-5"></a>
 
 ## Contoh Konkret
 
@@ -153,7 +178,7 @@ Pergantian ini menghasilkan permukaan yang, terutama pada keadaan terdeoksigenas
 Contoh ini menghubungkan beberapa skala:
 
 ```mermaid
-flowchart LR
+flowchart TD
     D["Varian DNA pada HBB"] --> R["Beta-globin: Glu6 menjadi Val"]
     R --> P["Polimerisasi HbS saat deoksigenasi"]
     P --> S["Eritrosit kurang lentur"]
@@ -167,6 +192,8 @@ Pelajarannya bukan bahwa setiap mutasi menyebabkan penyakit, melainkan bahwa dam
 Eksperimen klasik pada ribonuklease menunjukkan bahwa, dalam kondisi yang sesuai, protein yang didenaturasi dan direduksi dapat kembali memperoleh struktur serta aktivitasnya setelah kondisi dipulihkan.
 
 Temuan ini mendukung gagasan bahwa urutan asam amino menyimpan informasi utama untuk pelipatan. Namun, hasil tersebut tidak berarti semua protein dapat melipat sendiri dengan mudah: banyak protein memerlukan bantuan sistem seluler, kofaktor, atau pasangan perakitan.
+
+<a id="bagian-6"></a>
 
 ## Hubungan dengan Bioinformatika
 
@@ -200,6 +227,8 @@ flowchart TD
 
 Prediksi fungsi tetap merupakan hipotesis sampai didukung bukti yang sesuai.
 
+<a id="bagian-7"></a>
+
 ## Ringkasan
 
 - Protein tersusun atas residu asam amino yang terhubung melalui ikatan peptida.
@@ -209,6 +238,8 @@ Prediksi fungsi tetap merupakan hipotesis sampai didukung bukti yang sesuai.
 - Mutasi dan modifikasi pascatranslasi dapat mengubah aktivitas, kestabilan, atau penempatan protein.
 - Bioinformatika membantu menghubungkan urutan dengan struktur dan fungsi, tetapi prediksi harus dibaca bersama keterbatasan dan bukti pendukungnya.
 
+<a id="bagian-8"></a>
+
 ## Pertanyaan Latihan
 
 1. Jelaskan perbedaan struktur sekunder, tersier, dan kuartener. Mengapa protein satu rantai tidak memiliki struktur kuartener?
@@ -216,6 +247,8 @@ Prediksi fungsi tetap merupakan hipotesis sampai didukung bukti yang sesuai.
 3. Sebuah enzim kehilangan aktivitas setelah dipanaskan, tetapi rantai polipeptidanya tetap utuh. Jelaskan kemungkinan perubahan yang terjadi dan bedakan denaturasi dari degradasi.
 4. Menggunakan hemoglobin S sebagai contoh, jelaskan bagaimana perubahan satu residu dapat memengaruhi sifat sel dan menyebabkan gangguan fisiologis.
 5. Anda menemukan protein dengan urutan mirip enzim yang sudah dikenal. Susun langkah bioinformatika untuk menguji dugaan fungsinya dan jelaskan mengapa kemiripan urutan saja belum cukup.
+
+<a id="bagian-9"></a>
 
 ## Bacaan Lanjutan
 

@@ -31,7 +31,7 @@ class ProgressTests(unittest.TestCase):
         for topics, rows, done, pending in cases:
             with self.subTest(topics=topics):
                 result = daily.render_progress({"curriculum": topics})
-                self.assertIn("```mermaid\nflowchart LR", result)
+                self.assertIn("```mermaid\nflowchart TD", result)
                 self.assertIn(f'Selesai["Tersedia: {done}"]', result)
                 self.assertIn(f'Pending["Direncanakan: {pending}"]', result)
                 for row in rows:
@@ -78,6 +78,103 @@ class MateriTests(unittest.TestCase):
                 self.assertEqual([], daily.validate_materi(materi(MERMAID + extra)))
 
 
+class NormalizationTests(unittest.TestCase):
+    def test_math_and_summary_headings_preserve_fenced_content_and_are_idempotent(self):
+        protected = ("```python\n" + r'print("\\(x\\)")' + "\n### Istilah Kunci\n```\n"
+                     + "~~~~mermaid\nflowchart TD\n" + r'A["\\[x\\]"] --> B' + "\n```\n~~~~\n")
+        raw = (r"Inline \(x + y\) dan \\(z\\)." + "\n" + r"\[a=b\]" + "\n"
+               + r"\\[c=d\\]" + "\n" + protected
+               + "### Istilah Kunci\nGen.\n### Koneksi ke Kurikulum\nDNA.\n")
+        result = daily.normalize_markdown(raw, news=True)
+        self.assertIn("Inline $x + y$ dan $z$.", result)
+        self.assertIn("$$\na=b\n$$", result)
+        self.assertIn("$$\nc=d\n$$", result)
+        self.assertIn(protected, result)
+        self.assertIn("\n## Istilah Kunci\n", result)
+        self.assertIn("\n## Koneksi ke Kurikulum\n", result)
+        self.assertEqual(result, daily.normalize_markdown(result, news=True))
+
+    def test_fake_generation_preserves_inner_fences_and_normalizes_math(self):
+        topic = {"title": "DNA", "category": "Biology", "year": 1}
+        source = materi(MERMAID + r"Inline \\(x\\)." + "\n```python\nprint('safe')\n```\n")
+        for raw in (source, "```markdown\n" + source + "```", "````markdown\n" + source + "````"):
+            with self.subTest(wrapper=raw[:15]), \
+                    patch.object(daily, "ai_generate", return_value=(raw, "fake")), \
+                    patch.object(daily.urllib.request, "urlopen", side_effect=AssertionError("network forbidden")):
+                result, model = daily.generate_materi(topic, [])
+                self.assertEqual("fake", model)
+                self.assertIn(MERMAID, result)
+                self.assertIn("```python\nprint('safe')\n```", result)
+                self.assertIn("Inline $x$.", result)
+                self.assertEqual([], daily.validate_materi(result))
+        # A code fence at the start is content, not a Markdown response wrapper.
+        self.assertEqual(MERMAID, daily.normalize_markdown(MERMAID))
+
+    def test_prompts_use_clean_headings_github_math_and_vertical_diagrams(self):
+        prompt = daily.materi_prompt({"title": "DNA", "category": "Biology", "year": 1}, [])
+        self.assertIn("$...$", prompt)
+        self.assertIn("$$...$$", prompt)
+        self.assertIn("flowchart TD", prompt)
+        for line in prompt.splitlines():
+            if line.startswith("## "):
+                self.assertNotIn("(", line)
+                self.assertNotIn("—", line)
+
+
+class OutputTests(unittest.TestCase):
+    def test_code_output_cannot_close_its_display_fence(self):
+        topic = {"title": "DNA", "folder": "Biology/DNA", "category": "Biology", "year": 1}
+        output = "before\n```\n## Not a heading\nafter"
+        with tempfile.TemporaryDirectory() as tmp, patch.object(daily, "ROOT", Path(tmp)), \
+                patch.object(daily, "DAILY_DIR", Path(tmp) / "Daily"), \
+                patch.object(daily, "NEWS_DIR", Path(tmp) / "News"), \
+                patch.object(daily.urllib.request, "urlopen", side_effect=AssertionError("network forbidden")):
+            daily.write_outputs("2026-01-01", topic, "# DNA\n", ("print('ok')\n", output),
+                                "fake", [], "_Tidak ada rangkuman._", "-")
+            lesson = (Path(tmp) / topic["folder"] / "README.md").read_text()
+            self.assertIn("````text\n" + output + "\n````", lesson)
+            self.assertEqual("print('ok')\n", (Path(tmp) / topic["folder"] / "main.py").read_text())
+            self.assertIn("Tidak ada paper baru", (Path(tmp) / "News/LATEST.md").read_text())
+
+    def test_outputs_use_summary_links_metadata_and_sibling_navigation(self):
+        topics = [{"title": title, "folder": f"Biology/{title}", "category": "Biology", "year": 1}
+                  for title in ("DNA", "RNA")]
+        papers = [{"title": "Paper title", "url": "https://example.org/paper", "authors": "Author",
+                   "journal": "Journal", "year": "2026"}]
+        news = "### 1. Temuan\n\nIsi.\n\n### Istilah Kunci\n\nGen.\n\n### Koneksi ke Kurikulum\n\nDNA.\n"
+        with tempfile.TemporaryDirectory() as tmp, patch.object(daily, "ROOT", Path(tmp)), \
+                patch.object(daily, "DAILY_DIR", Path(tmp) / "Daily"), \
+                patch.object(daily, "NEWS_DIR", Path(tmp) / "News"), \
+                patch.object(daily.urllib.request, "urlopen", side_effect=AssertionError("network forbidden")):
+            for created in ([(t, False) for t in topics], []):
+                with self.subTest(created=created):
+                    daily.write_outputs("2026-01-01", topics[-1] if created else None,
+                                        "# RNA\n\n```python\n" + "source-preview" * 100,
+                                        None, "fake", papers, news, "fake", created)
+                    latest = (Path(tmp) / "Daily/LATEST.md").read_text()
+                    self.assertNotIn("source-preview", latest)
+                    self.assertNotIn("```", latest)
+                    for topic, _ in created:
+                        self.assertIn(f"[{topic['title']}](../{topic['folder']}/README.md)", latest)
+                    if not created:
+                        self.assertIn("Semua topik kurikulum sudah selesai", latest)
+                    for relative, home, counterpart in (
+                        ("Daily/2026-01-01.md", "../README.md", "../News/Archive/2026-01-01.md"),
+                        ("Daily/LATEST.md", "../README.md", "../News/LATEST.md"),
+                        ("News/Archive/2026-01-01.md", "../../README.md", "../../Daily/2026-01-01.md"),
+                        ("News/LATEST.md", "../README.md", "../Daily/LATEST.md"),
+                    ):
+                        text = (Path(tmp) / relative).read_text()
+                        self.assertIn(f"]({home})", text)
+                        self.assertIn(f"]({counterpart})", text)
+                        if "LATEST" not in relative:
+                            self.assertIn("## Rangkuman\n\n### 1. Temuan", text)
+                            self.assertIn("\n## Istilah Kunci\n", text)
+                            self.assertIn("\n## Koneksi ke Kurikulum\n", text)
+                    self.assertIn("- [Paper title](https://example.org/paper)\n  - Author · *Journal, 2026*",
+                                  (Path(tmp) / "News/LATEST.md").read_text())
+
+
 class ReadmeTests(unittest.TestCase):
     def test_markers_surrounding_content_and_idempotence(self):
         topic = {"category": "Biology", "status": "done", "year": 1, "folder": "Biology/DNA", "title": "DNA"}
@@ -101,6 +198,21 @@ class ReadmeTests(unittest.TestCase):
                 self.assertNotIn("\nold\n", once)
                 self.assertNotIn("old curriculum", once)
                 self.assertNotIn("old progress", once)
+
+
+class ProseBoundaryTests(unittest.TestCase):
+    def test_inline_and_nested_code_preserved(self):
+        source = 'Use `re.compile(r"\\(x\\)")` then \\(y\\).'
+        self.assertEqual(daily.normalize_markdown(source), 'Use `re.compile(r"\\(x\\)")` then $y$.\n')
+        source = '1. Example\n\n    ```python\n    print(r"\\(x\\)")\n    ```\n'
+        self.assertEqual(daily.normalize_markdown(source), source)
+        self.assertEqual(daily.normalize_markdown(r"Equation: \[x=1\] then continue."), 'Equation: \n\n$$\nx=1\n$$\n\n then continue.\n')
+
+
+class EscapedMathTests(unittest.TestCase):
+    def test_doubled_commands_and_single_delimiter_rowbreaks(self):
+        self.assertEqual(daily.normalize_markdown(r"\\(V_{\\max}\\)"), "$V_{\\max}$\n")
+        self.assertEqual(daily.normalize_markdown(r"\[a \\ b\]"), "$$\na \\\\ b\n$$\n")
 
 
 if __name__ == "__main__":

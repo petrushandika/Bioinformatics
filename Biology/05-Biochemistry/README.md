@@ -4,6 +4,23 @@
 
 [Beranda](../../README.md) · [← Genetika](../04-Genetics/README.md) · [Protein →](../06-Protein/README.md)
 
+<details>
+<summary>Daftar isi</summary>
+
+- [Gambaran dan Cara Belajar](#bagian-1)
+- [Tujuan Pembelajaran](#bagian-2)
+- [Konsep Utama](#bagian-3)
+- [Ringkasan Konsep](#bagian-4)
+- [Contoh Konkret](#bagian-5)
+- [Hubungan dengan Bioinformatika](#bagian-6)
+- [Ringkasan](#bagian-7)
+- [Pertanyaan Latihan](#bagian-8)
+- [Bacaan Lanjutan](#bagian-9)
+
+</details>
+
+<a id="bagian-1"></a>
+
 ## Gambaran dan Cara Belajar
 
 Hubungkan sifat kimia biomolekul dengan fungsi sel dan penggunaan energi. Baca konsep dasar sebelum menelaah contoh laktase dan hemoglobin; gunakan latihan untuk menjelaskan hubungan struktur, reaksi, dan bukti bioinformatika.
@@ -11,6 +28,8 @@ Hubungkan sifat kimia biomolekul dengan fungsi sel dan penggunaan energi. Baca k
 Biokimia mempelajari molekul penyusun makhluk hidup, reaksi kimia yang terjadi di dalam sel, serta cara reaksi tersebut mendukung kehidupan. Jika biologi molekuler menjelaskan bagaimana informasi DNA digunakan untuk menghasilkan protein, biokimia membantu menjawab pertanyaan berikut: **Bagaimana struktur molekul menentukan fungsi, dan bagaimana sel memperoleh serta menggunakan energi?**
 
 Materi ini menghubungkan pengetahuan tentang struktur sel, dogma sentral, dan genetika dengan proses kimia yang mendasari pertumbuhan, pewarisan sifat, dan respons organisme terhadap lingkungan.
+
+<a id="bagian-2"></a>
 
 ## Tujuan Pembelajaran
 
@@ -21,6 +40,8 @@ Setelah mempelajari topik ini, mahasiswa diharapkan mampu:
 3. Menjelaskan hubungan antara struktur protein, aktivitas enzim, dan pengaruh kondisi lingkungan.
 4. Menguraikan prinsip energi bebas, ATP, reaksi redoks, dan organisasi metabolisme.
 5. Menghubungkan data sekuens, struktur, dan jalur metabolik dengan analisis bioinformatika dasar.
+
+<a id="bagian-3"></a>
 
 ## Konsep Utama
 
@@ -49,17 +70,17 @@ Molekul **hidrofilik** berinteraksi baik dengan air, sedangkan bagian **hidrofob
 
 Keasaman larutan dinyatakan dengan pH:
 
-\[
+$$
 \mathrm{pH}=-\log_{10}a_{\mathrm{H^+}}
-\]
+$$
 
-Aktivitas ion hidrogen, \(a_{\mathrm{H^+}}\), sering didekati menggunakan konsentrasi ion hidrogen pada pembahasan larutan encer. Karena skalanya logaritmik, perubahan satu unit pH berarti perubahan aktivitas ion hidrogen sebesar sepuluh kali.
+Aktivitas ion hidrogen, $a_{\mathrm{H^+}}$, sering didekati menggunakan konsentrasi ion hidrogen pada pembahasan larutan encer. Karena skalanya logaritmik, perubahan satu unit pH berarti perubahan aktivitas ion hidrogen sebesar sepuluh kali.
 
 **Penyangga atau buffer** mengurangi perubahan pH ketika sejumlah terbatas asam atau basa ditambahkan. Sistem ini biasanya terdiri atas asam lemah dan basa konjugatnya. Hubungannya dapat diperkirakan dengan persamaan Henderson–Hasselbalch:
 
-\[
+$$
 \mathrm{pH}=\mathrm{p}K_a+\log_{10}\frac{[\mathrm{A^-}]}{[\mathrm{HA}]}
-\]
+$$
 
 Di sini, HA adalah asam lemah dan A⁻ adalah basa konjugatnya. Penyangga bekerja paling efektif ketika pH mendekati pKa dan kapasitasnya terbatas oleh jumlah komponen yang tersedia.
 
@@ -127,18 +148,18 @@ Substrat berinteraksi dengan **situs aktif**. Pengikatan ini tidak harus menyeru
 
 Untuk enzim yang mengikuti model Michaelis–Menten:
 
-\[
+$$
 v=\frac{V_{\max}[S]}{K_m+[S]}
-\]
+$$
 
 Keterangan:
 
-- \(v\): laju awal reaksi.
-- \([S]\): konsentrasi substrat.
-- \(V_{\max}\): laju maksimum pada jumlah enzim tertentu.
-- \(K_m\): konsentrasi substrat saat laju mencapai setengah \(V_{\max}\).
+- $v$: laju awal reaksi.
+- $[S]$: konsentrasi substrat.
+- $V_{\max}$: laju maksimum pada jumlah enzim tertentu.
+- $K_m$: konsentrasi substrat saat laju mencapai setengah $V_{\max}$.
 
-Nilai \(K_m\) tidak selalu sama dengan ukuran afinitas pengikatan substrat; interpretasinya bergantung pada mekanisme reaksi.
+Nilai $K_m$ tidak selalu sama dengan ukuran afinitas pengikatan substrat; interpretasinya bergantung pada mekanisme reaksi.
 
 Aktivitas enzim dapat dipengaruhi oleh suhu, pH, konsentrasi substrat, inhibitor, modifikasi kovalen, dan regulator alosterik. Beberapa enzim juga memerlukan **kofaktor**, misalnya ion logam, atau koenzim organik seperti NAD⁺.
 
@@ -146,13 +167,13 @@ Aktivitas enzim dapat dipengaruhi oleh suhu, pH, konsentrasi substrat, inhibitor
 
 Kelayakan termodinamik reaksi dinyatakan melalui perubahan energi bebas Gibbs:
 
-\[
+$$
 \Delta G=\Delta H-T\Delta S
-\]
+$$
 
-Pada suhu dan tekanan tetap, reaksi dengan \(\Delta G<0\) menguntungkan secara termodinamik ke arah yang dituliskan. Namun, reaksi tersebut belum tentu berlangsung cepat karena masih dapat memiliki hambatan aktivasi tinggi.
+Pada suhu dan tekanan tetap, reaksi dengan $\Delta G<0$ menguntungkan secara termodinamik ke arah yang dituliskan. Namun, reaksi tersebut belum tentu berlangsung cepat karena masih dapat memiliki hambatan aktivasi tinggi.
 
-Nilai \(\Delta G\) bergantung pada kondisi aktual, termasuk konsentrasi reaktan dan produk. Karena itu, nilai standar biokimia tidak boleh langsung dianggap sebagai nilai di dalam sel.
+Nilai $\Delta G$ bergantung pada kondisi aktual, termasuk konsentrasi reaktan dan produk. Karena itu, nilai standar biokimia tidak boleh langsung dianggap sebagai nilai di dalam sel.
 
 **ATP** membantu menghubungkan reaksi pelepasan energi dengan proses yang memerlukan energi, seperti sintesis molekul dan transpor aktif. Hidrolisis ATP menguntungkan karena keseluruhan perubahan dari reaktan menuju produk, bukan karena pemutusan ikatan itu sendiri melepaskan energi. Pemutusan ikatan justru memerlukan energi.
 
@@ -175,6 +196,8 @@ Glikolisis mengubah glukosa menjadi piruvat dan menghasilkan ATP serta NADH. Pad
 Pada eukariota, siklus asam sitrat terutama berlangsung di matriks mitokondria, sedangkan rantai transpor elektron berada pada membran dalam mitokondria. Pada bakteri, organisasi tempat berlangsungnya proses tersebut berbeda karena tidak terdapat mitokondria.
 
 Jalur metabolik saling terhubung dan diatur sesuai kebutuhan sel. Misalnya, penghambatan umpan balik memungkinkan produk akhir mengurangi aktivitas enzim pada tahap sebelumnya, sehingga produksi berlebihan dapat dibatasi.
+
+<a id="bagian-4"></a>
 
 ## Ringkasan Konsep
 
@@ -200,6 +223,8 @@ flowchart TD
     A --> C["Komponen sel baru"]
 ```
 
+<a id="bagian-5"></a>
+
 ## Contoh Konkret
 
 ### Pencernaan laktosa dan peran enzim
@@ -221,11 +246,13 @@ Pada hemoglobin S, perubahan glutamat menjadi valin pada posisi yang secara konv
 Akibatnya, sifat mekanik sel darah merah dapat berubah. Contoh ini memperlihatkan alur hubungan:
 
 ```mermaid
-flowchart LR
+flowchart TD
     D["Varian DNA"] --> A["Perubahan asam amino"]
     A --> P["Perubahan interaksi protein"]
     P --> S["Perubahan sifat sel"]
 ```
+
+<a id="bagian-6"></a>
 
 ## Hubungan dengan Bioinformatika
 
@@ -245,6 +272,8 @@ Bioinformatika memungkinkan prinsip biokimia dianalisis menggunakan data digital
 
 Latihan awal yang berguna adalah memilih satu enzim di UniProt, mencatat fungsi dan kofaktornya, lalu memeriksa apakah tersedia struktur terkait di PDB. Bedakan informasi yang telah diuji secara eksperimen dari anotasi berbasis prediksi.
 
+<a id="bagian-7"></a>
+
 ## Ringkasan
 
 - Fungsi biomolekul bergantung pada komposisi, struktur, dan lingkungan kimianya.
@@ -254,13 +283,17 @@ Latihan awal yang berguna adalah memilih satu enzim di UniProt, mencatat fungsi 
 - ATP dan pembawa elektron menghubungkan berbagai proses metabolik.
 - Bioinformatika membantu mengaitkan sekuens, struktur, fungsi, dan jaringan metabolisme, tetapi prediksi tetap memerlukan evaluasi bukti.
 
+<a id="bagian-8"></a>
+
 ## Pertanyaan Latihan
 
 1. Mengapa air dapat melarutkan banyak senyawa ionik, sedangkan minyak cenderung membentuk fase terpisah?
 2. Pati dan selulosa sama-sama tersusun dari glukosa. Jelaskan mengapa struktur dan kecernaannya berbeda.
 3. Jelaskan perbedaan struktur primer, sekunder, tersier, dan kuartener protein. Tingkat mana yang umumnya tetap utuh saat denaturasi?
-4. Apakah enzim dapat membuat reaksi dengan \(\Delta G\) positif menjadi negatif hanya dengan menurunkan energi aktivasi? Jelaskan, lalu terangkan bagaimana penggandengan dengan hidrolisis ATP dapat membantu.
+4. Apakah enzim dapat membuat reaksi dengan $\Delta G$ positif menjadi negatif hanya dengan menurunkan energi aktivasi? Jelaskan, lalu terangkan bagaimana penggandengan dengan hidrolisis ATP dapat membantu.
 5. Sebuah varian mengganti residu bermuatan dengan residu hidrofobik di dekat situs aktif enzim. Data sekuens, struktur, dan eksperimen apa yang diperlukan untuk menilai dampaknya?
+
+<a id="bagian-9"></a>
 
 ## Bacaan Lanjutan
 

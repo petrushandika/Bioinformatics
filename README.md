@@ -4,6 +4,23 @@ Catatan belajar bioinformatika berbahasa Indonesia: memahami biologi, berlatih P
 
 [Mulai dari biologi](Biology/01-History/README.md) · [Latihan Python](Python/README.md) · [Update terbaru](Daily/LATEST.md) · [Ringkasan paper](News/LATEST.md)
 
+<details>
+<summary>Daftar isi</summary>
+
+- [Mulai Belajar](#bagian-1)
+- [Peta Belajar](#bagian-2)
+- [Isi Repositori](#bagian-3)
+- [Kurikulum](#bagian-4)
+- [Progress Belajar](#bagian-5)
+- [Pembaruan Harian](#bagian-6)
+- [Konvensi Dokumentasi](#bagian-7)
+- [Referensi](#bagian-8)
+- [Lisensi dan Batas Penggunaan](#bagian-9)
+
+</details>
+
+<a id="bagian-1"></a>
+
 ## Mulai Belajar
 
 1. Ikuti materi biologi sesuai urutan pada tabel kurikulum. Baca diagram konsep, lalu kerjakan pertanyaan latihan sebelum membuka topik berikutnya.
@@ -20,10 +37,12 @@ python3 Python/01-Basics/01-Intro/main.py
 
 Latihan [`07-Control-Program`](Python/01-Basics/07-Control-Program/main.py) bersifat interaktif. Input username/password di sana hanya demonstrasi percabangan: **jangan gunakan kredensial asli** dan jangan jadikan contoh itu implementasi autentikasi.
 
+<a id="bagian-2"></a>
+
 ## Peta Belajar
 
 ```mermaid
-flowchart LR
+flowchart TD
     B["Fondasi biologi"] --> M["Biologi molekuler dan genetika"]
     P["Dasar Python"] --> D["Pemrosesan data"]
     S["Matematika dan statistik — rencana"] --> A["Analisis bioinformatika — rencana"]
@@ -34,6 +53,8 @@ flowchart LR
 ```
 
 Urutan tahun pada kurikulum adalah pengelompokan tahap belajar, bukan durasi wajib. Topik lanjutan belum tersedia sampai folder dan materinya dibuat.
+
+<a id="bagian-3"></a>
 
 ## Isi Repositori
 
@@ -59,6 +80,8 @@ flowchart TD
 | [`scripts/curriculum.json`](scripts/curriculum.json) | Sumber status dan urutan topik yang digunakan otomatisasi. |
 | [`scripts/daily_update.py`](scripts/daily_update.py) | Generator materi, pengambilan paper, dan pembaruan indeks. |
 | [Workflow harian](.github/workflows/daily-update.yml) | Jadwal, konfigurasi Python, dan trigger manual. |
+
+<a id="bagian-4"></a>
 
 ## Kurikulum
 
@@ -141,13 +164,15 @@ Terinspirasi oleh [OSSU Bioinformatics](https://github.com/ossu/bioinformatics),
 
 <!-- CURRICULUM:END -->
 
+<a id="bagian-5"></a>
+
 ## Progress Belajar
 
 Grafik berikut menghitung **ketersediaan materi dalam manifest kurikulum**, bukan kemampuan belajar. Tujuh contoh Python awal merupakan latihan tambahan yang belum tercantum sebagai entri manifest; angka kategori Python karena itu tidak menghitungnya.
 
 <!-- PROGRESS:START -->
 ```mermaid
-flowchart LR
+flowchart TD
     Total["Total: 52"] --> Selesai["Tersedia: 10"]
     Total --> Pending["Direncanakan: 42"]
 ```
@@ -163,6 +188,8 @@ flowchart LR
 | 🎓 Capstone | 0 | 1 | 0% |
 | **Total** | **10** | **52** | **19%** |
 <!-- PROGRESS:END -->
+
+<a id="bagian-6"></a>
 
 ## Pembaruan Harian
 
@@ -197,6 +224,8 @@ Jika seluruh topik sudah tersedia, proses melewati pembuatan materi dan tetap me
 
 **Perhatian:** menjalankan `scripts/daily_update.py` bukan preview read-only. Skrip memanggil layanan eksternal, menulis berkas, men-stage seluruh perubahan, dan membuat commit. `--no-push` hanya menonaktifkan push, bukan penulisan atau commit. Gunakan checkout bersih yang terpisah bila perlu menjalankannya lokal.
 
+<a id="bagian-7"></a>
+
 ## Konvensi Dokumentasi
 
 - Semua chart, peta konsep, alur, dan diagram ditulis dalam fenced code block **`mermaid`** di Markdown, bukan gambar atau ASCII art.
@@ -207,6 +236,8 @@ Jika seluruh topik sudah tersedia, proses melewati pembuatan materi dan tetap me
 
 GitHub merender Mermaid langsung di halaman Markdown. Pada editor lokal, aktifkan dukungan preview Mermaid untuk melihat diagram.
 
+<a id="bagian-8"></a>
+
 ## Referensi
 
 - [OSSU Bioinformatics](https://github.com/ossu/bioinformatics) — inspirasi jalur belajar.
@@ -214,6 +245,8 @@ GitHub merender Mermaid langsung di halaman Markdown. Pada editor lokal, aktifka
 - [UniProt](https://www.uniprot.org/) — informasi urutan dan fungsi protein.
 - [RCSB PDB](https://www.rcsb.org/) — struktur makromolekul biologis.
 - [Python Tutorial](https://docs.python.org/3/tutorial/) — referensi bahasa untuk latihan kode.
+
+<a id="bagian-9"></a>
 
 ## Lisensi dan Batas Penggunaan
 

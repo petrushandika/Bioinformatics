@@ -109,6 +109,53 @@ def strip_fence(text: str, lang: str = "") -> str:
     return (m.group(1) if m else text).strip() + "\n"
 
 
+def normalize_markdown(text: str, *, news: bool = False) -> str:
+    """Normalize prose only; keep fenced code/diagrams byte-for-byte intact."""
+    text = text.strip() + "\n"
+    # Strip only a complete Markdown response wrapper, never the first inner fence.
+    wrapper = re.fullmatch(r"(`{3,}|~{3,})(?:markdown|md)[ \t]*\n(.*)\n\1[ \t]*\n?", text, re.DOTALL)
+    if wrapper:
+        text = wrapper.group(2).strip() + "\n"
+
+    def prose(value: str) -> str:
+        # Model output sometimes doubles the backslashes around TeX delimiters.
+        def equation(match: re.Match, block: bool = False) -> str:
+            body = match.group(2).strip()
+            if len(match.group(1)) > 1:
+                body = body.replace("\\\\", "\\")
+            return "$$\n" + body + "\n$$" if block else "$" + body + "$"
+
+        spans = re.split(r"(`+[^`]*(?:`(?!`)[^`]*)*?`+)", value)
+        for index in range(0, len(spans), 2):
+            part = spans[index]
+            # Display equations need their own lines, even if emitted inside a sentence.
+            part = re.sub(r"(\\+)\[(.*?)\\+\]", lambda m: "\n\n" + equation(m, True) + "\n\n", part, flags=re.DOTALL)
+            part = re.sub(r"(\\+)\((.*?)\\+\)", equation, part, flags=re.DOTALL)
+            if news:
+                part = re.sub(r"^### (Istilah Kunci|Koneksi ke Kurikulum)[ \t]*$", r"## \1", part, flags=re.MULTILINE)
+            spans[index] = part
+        return "".join(spans)
+
+    result, pending = [], []
+    fence = None
+    for line in text.splitlines(keepends=True):
+        if fence:
+            result.append(line)
+            if re.fullmatch(r"[ \t>]*" + re.escape(fence[0]) + "{" + str(len(fence)) + r",}[ \t]*\n?", line):
+                fence = None
+        else:
+            opening = re.match(r"^[ \t>]*(?:[-*+] |\d+[.)] )?(`{3,}|~{3,})", line)
+            if opening:
+                result.append(prose("".join(pending)))
+                pending = []
+                fence = opening.group(1)
+                result.append(line)
+            else:
+                pending.append(line)
+    result.append(prose("".join(pending)))
+    return "".join(result).strip() + "\n"
+
+
 # ── Kurikulum ────────────────────────────────────────────────────────────────
 
 def load_curriculum() -> dict:
@@ -147,17 +194,25 @@ def materi_prompt(topic: dict, recent: list[str]) -> str:
         f"Topik yang sudah dipelajari sebelumnya: {', '.join(recent) or '-'}\n\n"
         "Struktur wajib (Markdown):\n"
         f"# {topic['title']}\n"
-        "## Tujuan Pembelajaran (3–5 poin)\n"
-        "## Konsep Utama — beberapa subbagian ### dengan penjelasan mendalam\n"
-        "## Tabel dan Diagram (minimal satu diagram bermakna dalam blok ```mermaid, bukan blok kosong; "
-        "gunakan flowchart atau sequenceDiagram untuk menjelaskan hubungan/proses topik, bukan hiasan).\n"
+        "## Tujuan Pembelajaran\n"
+        "Isi 3–5 poin.\n"
+        "## Konsep Utama\n"
+        "Gunakan beberapa subbagian ### dengan penjelasan mendalam.\n"
+        "## Tabel dan Diagram\n"
+        "Minimal satu diagram bermakna dalam blok ```mermaid, bukan blok kosong; "
+        "utamakan flowchart TD dengan label singkat untuk diagram padat, atau sequenceDiagram "
+        "untuk menjelaskan hubungan/proses topik, bukan hiasan.\n"
         "Semua diagram/grafik wajib Mermaid. Dilarang diagram ASCII, kotak/anak panah teks, dan bar karakter. "
         "Tabel data tetap tabel Markdown; kode, output, sekuens, dan persamaan ilmiah tetap diperbolehkan.\n"
         "## Contoh Konkret\n"
         "## Hubungan dengan Bioinformatika\n"
         "## Ringkasan\n"
-        "## Pertanyaan Latihan (5 soal bernomor)\n"
+        "## Pertanyaan Latihan\n"
+        "Isi 5 soal bernomor.\n"
         "## Bacaan Lanjutan\n\n"
+        "Gunakan judul bagian persis seperti di atas tanpa instruksi template. "
+        "Persamaan GitHub Markdown: $...$ untuk inline dan $$...$$ pada baris tersendiri untuk blok. "
+        "Jangan gunakan delimiter TeX backslash-kurung atau backslash-siku.\n"
         f"{code_note}Panjang sekitar 1200–2000 kata. Keluarkan Markdown saja tanpa pembuka/penutup percakapan."
     )
 
@@ -201,7 +256,7 @@ def generate_materi(topic: dict, recent: list[str]) -> tuple[str, str]:
     problems: list[str] = []
     for _ in range(2):
         text, model = ai_generate(prompt, SYSTEM_MATERI)
-        text = strip_fence(text, "markdown") if text.lstrip().startswith("```") else text.strip() + "\n"
+        text = normalize_markdown(text)
         problems = validate_materi(text)
         if not problems:
             return text, model
@@ -347,9 +402,9 @@ def summarize_papers(papers: list[dict], recent: list[str]) -> tuple[str, str]:
               "Untuk tiap paper buat subjudul `### <nomor>. <judul singkat Indonesia>` lalu: 3–4 kalimat inti temuan "
               "(hanya dari abstrak, jangan menambah klaim), **Metode/teknologi**, dan **Kenapa penting**. "
               "Jika menggunakan chart/diagram, wajib blok mermaid, bukan ASCII atau gambar. Tabel tetap Markdown. "
-              f"Tutup dengan `### Istilah Kunci` (5 istilah) dan `### Koneksi ke Kurikulum` (kaitkan dengan: {', '.join(recent) or 'dasar bioinformatika'}).")
+              f"Tutup dengan `## Istilah Kunci` (5 istilah) dan `## Koneksi ke Kurikulum` (kaitkan dengan: {', '.join(recent) or 'dasar bioinformatika'}).")
     text, model = ai_generate(prompt, "Kamu mentor bioinformatika yang merangkum paper secara jujur dan ringkas.", max_tokens=4000)
-    return text.strip() + "\n", model
+    return normalize_markdown(text, news=True), model
 
 
 # ── README ───────────────────────────────────────────────────────────────────
@@ -382,7 +437,7 @@ def render_progress(data: dict) -> str:
     total = sum(c[1] for c in counts.values())
     percent = round(done / total * 100) if total else 0
     rows.append(f"| **Total** | **{done}** | **{total}** | **{percent}%** |")
-    diagram = (f'```mermaid\nflowchart LR\n    Total["Total: {total}"] --> Selesai["Tersedia: {done}"]\n'
+    diagram = (f'```mermaid\nflowchart TD\n    Total["Total: {total}"] --> Selesai["Tersedia: {done}"]\n'
                f'    Total --> Pending["Direncanakan: {total - done}"]\n```')
     return "<!-- PROGRESS:START -->\n" + diagram + "\n\n" + "\n".join(rows) + "\n<!-- PROGRESS:END -->"
 
@@ -407,7 +462,7 @@ def update_readme(data: dict) -> None:
 def paper_lines(papers: list[dict]) -> str:
     if not papers:
         return "_Tidak ada paper baru yang memenuhi kriteria hari ini._"
-    return "\n".join(f"- [{p['title']}]({p['url']}) — {p['authors']} · *{p['journal']}, {p['year']}*" for p in papers)
+    return "\n".join(f"- [{p['title']}]({p['url']})\n  - {p['authors']} · *{p['journal']}, {p['year']}*" for p in papers)
 
 
 def write_outputs(date_str: str, topic: dict | None, materi: str, code: tuple[str, str] | None, m_model: str,
@@ -419,25 +474,34 @@ def write_outputs(date_str: str, topic: dict | None, materi: str, code: tuple[st
         folder.mkdir(parents=True, exist_ok=True)
         body = materi
         if code:
-            body += f"\n---\n\n## Contoh Kode\n\nJalankan: `python {topic['folder']}/main.py`\n\n<details><summary>Contoh output</summary>\n\n```text\n{code[1].strip()[:2500]}\n```\n\n</details>\n"
+            output = code[1].strip()[:2500]
+            fence = "`" * max(3, 1 + max((len(run) for run in re.findall(r"`+", output)), default=0))
+            body += f"\n---\n\n## Contoh Kode\n\nJalankan: `python {topic['folder']}/main.py`\n\n<details><summary>Contoh output</summary>\n\n{fence}text\n{output}\n{fence}\n\n</details>\n"
             (folder / "main.py").write_text(code[0], encoding="utf-8")
         (folder / "README.md").write_text(body, encoding="utf-8")
     items = created if created else ([(topic, code is not None)] if topic else [])
-    materi_section = ("## 📚 Materi Baru\n\n" + "\n".join(
+    materi_section = ("## Materi Baru\n\n" + "\n".join(
         f"- [{t['title']}](../{t['folder']}/README.md) — {t['category']}, Tahun {t['year']}"
         + (" · `main.py` sudah dijalankan" if has_code else "") for t, has_code in items) + "\n"
-        if items else "## 📚 Materi\n\n_Semua topik kurikulum sudah selesai._\n")
-    digest = (f"# Update Harian — {date_str}\n\n> Dibuat otomatis via 9Router Astronacci · Materi: `{m_model}` · Rangkuman: `{n_model}`\n\n"
-              f"{materi_section}\n---\n\n## 🔬 Paper Terbaru\n\n{paper_lines(papers)}\n\n### Rangkuman\n\n{news}\n")
+        if items else "## Materi\n\n_Semua topik kurikulum sudah selesai._\n")
+    news = normalize_markdown(news, news=True)
+    digest = (f"# Update Harian — {date_str}\n\n"
+              f"[Beranda](../README.md) · [Berita hari ini](../News/Archive/{date_str}.md)\n\n"
+              f"> Dibuat otomatis via 9Router Astronacci · Materi: `{m_model}` · Rangkuman: `{n_model}`\n\n"
+              f"{materi_section}\n---\n\n## Paper Terbaru\n\n{paper_lines(papers)}\n\n## Rangkuman\n\n{news}\n")
     (DAILY_DIR / f"{date_str}.md").write_text(digest, encoding="utf-8")
-    preview = re.sub(r"^#.*\n", "", materi, count=1).strip()[:600] if materi else ""
     (DAILY_DIR / "LATEST.md").write_text(
-        f"# Update Terbaru — {date_str}\n\n" + (f"**Materi:** [{topic['title']}](../{topic['folder']}/README.md)\n\n{preview}…\n\n" if topic else "")
-        + f"**Paper:** {len(papers)}\n\n[📖 Baca update lengkap](./{date_str}.md)\n", encoding="utf-8")
+        f"# Update Terbaru — {date_str}\n\n"
+        "[Beranda](../README.md) · [Berita terbaru](../News/LATEST.md)\n\n"
+        f"{materi_section}\n**Paper:** {len(papers)}\n\n[Baca update lengkap](./{date_str}.md)\n", encoding="utf-8")
     (NEWS_DIR / "Archive" / f"{date_str}.md").write_text(
-        f"# Berita Bioinformatika — {date_str}\n\n## Paper\n\n{paper_lines(papers)}\n\n---\n\n{news}\n", encoding="utf-8")
+        f"# Berita Bioinformatika — {date_str}\n\n"
+        f"[Beranda](../../README.md) · [Update harian](../../Daily/{date_str}.md)\n\n"
+        f"## Paper\n\n{paper_lines(papers)}\n\n---\n\n## Rangkuman\n\n{news}\n", encoding="utf-8")
     (NEWS_DIR / "LATEST.md").write_text(
-        f"# Berita Terbaru — {date_str}\n\n{paper_lines(papers)}\n\n[Rangkuman lengkap →](./Archive/{date_str}.md)\n", encoding="utf-8")
+        f"# Berita Terbaru — {date_str}\n\n"
+        "[Beranda](../README.md) · [Update terbaru](../Daily/LATEST.md)\n\n"
+        f"## Paper\n\n{paper_lines(papers)}\n\n[Rangkuman lengkap →](./Archive/{date_str}.md)\n", encoding="utf-8")
 
 
 def git(*args: str) -> str:
