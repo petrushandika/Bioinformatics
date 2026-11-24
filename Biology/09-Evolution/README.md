@@ -2,7 +2,7 @@
 
 # Evolusi & Seleksi Alam
 
-[Beranda](../../README.md) · [← Metabolisme](../08-Metabolism/README.md) · [Selesai: kembali ke indeks →](../../README.md)
+[Beranda](../../README.md) · [← Metabolisme](../08-Metabolism/README.md) · [Taksonomi →](../10-Taxonomy/README.md)
 
 ## Gambaran dan Cara Belajar
 
@@ -256,4 +256,4 @@ Posisi yang sangat terkonservasi dapat menandakan kendala fungsional atau strukt
 
 ---
 
-[↑ Atas](#top) · [Beranda](../../README.md) · [← Metabolisme](../08-Metabolism/README.md) · [Selesai: kembali ke indeks →](../../README.md)
+[↑ Atas](#top) · [Beranda](../../README.md) · [← Metabolisme](../08-Metabolism/README.md) · [Taksonomi →](../10-Taxonomy/README.md)
