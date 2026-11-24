@@ -1,73 +1,70 @@
-# Bioinformatics Learning Journey 🧬
+# Bioinformatics
 
-Repositori ini mendokumentasikan perjalanan belajar bioinformatika secara terstruktur — mulai dari konsep dasar biologi, pemrograman Python, hingga analisis data genomik tingkat lanjut. Materi diperbarui otomatis setiap hari melalui GitHub Actions.
+Catatan belajar bioinformatika berbahasa Indonesia: memahami biologi, berlatih Python, lalu menghubungkan keduanya dengan analisis data biologis. Repo ini adalah **jurnal belajar**, bukan pipeline penelitian siap produksi atau bukti penguasaan seluruh kurikulum.
 
----
+[Mulai dari biologi](Biology/01-History/README.md) · [Latihan Python](Python/README.md) · [Update terbaru](Daily/LATEST.md) · [Ringkasan paper](News/LATEST.md)
 
-## Daftar Isi
+## Mulai Belajar
 
-- [Tentang Proyek](#tentang-proyek)
-- [Motivasi](#motivasi)
-- [Struktur Folder](#struktur-folder)
-- [Kurikulum](#kurikulum)
-- [Progress Belajar](#progress-belajar)
-- [Pembaruan Harian](#pembaruan-harian)
-- [Tools & Teknologi](#tools--teknologi)
-- [Referensi](#referensi)
+1. Ikuti materi biologi sesuai urutan pada tabel kurikulum. Baca diagram konsep, lalu kerjakan pertanyaan latihan sebelum membuka topik berikutnya.
+2. Jalankan contoh Python yang sudah tersedia. Ubah input atau variabelnya dan jelaskan perbedaan hasilnya.
+3. Baca ringkasan paper sebagai pengantar, lalu periksa sumber aslinya. Ringkasan otomatis berdasarkan abstrak bukan pengganti penilaian metode dan hasil penelitian.
 
----
+Untuk menjalankan contoh lokal, gunakan Git dan **Python 3.10+** (`match` pada latihan control flow memerlukannya). Workflow harian menggunakan Python 3.12. Contoh dasar yang tersedia hanya memakai standard library.
 
-## Tentang Proyek
-
-Repositori ini adalah catatan perjalanan belajar bioinformatika yang mengikuti kurikulum terstruktur dari [OSSU Bioinformatics](https://github.com/ossu/bioinformatics). Setiap folder berisi file markdown berisi teori, konsep, dan kode yang relevan.
-
-> Materi baru ditambahkan otomatis setiap hari. Cek folder [`Daily/`](./Daily/) untuk log harian terbaru.
-
----
-
-## Motivasi
-
-Bioinformatika adalah persimpangan antara biologi, ilmu komputer, dan analisis data. Perjalanan ini dimotivasi oleh:
-
-- Memahami aspek komputasional dalam penelitian biologi
-- Mengembangkan kemampuan memproses dan menganalisis data biologis
-- Berkontribusi pada bidang biologi komputasional yang berkembang pesat
-- Menjembatani ilmu biologi dengan pemrograman komputer
-- Menguasai tools dan praktik standar industri bioinformatika
-
----
-
-## Struktur Folder
-
-```
-Bioinformatics/
-├── README.md                    ← Halaman utama (file ini)
-├── Daily/                       ← Log & materi harian (auto-update)
-│   ├── LATEST.md               ← Materi terbaru hari ini
-│   └── YYYY-MM-DD.md           ← Arsip per tanggal
-├── Biology/                     ← Materi biologi
-│   ├── 01-History/             ← Sejarah biologi & bioinformatika
-│   ├── 02-Cell-Structure/      ← Struktur sel
-│   ├── 03-Molecular-Biology/   ← Biologi molekuler
-│   ├── 04-Genetics/            ← Genetika
-│   └── 05-Biochemistry/        ← Biokimia dasar
-├── Python/                      ← Pemrograman Python
-│   └── 01-Basics/              ← Dasar-dasar Python
-│       ├── 01-Intro/
-│       ├── 02-Comment/
-│       ├── 03-Variable/
-│       ├── 04-Data-Type/
-│       ├── 05-String/
-│       ├── 06-Operator/
-│       └── 07-Control-Program/
-└── .github/
-    └── workflows/
-        └── daily-update.yml    ← Otomatisasi GitHub Actions
+```bash
+git clone https://github.com/petrushandika/Bioinformatics.git
+cd Bioinformatics
+python3 Python/01-Basics/01-Intro/main.py
 ```
 
----
+Latihan [`07-Control-Program`](Python/01-Basics/07-Control-Program/main.py) bersifat interaktif. Input username/password di sana hanya demonstrasi percabangan: **jangan gunakan kredensial asli** dan jangan jadikan contoh itu implementasi autentikasi.
+
+## Peta Belajar
+
+```mermaid
+flowchart LR
+    B["Fondasi biologi"] --> M["Biologi molekuler dan genetika"]
+    P["Dasar Python"] --> D["Pemrosesan data"]
+    S["Matematika dan statistik — rencana"] --> A["Analisis bioinformatika — rencana"]
+    M --> A
+    D --> A
+    A --> G["Genomik, struktur, dan machine learning — rencana"]
+    G --> C["Capstone — rencana"]
+```
+
+Urutan tahun pada kurikulum adalah pengelompokan tahap belajar, bukan durasi wajib. Topik lanjutan belum tersedia sampai folder dan materinya dibuat.
+
+## Isi Repositori
+
+```mermaid
+flowchart TD
+    R["Bioinformatics"] --> B["Biology — catatan konsep"]
+    R --> P["Python — latihan yang dapat dijalankan"]
+    R --> D["Daily — jurnal dan tautan materi"]
+    R --> N["News — ringkasan paper dan arsip"]
+    R --> S["scripts — kurikulum dan generator"]
+    R --> W["GitHub Actions — pemicu pembaruan"]
+    S --> D
+    S --> N
+    W --> S
+```
+
+| Lokasi | Isi dan cara menggunakannya |
+|---|---|
+| [`Biology/`](Biology/) | Materi sejarah, sel, molekuler, genetika, biokimia, protein, enzim, metabolisme, evolusi, dan taksonomi. |
+| [`Python/`](Python/README.md) | Tujuh latihan awal: intro, komentar, variabel, tipe data, string, operator, dan control flow. |
+| [`Daily/LATEST.md`](Daily/LATEST.md) | Pintu masuk ke update harian terbaru; arsip per tanggal berada di `Daily/`. |
+| [`News/LATEST.md`](News/LATEST.md) | Tautan paper dan arsip ringkasan berbasis abstrak. |
+| [`scripts/curriculum.json`](scripts/curriculum.json) | Sumber status dan urutan topik yang digunakan otomatisasi. |
+| [`scripts/daily_update.py`](scripts/daily_update.py) | Generator materi, pengambilan paper, dan pembaruan indeks. |
+| [Workflow harian](.github/workflows/daily-update.yml) | Jadwal, konfigurasi Python, dan trigger manual. |
 
 ## Kurikulum
+
+Terinspirasi oleh [OSSU Bioinformatics](https://github.com/ossu/bioinformatics), dengan urutan dan materi lokal yang disesuaikan. Ini bukan salinan lengkap atau sertifikasi OSSU.
+
+**Legenda:** ✅ materi tersedia menurut status generator; 🔜 masih direncanakan. Status tersedia **tidak berarti sudah dipelajari, ditinjau pakar, atau lulus evaluasi**. Folder yang belum tersedia ditulis sebagai teks, bukan tautan kosong.
 
 <!-- CURRICULUM:START -->
 ### Tahun 1 — Fondasi
@@ -144,74 +141,80 @@ Bioinformatics/
 
 <!-- CURRICULUM:END -->
 
----
-
 ## Progress Belajar
 
-<!-- PROGRESS:START -->
-```
-Biologi                 █████████░ 10/11  91%
-Python                  ░░░░░░░░░░  0/8    0%
-Matematika & Statistik  ░░░░░░░░░░  0/7    0%
-Bioinformatika          ░░░░░░░░░░  0/17   0%
-Machine Learning        ░░░░░░░░░░  0/5    0%
-Komputasi               ░░░░░░░░░░  0/3    0%
-Capstone                ░░░░░░░░░░  0/1    0%
-Total                   ██░░░░░░░░ 10/52  19%
-```
-<!-- PROGRESS:END -->
+Grafik berikut menghitung **ketersediaan materi dalam manifest kurikulum**, bukan kemampuan belajar. Tujuh contoh Python awal merupakan latihan tambahan yang belum tercantum sebagai entri manifest; angka kategori Python karena itu tidak menghitungnya.
 
----
+<!-- PROGRESS:START -->
+```mermaid
+flowchart LR
+    Total["Total: 52"] --> Selesai["Tersedia: 10"]
+    Total --> Pending["Direncanakan: 42"]
+```
+
+| Kategori | Tersedia | Total | Progress |
+|----------|---------|-------|----------|
+| 🧬 Biologi | 10 | 11 | 91% |
+| 💻 Python | 0 | 8 | 0% |
+| 📊 Matematika & Statistik | 0 | 7 | 0% |
+| 🔬 Bioinformatika | 0 | 17 | 0% |
+| 🤖 Machine Learning | 0 | 5 | 0% |
+| 🖥️ Komputasi | 0 | 3 | 0% |
+| 🎓 Capstone | 0 | 1 | 0% |
+| **Total** | **10** | **52** | **19%** |
+<!-- PROGRESS:END -->
 
 ## Pembaruan Harian
 
-Setiap hari, GitHub Actions secara otomatis menambahkan konten baru ke folder [`Daily/`](./Daily/). Ini mencakup:
+Workflow dijadwalkan pada **23:17 UTC / 06:17 WIB**. Waktu mulai bisa tertunda oleh antrean GitHub Actions. Pemicu manual tersedia di tab Actions; `repository_dispatch` juga didukung. Jika jurnal tanggal WIB yang sama sudah ada, proses berhenti tanpa perubahan kecuali opsi `force` diaktifkan.
 
-- Ringkasan topik baru
-- Catatan belajar harian
-- Kode contoh
-- Pertanyaan latihan
+```mermaid
+flowchart TD
+    T["Jadwal atau pemicu manual"] --> E{"Jurnal hari ini sudah ada?"}
+    E -->|"Ya, tanpa force"| X["Selesai tanpa perubahan"]
+    E -->|"Tidak, atau force"| P["Pilih topik pending"]
+    P --> G["Buat materi lewat 9Router"]
+    G --> V{"Validasi materi lolos?"}
+    V -->|"Tidak setelah retry"| F["Hentikan dengan error"]
+    V -->|"Ya"| K["Coba buat dan uji kode jika kategori mendukung"]
+    K --> N["Cari paper di PubMed; fallback Europe PMC"]
+    N --> R["Rangkum abstrak jika tersedia"]
+    R --> O["Tulis materi, jurnal, berita, dan indeks"]
+    O --> C["Commit dan push ke main"]
+```
 
-**Untuk membaca update terbaru:** buka [`Daily/LATEST.md`](./Daily/LATEST.md)
+Jika seluruh topik sudah tersedia, proses melewati pembuatan materi dan tetap mencoba memperbarui ringkasan paper. Kegagalan pembuatan kode tidak selalu menggagalkan materi; lihat apakah `main.py` benar-benar ada. Validasi struktur dan eksekusi contoh **bukan verifikasi ilmiah otomatis**.
 
----
+### Konfigurasi pengelola
 
-## Tools & Teknologi
+| Pengaturan GitHub Actions | Kegunaan |
+|---|---|
+| Secret `ROUTER_API_KEY` | Autentikasi generator; jangan ditaruh di kode atau README. |
+| Variable `ROUTER_BASE_URL` | Override endpoint generator; default ada di workflow. |
+| Variable `ROUTER_MODELS` | Daftar model utama/cadangan, dipisahkan koma. |
+| Input manual `topics` | Jumlah topik per run, dibatasi 1–5. |
+| Input manual `force` | Memproses ulang tanggal yang sama; dapat menimpa jurnal/ringkasan tanggal tersebut. |
 
-| Kategori | Tools |
-|----------|-------|
-| Bahasa Pemrograman | Python, R, Java |
-| Bioinformatika | BioPython, Bioconductor, BLAST |
-| Analisis Data | Pandas, NumPy, SciPy |
-| Visualisasi | Matplotlib, ggplot2 |
-| Database | GenBank, UniProt, NCBI |
-| Workflow | GitHub Actions |
+**Perhatian:** menjalankan `scripts/daily_update.py` bukan preview read-only. Skrip memanggil layanan eksternal, menulis berkas, men-stage seluruh perubahan, dan membuat commit. `--no-push` hanya menonaktifkan push, bukan penulisan atau commit. Gunakan checkout bersih yang terpisah bila perlu menjalankannya lokal.
 
----
+## Konvensi Dokumentasi
+
+- Semua chart, peta konsep, alur, dan diagram ditulis dalam fenced code block **`mermaid`** di Markdown, bukan gambar atau ASCII art.
+- Tabel perbandingan tetap tabel Markdown. Sekuens biologis, persamaan, kode, dan output tetap format teks/kode yang sesuai; bukan dipaksakan menjadi diagram.
+- Setiap diagram harus disertai penjelasan; Mermaid memvisualisasikan konsep, bukan bukti eksperimen.
+- Bagian kurikulum dan progress di antara marker HTML dikelola generator. Edit sumber status pada `scripts/curriculum.json`, bukan angka hasil render.
+- Perbaiki klaim ilmiah dengan sumber yang dapat diperiksa. Bedakan contoh sintetis, hasil eksekusi, hipotesis, dan hasil penelitian.
+
+GitHub merender Mermaid langsung di halaman Markdown. Pada editor lokal, aktifkan dukungan preview Mermaid untuk melihat diagram.
 
 ## Referensi
 
-Kurikulum ini mengikuti [OSSU Bioinformatics Curriculum](https://github.com/ossu/bioinformatics) dan dilengkapi dengan:
+- [OSSU Bioinformatics](https://github.com/ossu/bioinformatics) — inspirasi jalur belajar.
+- [NCBI](https://www.ncbi.nlm.nih.gov/) dan [EMBL-EBI](https://www.ebi.ac.uk/) — database dan materi bioinformatika.
+- [UniProt](https://www.uniprot.org/) — informasi urutan dan fungsi protein.
+- [RCSB PDB](https://www.rcsb.org/) — struktur makromolekul biologis.
+- [Python Tutorial](https://docs.python.org/3/tutorial/) — referensi bahasa untuk latihan kode.
 
-1. **Kursus Online**
-   - edX, Coursera, MIT OpenCourseWare
+## Lisensi dan Batas Penggunaan
 
-2. **Buku Teks**
-   - *Bioinformatics and Functional Genomics* — Jonathan Pevsner
-   - *Python for Biologists* — Martin Jones
-   - *Statistical Methods in Bioinformatics* — William Ewens
-
-3. **Sumber Online**
-   - [NCBI](https://www.ncbi.nlm.nih.gov/)
-   - [European Bioinformatics Institute](https://www.ebi.ac.uk/)
-   - [Galaxy Project](https://galaxyproject.org/)
-
----
-
-## Lisensi
-
-Repositori ini dilisensikan di bawah MIT License.
-
----
-
-_Repositori ini diperbarui otomatis setiap hari. Terakhir diperbarui: lihat [Daily/LATEST.md](./Daily/LATEST.md)_
+Belum ada berkas `LICENSE` di repositori ini; jangan menganggap materi otomatis berlisensi MIT. Sumber eksternal tetap mengikuti ketentuan masing-masing. Materi disusun untuk belajar, bukan rekomendasi klinis atau dasar diagnosis.

@@ -1,5 +1,11 @@
 # Taksonomi & Klasifikasi Makhluk Hidup
 
+[Beranda](../../README.md) · [← Evolusi](../09-Evolution/README.md)
+
+## Gambaran dan Cara Belajar
+
+Bandingkan hierarki takson dengan hubungan kekerabatan: keduanya bukan hal yang sama. Gunakan contoh pohon untuk membaca nenek moyang bersama, lalu kerjakan pertanyaan latihan.
+
 ## Tujuan Pembelajaran
 
 Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
@@ -149,15 +155,12 @@ Tabel berikut menunjukkan contoh hierarki klasifikasi manusia.
 
 Diagram sederhana berikut menunjukkan hubungan tiga takson hipotetis:
 
-```text
-Akar
-  |
-  +---------------- C
-  |
-  +------+
-         +--------- A
-         |
-         +--------- B
+```mermaid
+flowchart TD
+    R["Akar: nenek moyang bersama"] --> C["C"]
+    R --> AB["Nenek moyang bersama A dan B"]
+    AB --> A["A"]
+    AB --> B["B"]
 ```
 
 A dan B memiliki nenek moyang bersama yang lebih baru dibandingkan nenek moyang bersama masing-masing dengan C. Karena itu, A dan B disebut **takson saudara**. Diagram ini tidak menyatakan bahwa C lebih primitif.

@@ -1,4 +1,12 @@
+<a id="top"></a>
+
 # Genetika
+
+[Beranda](../../README.md) · [← Biologi Molekuler](../03-Molecular-Biology/README.md) · [Biokimia →](../05-Biochemistry/README.md)
+
+## Gambaran dan Cara Belajar
+
+Pelajari pewarisan alel dari persilangan hingga populasi. Gunakan bagan dan tabel untuk membedakan genotipe, fenotipe, pola pewarisan, serta asumsi model Mendel dan Hardy–Weinberg.
 
 ## Apa itu Genetika?
 
@@ -10,7 +18,7 @@
 
 ### Gregor Mendel (1822–1884)
 
-Bapa genetika modern. Melakukan percobaan pada ~29.000 tanaman kacang polong (*Pisum sativum*) selama 8 tahun.
+Bapak genetika modern. Melakukan percobaan pada ~29.000 tanaman kacang polong (*Pisum sativum*) selama 8 tahun.
 
 ### Hukum I Mendel — Segregasi
 
@@ -18,29 +26,31 @@ Bapa genetika modern. Melakukan percobaan pada ~29.000 tanaman kacang polong (*P
 
 **Contoh:**
 
+```mermaid
+flowchart TD
+    P["Induk: Tt × Tt"] --> G["Masing-masing menghasilkan gamet T atau t"]
+    G --> A["TT: peluang 1/4"]
+    G --> B["Tt: peluang 1/2"]
+    G --> C["tt: peluang 1/4"]
+    A --> H["Tinggi: total 3/4"]
+    B --> H
+    C --> L["Pendek: 1/4"]
 ```
-Orang tua:  Tt  ×  Tt
-            ↓
-Gamet:   T,t    ×   T,t
 
-Bagan Punnett:
-      T      t
-T  | TT  |  Tt  |
-t  | Tt  |  tt  |
-
-Rasio genotip:  1 TT : 2 Tt : 1 tt
-Rasio fenotip:  3 Tinggi : 1 Pendek
-```
+Rasio genotipe 1 TT : 2 Tt : 1 tt dan fenotipe 3 tinggi : 1 pendek merupakan harapan untuk dominansi penuh, bukan jumlah pasti pada setiap keluarga.
 
 ### Hukum II Mendel — Pemisahan Bebas
 
-> *"Gen untuk sifat yang berbeda diwariskan secara bebas satu sama lain."*
+> Alel pada lokus yang tidak terpaut, atau berjarak cukup jauh sehingga tampak tidak terpaut, dapat memilah secara bebas saat pembentukan gamet. Gen terpaut tidak selalu mengikuti pola ini.
 
+```mermaid
+flowchart LR
+    P["BBTT × bbtt"] --> F["F1: seluruhnya BbTt"]
+    F --> C["Persilangan F1: BbTt × BbTt"]
+    C --> R["F2: rasio fenotipe harapan 9:3:3:1"]
 ```
-Orang tua:  BBTT  ×  bbtt
-F1:         BbTt  (semua)
-F2 rasio:   9:3:3:1
-```
+
+Rasio ini mensyaratkan pemilahan bebas kedua lokus, dominansi penuh, dan tidak adanya interaksi gen yang mengubah pengelompokan fenotipe.
 
 ---
 
@@ -51,9 +61,9 @@ F2 rasio:   9:3:3:1
 | Gen | Segmen DNA yang mengkode protein/RNA fungsional |
 | Alel | Varian dari gen yang sama |
 | Genotip | Komposisi genetik (TT, Tt, tt) |
-| Fenotip | Ekspresi fisik/tampak dari gen |
-| Dominan | Alel yang diekspresikan (T) |
-| Resesif | Alel yang tersembunyi saat berpasangan (t) |
+| Fenotip | Sifat teramati atau terukur hasil interaksi genotipe dan lingkungan |
+| Dominan | Alel yang menentukan fenotipe heterozigot pada model dominansi penuh (T) |
+| Resesif | Efek fenotipenya tertutupi pada heterozigot dalam model dominansi penuh (t) |
 | Homozigot | Dua alel identik (TT atau tt) |
 | Heterozigot | Dua alel berbeda (Tt) |
 | Lokus | Posisi gen pada kromosom |
@@ -64,15 +74,16 @@ F2 rasio:   9:3:3:1
 
 ### Struktur Kromosom
 
-```
-Kromosom terdiri dari:
-- DNA (untai panjang)
-- Histon (protein pengemas)
-- Scaffold protein
+Kromosom eukariotik tersusun atas DNA, histon, dan protein pengorganisasi lainnya.
 
-Tingkatan kemasan:
-DNA → Nukleosom → Solenoid → Loop → Kromosom
+```mermaid
+flowchart LR
+    D[DNA] --> N["Nukleosom: DNA melilit histon"]
+    N --> C["Kromatin: organisasi dinamis dan loop"]
+    C --> K["Kromosom yang terkondensasi saat pembelahan"]
 ```
+
+Model solenoid bukan tahapan universal pengemasan kromatin di dalam sel.
 
 ### Jumlah Kromosom
 
@@ -87,8 +98,7 @@ DNA → Nukleosom → Solenoid → Loop → Kromosom
 
 ### Kromosom Seks
 
-- **Perempuan:** XX
-- **Laki-laki:** XY
+Pada manusia, kariotipe **XX** umumnya berkaitan dengan perkembangan perempuan dan **XY** dengan laki-laki. Terdapat variasi kromosom dan perkembangan seks; kromosom bukan satu-satunya faktor penentunya.
 
 ---
 
@@ -96,37 +106,23 @@ DNA → Nukleosom → Solenoid → Loop → Kromosom
 
 ### 1. Dominan Autosomal
 
-```
-Ciri: Sifat muncul di setiap generasi
-Contoh: Penyakit Huntington, Polidaktili
-Pola:  Aa × aa → 1/2 anak terpengaruh
-```
+**Ciri:** sifat dapat muncul lintas generasi, tetapi penetransi dan usia onset dapat memengaruhi pola. **Contoh:** penyakit Huntington dan beberapa bentuk polidaktili.
+
+Pada model dominansi penuh, persilangan `Aa × aa` memberi peluang 1/2 anak terdampak pada setiap kelahiran.
 
 ### 2. Resesif Autosomal
 
-```
-Ciri: Gen dibawa oleh carrier tanpa gejala
-Contoh: Fibrosis Kistik, Anemia Sel Sabit
-Pola:  Aa × Aa → 1/4 anak terpengaruh
-```
+**Ciri:** heterozigot dapat menjadi pembawa tanpa gejala penyakit resesif. **Contoh:** fibrosis kistik dan penyakit sel sabit.
+
+Pada persilangan dua pembawa `Aa × Aa`, peluang anak `aa` adalah 1/4 pada setiap kelahiran.
 
 ### 3. X-Linked
 
-```
-Ciri: Gen pada kromosom X
-Contoh: Buta Warna, Hemofilia
-Laki-laki (XY) lebih sering terdampak
-karena hanya memiliki 1 kromosom X
-```
+**Ciri:** lokus berada pada kromosom X. Untuk sifat resesif terpaut X, individu XY lebih sering terdampak karena hanya memiliki satu salinan lokus tersebut. **Contoh:** buta warna merah–hijau dan hemofilia A.
 
 ### 4. Kodominans
 
-```
-Ciri: Kedua alel diekspresikan bersamaan
-Contoh: Golongan Darah ABO
-  Alel: Iᴬ (A), Iᴮ (B), i (O)
-  IᴬIᴮ = Golongan Darah AB
-```
+**Ciri:** kedua alel tampak pada fenotipe heterozigot. Pada sistem ABO, alel Iᴬ dan Iᴮ bersifat kodominan; keduanya dominan terhadap i. Genotipe IᴬIᴮ menghasilkan golongan darah AB.
 
 ---
 
@@ -148,7 +144,7 @@ Contoh: Golongan Darah ABO
 | Penyakit | Tipe | Penyebab |
 |----------|------|----------|
 | Down Syndrome | Kromosomal | Trisomi 21 (3 kromosom ke-21) |
-| Turner Syndrome | Kromosomal | XO (hanya 1 kromosom X) |
+| Turner Syndrome | Kromosomal | 45,X (monosomi X; sebagian kasus mosaik) |
 | Klinefelter | Kromosomal | XXY |
 | Anemia Sel Sabit | Titik mutasi | Glu→Val pada HbS |
 | Fibrosis Kistik | Resesif | Mutasi gen CFTR |
@@ -158,17 +154,18 @@ Contoh: Golongan Darah ABO
 
 ## Epigenetik
 
-Perubahan ekspresi gen **tanpa perubahan sekuens DNA**.
+Perubahan keadaan regulasi gen atau kromatin **tanpa perubahan sekuens DNA**, yang dapat dipertahankan melalui pembelahan sel. Istilah epigenetik tidak berarti setiap perubahan ekspresi diwariskan lintas generasi.
 
+```mermaid
+flowchart LR
+    E["Regulasi epigenetik dan RNA"] --> D["Metilasi DNA pada promoter: sering terkait penekanan transkripsi"]
+    E --> H["Asetilasi histon: sering terkait akses kromatin yang meningkat"]
+    E --> R["RNA non-coding: mengatur kromatin atau ekspresi RNA"]
+    R --> M["miRNA: represi translasi dan/atau degradasi mRNA"]
+    E --> C["Remodeling kromatin: mengubah akses ke DNA"]
 ```
-Mekanisme Epigenetik:
-┌─────────────────────────────┐
-│ Metilasi DNA               │  ─── CpG island → gen dimatikan
-│ Modifikasi Histon          │  ─── Asetilasi → gen dinyalakan
-│ RNA non-coding             │  ─── miRNA → post-translational silencing
-│ Remodeling Kromatin        │  ─── Buka/tutup akses DNA
-└─────────────────────────────┘
-```
+
+Efek bergantung pada lokasi dan konteks. Tidak semua regulasi oleh RNA non-coding merupakan perubahan epigenetik yang stabil atau diwariskan.
 
 **Fakta menarik:** Kembar identik memiliki DNA sama, tetapi ekspresi gen dapat berbeda karena epigenetik!
 
@@ -185,7 +182,7 @@ Frekuensi alel dalam populasi tetap konstan **jika**:
 - Tidak ada migrasi
 - Tidak ada seleksi alam
 
-```
+```text
 Formula: p² + 2pq + q² = 1
          p + q = 1
 
@@ -200,15 +197,14 @@ q² = frekuensi aa
 
 ## Relevansi dengan Bioinformatika
 
-```
-Genetika → Bioinformatika
-
-Sekuens gen       → Gene annotation, database GenBank
-SNP (variasi)     → GWAS (Genome-Wide Association Study)
-Pewarisan sifat   → Pemodelan pedigree komputasional
-Penyakit genetik  → Clinical variant interpretation
-Genetika populasi → Population genomics, phylogenetics
-Epigenetik        → ChIP-seq, WGBS analysis
+```mermaid
+flowchart LR
+    G["Sekuens gen"] --> A["Anotasi gen dan GenBank"]
+    S["Varian SNP"] --> W[GWAS]
+    P["Pewarisan sifat"] --> D["Pemodelan silsilah"]
+    K["Penyakit genetik"] --> I["Interpretasi varian klinis"]
+    F["Frekuensi alel populasi"] --> N["Genomika populasi"]
+    E[Epigenetik] --> C["ChIP-seq dan analisis metilasi WGBS"]
 ```
 
 ---
@@ -223,4 +219,4 @@ Epigenetik        → ChIP-seq, WGBS analysis
 
 ---
 
-_[← Kembali: Biologi Molekuler](../03-Molecular-Biology/README.md) | [Lanjut: Biokimia →](../05-Biochemistry/README.md)_
+[↑ Atas](#top) · [Beranda](../../README.md) · [← Biologi Molekuler](../03-Molecular-Biology/README.md) · [Biokimia →](../05-Biochemistry/README.md)

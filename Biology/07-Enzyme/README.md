@@ -1,4 +1,12 @@
+<a id="top"></a>
+
 # Enzim & Kinetika Enzim
+
+[Beranda](../../README.md) · [← Protein](../06-Protein/README.md) · [Metabolisme →](../08-Metabolism/README.md)
+
+## Gambaran dan Cara Belajar
+
+Hubungkan mekanisme katalisis dengan pengukuran laju dan regulasi enzim. Setelah memahami asumsi model, kerjakan contoh Michaelis–Menten dan bandingkan pola inhibisi tanpa menyamakan parameter kinetika dengan afinitas secara otomatis.
 
 ## Tujuan Pembelajaran
 
@@ -159,7 +167,21 @@ Langkah dasar eksperimen adalah:
 
 Regresi nonlinear langsung terhadap persamaan Michaelis–Menten umumnya lebih sesuai daripada memakai transformasi kebalikan Lineweaver–Burk untuk estimasi parameter. Transformasi kebalikan mengubah struktur galat dan dapat memberikan pengaruh berlebihan pada titik berkonsentrasi substrat rendah.
 
-## Tabel atau Diagram
+## Peta Analisis Kinetika
+
+```mermaid
+flowchart TD
+    Q["Pertanyaan: bagaimana substrat atau inhibitor memengaruhi laju?"] --> D["Ukur sinyal terhadap waktu pada beberapa konsentrasi substrat"]
+    D --> C["Periksa blanko, replikasi, dan rentang awal linear"]
+    C --> V["Hitung laju awal"]
+    V --> M["Pilih model sesuai mekanisme dan asumsi"]
+    M --> F["Regresi nonlinear dan estimasi ketidakpastian"]
+    F --> R["Periksa residual dan kecocokan model"]
+    R --> I["Tafsirkan parameter dalam kondisi eksperimen"]
+    R -->|Model tidak memadai| M
+```
+
+## Ringkasan Konsep
 
 Tabel berikut merangkum pola inhibisi reversibel klasik. Parameter merupakan nilai **tampak** pada konsentrasi inhibitor tertentu.
 
@@ -250,3 +272,7 @@ Kemiripan urutan atau struktur belum menjamin kesamaan \(K_m\) maupun \(k_{\text
 - **UniProt** — anotasi fungsi protein, aktivitas katalitik, kofaktor, dan residu penting.
 - **RCSB Protein Data Bank (PDB)** — struktur tiga dimensi enzim serta kompleksnya dengan ligan.
 - **NCBI Bookshelf** — buku dan materi biomedis untuk memperkuat dasar biokimia.
+
+---
+
+[↑ Atas](#top) · [Beranda](../../README.md) · [← Protein](../06-Protein/README.md) · [Metabolisme →](../08-Metabolism/README.md)

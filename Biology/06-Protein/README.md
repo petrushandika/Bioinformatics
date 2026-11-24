@@ -1,4 +1,12 @@
+<a id="top"></a>
+
 # Struktur & Fungsi Protein
+
+[Beranda](../../README.md) · [← Biokimia](../05-Biochemistry/README.md) · [Enzim →](../07-Enzyme/README.md)
+
+## Gambaran dan Cara Belajar
+
+Pelajari hubungan urutan, pelipatan, dinamika, dan fungsi protein. Gunakan hemoglobin sebagai contoh lintas skala, lalu ikuti alur analisis untuk membedakan hipotesis fungsi dari bukti eksperimen.
 
 ## Tujuan Pembelajaran
 
@@ -20,7 +28,14 @@ Namun, urutan asam amino belum otomatis menghasilkan protein yang berfungsi. Ran
 
 Prinsip pentingnya adalah:
 
-**Urutan asam amino → sifat pelipatan dan dinamika → interaksi molekuler → fungsi biologis.**
+```mermaid
+flowchart LR
+    U["Urutan asam amino"] --> P["Pelipatan dan dinamika"]
+    P --> I["Interaksi molekuler"]
+    I --> F["Fungsi biologis"]
+    L["Lingkungan, kofaktor, dan lokasi"] -.-> P
+    L -.-> I
+```
 
 Hubungan ini dipengaruhi lingkungan, termasuk pH, suhu, komposisi ion, dan keberadaan molekul pasangan. Karena itu, protein tidak dapat dipahami hanya sebagai “produk akhir gen”, tetapi sebagai molekul dinamis yang bekerja dalam konteks sel.
 
@@ -114,7 +129,7 @@ Lokasi juga menentukan fungsi. Protein yang aktif secara kimia belum tentu beker
 
 Sebagian protein dapat melipat kembali setelah kondisi dipulihkan. Pada kasus lain, agregasi atau perubahan kimia menyebabkan kehilangan fungsi yang sulit dipulihkan.
 
-## Tabel atau Diagram
+## Ringkasan Konsep
 
 | Tingkat struktur | Apa yang dijelaskan? | Penentu atau penstabil utama | Contoh konsekuensi fungsional |
 |---|---|---|---|
@@ -137,7 +152,13 @@ Pergantian ini menghasilkan permukaan yang, terutama pada keadaan terdeoksigenas
 
 Contoh ini menghubungkan beberapa skala:
 
-**Perubahan DNA → perubahan satu residu → perubahan interaksi protein → perubahan sifat sel → penyakit.**
+```mermaid
+flowchart LR
+    D["Varian DNA pada HBB"] --> R["Beta-globin: Glu6 menjadi Val"]
+    R --> P["Polimerisasi HbS saat deoksigenasi"]
+    P --> S["Eritrosit kurang lentur"]
+    S --> K["Gangguan aliran darah dan kerusakan sel"]
+```
 
 Pelajarannya bukan bahwa setiap mutasi menyebabkan penyakit, melainkan bahwa dampak mutasi sangat bergantung pada konteks struktural dan fisiologis.
 
@@ -166,7 +187,18 @@ Bioinformatika menghubungkan **urutan, struktur, fungsi, dan evolusi** melalui a
 5. **Menggunakan prediksi secara kritis.**  
    Model prediksi, termasuk yang tersedia melalui AlphaFold Protein Structure Database, berguna ketika struktur eksperimental belum tersedia. Namun, model bukan pengukuran langsung. Tingkat kepercayaan model, wilayah fleksibel, keadaan kompleks, ligan, dan alternatif konformasi harus diperhatikan.
 
-Alur sederhana untuk pemula adalah: **ambil urutan → cari homolog → identifikasi domain → periksa struktur atau model → rumuskan hipotesis fungsi**. Kesimpulan penting sebaiknya didukung eksperimen, misalnya pengukuran aktivitas atau mutagenesis terarah.
+Alur analisis untuk pemula:
+
+```mermaid
+flowchart TD
+    U["Ambil urutan dan periksa anotasi"] --> H["Cari homolog"]
+    H --> D["Identifikasi domain dan residu penting"]
+    D --> S["Periksa struktur atau model beserta kepercayaannya"]
+    S --> F["Rumuskan hipotesis fungsi"]
+    F --> E["Uji eksperimen: aktivitas atau mutagenesis"]
+```
+
+Prediksi fungsi tetap merupakan hipotesis sampai didukung bukti yang sesuai.
 
 ## Ringkasan
 
@@ -193,3 +225,7 @@ Alur sederhana untuk pemula adalah: **ambil urutan → cari homolog → identifi
 - **UniProt** — latihan membaca urutan, domain, lokasi seluler, dan bukti anotasi.
 - **RCSB Protein Data Bank dan PDB-101** — eksplorasi struktur tiga dimensi serta materi pengantar.
 - **NCBI Bookshelf** — buku dan materi biomedis untuk memperkuat konsep dasar.
+
+---
+
+[↑ Atas](#top) · [Beranda](../../README.md) · [← Biokimia](../05-Biochemistry/README.md) · [Enzim →](../07-Enzyme/README.md)

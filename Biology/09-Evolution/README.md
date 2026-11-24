@@ -1,6 +1,14 @@
+<a id="top"></a>
+
 # Evolusi & Seleksi Alam
 
-## Tujuan Pembelajaran (3–5 poin)
+[Beranda](../../README.md) · [← Metabolisme](../08-Metabolism/README.md) · [Taksonomi →](../10-Taxonomy/README.md)
+
+## Gambaran dan Cara Belajar
+
+Bedakan sumber variasi dari proses yang mengubah frekuensi alel. Gunakan contoh resistansi antibiotik, model Hardy–Weinberg, dan alur filogenetika untuk menilai penjelasan evolusi secara kritis.
+
+## Tujuan Pembelajaran
 
 Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
 
@@ -128,7 +136,23 @@ Konsep spesies biologis berguna, tetapi tidak mudah diterapkan pada organisme as
 
 Hubungan kekerabatan digambarkan melalui **pohon filogenetik**. Titik percabangan mewakili nenek moyang bersama yang diinferensikan. Spesies modern bukan “tangga kemajuan”; manusia dan simpanse, misalnya, berbagi nenek moyang bersama, bukan berarti manusia berasal dari simpanse modern.
 
-## Tabel atau Diagram
+## Peta Mekanisme Evolusi
+
+```mermaid
+flowchart TD
+    M["Mutasi"] --> V["Variasi genetik terwariskan"]
+    R["Rekombinasi"] -->|Kombinasi alel baru| V
+    G["Aliran gen"] -->|Alel dari populasi lain| V
+    V --> S["Seleksi: kontribusi keturunan berbeda menurut fenotipe dan lingkungan"]
+    V --> D["Hanyutan: pengambilan sampel alel secara acak"]
+    S --> F["Perubahan frekuensi alel lintas generasi"]
+    D --> F
+    G --> F
+    M --> F
+    F --> E["Evolusi populasi; tidak selalu adaptif"]
+```
+
+## Tabel Mekanisme Evolusi
 
 | Mekanisme | Proses utama | Hubungan dengan kebugaran | Dampak yang mungkin terjadi |
 |---|---|---|---|
@@ -192,13 +216,14 @@ Interpretasinya memerlukan kehati-hatian. Hasil bergantung pada kualitas penyela
 
 ### Alur Analisis Sederhana
 
-Alur kerja pemula dapat berupa:
-
-1. Mengambil sekuens homolog dari **NCBI** atau **UniProt**.
-2. Memeriksa anotasi dan memilih sekuens yang sebanding.
-3. Melakukan penyelarasan sekuens berganda.
-4. Memeriksa kualitas penyelarasan sebelum membangun pohon.
-5. Menghubungkan pola konservasi dengan fungsi dan struktur protein, misalnya menggunakan **PDB**.
+```mermaid
+flowchart TD
+    H["Ambil sekuens homolog dari NCBI atau UniProt"] --> A["Periksa anotasi dan pilih sekuens yang sebanding"]
+    A --> M["Penyelarasan sekuens berganda"]
+    M --> Q["Periksa kualitas alignment"]
+    Q --> P["Inferensikan pohon dengan model evolusi dan nilai dukungan"]
+    P --> I["Hubungkan konservasi dengan fungsi dan struktur PDB"]
+```
 
 Posisi yang sangat terkonservasi dapat menandakan kendala fungsional atau struktural. Namun, konservasi saja belum membuktikan mekanisme fungsi tertentu.
 
@@ -228,3 +253,7 @@ Posisi yang sangat terkonservasi dapat menandakan kendala fungsional atau strukt
 - **UniProt** — anotasi fungsi protein, keluarga protein, dan informasi sekuens untuk perbandingan evolusioner.
 - **Ensembl** — informasi genom komparatif, ortolog, paralog, dan pohon gen.
 - **PDB** — struktur tiga dimensi biomolekul untuk menghubungkan konservasi evolusioner dengan struktur dan fungsi.
+
+---
+
+[↑ Atas](#top) · [Beranda](../../README.md) · [← Metabolisme](../08-Metabolism/README.md) · [Taksonomi →](../10-Taxonomy/README.md)

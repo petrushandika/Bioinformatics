@@ -1,4 +1,12 @@
+<a id="top"></a>
+
 # Biologi Molekuler
+
+[Beranda](../../README.md) · [← Struktur Sel](../02-Cell-Structure/README.md) · [Genetika →](../04-Genetics/README.md)
+
+## Gambaran dan Cara Belajar
+
+Ikuti aliran informasi dari DNA ke RNA dan protein, beserta regulasinya. Gunakan contoh sekuens untuk berlatih menentukan arah transkripsi dan membaca kodon; bedakan proses biologis dari analisis komputasionalnya.
 
 ## Apa itu Biologi Molekuler?
 
@@ -8,18 +16,16 @@
 
 ## Dogma Sentral Biologi Molekuler
 
-```
-                Replikasi
-        DNA ────────────► DNA
-         │
-  Transkripsi
-         │
-         ▼
-        RNA ─────────────► Protein
-              Translasi
+```mermaid
+flowchart LR
+    D[DNA] -->|Replikasi| D
+    D -->|Transkripsi| R[RNA]
+    R -->|Translasi| P[Protein]
+    R -->|Transkripsi balik pada sistem tertentu| D
+    R -->|Replikasi pada virus RNA tertentu| R
 ```
 
-> **"DNA makes RNA makes Protein"** — Francis Crick, 1958
+> **Batas dogma sentral:** informasi sekuens tidak ditransfer kembali dari protein ke asam nukleat. Transkripsi balik tidak melanggar batas ini.
 
 ---
 
@@ -29,7 +35,7 @@
 
 DNA adalah polimer dari **nukleotida**. Setiap nukleotida terdiri dari:
 
-```
+```text
 Nukleotida = Fosfat + Gula Deoksiribosa + Basa Nitrogen
 ```
 
@@ -46,15 +52,12 @@ Nukleotida = Fosfat + Gula Deoksiribosa + Basa Nitrogen
 
 ### Struktur Heliks Ganda
 
+```text
+5'-ATGCATGC-3'
+3'-TACGTACG-5'
 ```
-5' ─ A─T─G─C─A─T─G─C ─ 3'   (untai sense)
-     | | | | | | | |
-3' ─ T─A─C─G─T─A─C─G ─ 5'   (untai antisense)
 
-- Antiparalel: satu untai 5'→3', pasangannya 3'→5'
-- Diameter: ~2 nm
-- 1 putaran = 10 pasangan basa = 3.4 nm
-```
+Kedua untai berpasangan secara komplementer dan antiparalel. Label pengode (*sense*) dan cetakan (*antisense*) ditentukan relatif terhadap gen yang ditranskripsi. Diameter DNA bentuk B sekitar 2 nm; satu putaran rata-rata sekitar 10,5 pasangan basa dengan kenaikan sekitar 0,34 nm per pasangan basa.
 
 ### Replikasi DNA
 
@@ -62,16 +65,13 @@ Proses penggandaan DNA sebelum pembelahan sel.
 
 **Model:** Semi-konservatif (setiap untai baru menggunakan 1 untai lama sebagai template)
 
-```
-Enzim-enzim kunci:
-┌─────────────────┬────────────────────────────────┐
-│ Helikase        │ Membuka heliks ganda (unzipping)│
-│ Primase         │ Membuat primer RNA              │
-│ DNA Polimerase  │ Menyintesis untai DNA baru      │
-│ Ligase          │ Menyambung fragmen Okazaki      │
-│ Topoisomerase   │ Mencegah supercoiling           │
-└─────────────────┴────────────────────────────────┘
-```
+| Enzim | Peran |
+|---|---|
+| Helikase | Membuka heliks ganda |
+| Primase | Membuat primer RNA |
+| DNA polimerase | Menyintesis DNA baru dalam arah 5′→3′ |
+| Ligase | Menutup celah antarnukleotida, termasuk setelah pemrosesan fragmen Okazaki |
+| Topoisomerase | Mengatur tegangan puntir dan superkoiling |
 
 ---
 
@@ -83,8 +83,8 @@ Enzim-enzim kunci:
 |-------|-----|-----|
 | Gula | Deoksiribosa | Ribosa |
 | Basa | A, T, G, C | A, **U**, G, C |
-| Untai | Dobel | Tunggal |
-| Lokasi | Nukleus | Nukleus & Sitoplasma |
+| Untai | Umumnya ganda | Umumnya tunggal; dapat membentuk struktur berpasangan |
+| Lokasi | Nukleus dan organel ber-DNA pada eukariota; nukleoid pada prokariota | Nukleus, sitoplasma, dan organel sesuai jenis sel |
 | Fungsi | Menyimpan info genetik | Ekspres gen |
 
 ### Jenis-jenis RNA
@@ -93,7 +93,7 @@ Enzim-enzim kunci:
 |-------|-----------|--------|
 | mRNA | messenger RNA | Membawa instruksi dari DNA ke ribosom |
 | tRNA | transfer RNA | Membawa asam amino ke ribosom |
-| rRNA | ribosomal RNA | Komponen struktural ribosom |
+| rRNA | ribosomal RNA | Komponen struktural dan katalitik ribosom |
 | miRNA | micro RNA | Regulasi ekspresi gen |
 | siRNA | small interfering RNA | RNA interference (silencing) |
 | lncRNA | long non-coding RNA | Regulasi genomik |
@@ -102,40 +102,35 @@ Enzim-enzim kunci:
 
 ## Transkripsi
 
-Proses pembuatan mRNA dari template DNA.
+Proses sintesis RNA dari template DNA; transkrip pengode protein diproses atau digunakan sebagai mRNA.
 
 ### Tahapan Transkripsi
 
+```mermaid
+flowchart TD
+    I["Inisiasi: RNA polimerase dan faktor terkait mengenali promoter"] --> E["Elongasi: template DNA dibaca 3′ ke 5′; RNA disintesis 5′ ke 3′"]
+    E --> T["Terminasi: transkripsi berakhir dan transkrip dilepaskan"]
 ```
-1. INISIASI
-   RNA Polimerase mengikat promoter (sekuens TATA box)
-   Heliks DNA terbuka
 
-2. ELONGASI  
-   RNA Polimerase bergerak sepanjang template (3'→5')
-   mRNA disintesis (5'→3')
-   Basa RNA: A↔U, T↔A, G↔C
-
-3. TERMINASI
-   RNA Polimerase mencapai sekuens terminator
-   mRNA dilepaskan
-```
+Tidak semua promoter memiliki TATA box. Pasangan basa template DNA ke RNA adalah A–U, T–A, G–C, dan C–G; transkripsi menghasilkan berbagai jenis RNA, bukan hanya mRNA.
 
 ### Pemrosesan mRNA (pada eukariot)
 
-```
-Pre-mRNA
-  │
-  ├── 5' Capping (tambah 7-metilguanosin)
-  ├── 3' Polyadenylation (tambah ekor poli-A)
-  └── RNA Splicing (buang intron, sambung ekson)
-  │
-  ▼
-Mature mRNA → diekspor ke sitoplasma
+```mermaid
+flowchart TD
+    P[Pre-mRNA] --> C["Penambahan tudung 5′: 7-metilguanosin"]
+    P --> A["Pemotongan ujung 3′ dan poliadenilasi pada kebanyakan mRNA"]
+    P --> S["Splicing: intron dibuang, ekson disambung"]
+    C --> M["mRNA matang"]
+    A --> M
+    S --> M
+    M --> X["Ekspor ke sitoplasma"]
 ```
 
-> **Intron:** sekuens non-coding yang dibuang
-> **Ekson:** sekuens coding yang dipertahankan
+Pemrosesan dapat berlangsung tumpang tindih dengan transkripsi; diagram tidak menetapkan urutan wajib antartahap.
+
+> **Intron:** bagian transkrip yang dibuang saat splicing.
+> **Ekson:** bagian yang dipertahankan pada RNA matang, termasuk daerah pengode dan daerah tak diterjemahkan (UTR).
 
 ---
 
@@ -145,33 +140,25 @@ Proses pembuatan protein dari mRNA.
 
 ### Kode Genetik
 
-mRNA dibaca dalam **kodon** (3 basa per kodon) → 1 asam amino
+mRNA dibaca dalam **kodon**, masing-masing tiga basa. Kodon pengode menentukan asam amino; kodon stop menandai terminasi.
 
-```
-Tabel Kodon (sebagian):
-UUU = Phe (F)    AUG = Met (M) ← Kodon Start
-UUC = Phe (F)    UAA = Stop
-UUA = Leu (L)    UAG = Stop
-...              UGA = Stop
-```
+| Kodon mRNA | Makna dalam kode genetik standar |
+|---|---|
+| UUU, UUC | Fenilalanin, Phe (F) |
+| UUA | Leusin, Leu (L) |
+| AUG | Metionin, Met (M); kodon awal yang paling umum |
+| UAA, UAG, UGA | Sinyal stop |
 
-**64 kodon** → 20 asam amino (degenerasi kode genetik)
+Dalam kode genetik standar, **61 kodon mengode 20 asam amino dan 3 kodon merupakan sinyal stop**. Beberapa kodon berbeda mengode asam amino yang sama (degenerasi kode genetik).
 
 ### Tahapan Translasi
 
-```
-1. INISIASI
-   Ribosom kecil mengikat mRNA di kodon AUG (start)
-   tRNA-Met pertama masuk ke situs P ribosom
-
-2. ELONGASI
-   tRNA baru masuk ke situs A (sesuai kodon)
-   Ikatan peptida terbentuk
-   Ribosom bergerak (translokasi) 3 basa ke kanan
-
-3. TERMINASI
-   Ribosom mencapai kodon stop (UAA, UAG, UGA)
-   Release factor membebaskan polipeptida
+```mermaid
+flowchart TD
+    I["Inisiasi: subunit kecil dan faktor inisiasi menempatkan kodon awal; tRNA inisiator berada di situs P"] --> E["Elongasi: aminoasil-tRNA masuk situs A dan ikatan peptida terbentuk"]
+    E --> X["Translokasi: ribosom bergeser satu kodon ke arah 3′ mRNA"]
+    X --> E
+    X --> T["Kodon stop: faktor pelepas membebaskan polipeptida"]
 ```
 
 ---
@@ -180,12 +167,15 @@ UUA = Leu (L)    UAG = Stop
 
 ### Pada Prokariot: Model Operon
 
-```
-Operon Lac (E. coli):
-[Promoter][Operator][lacZ][lacY][lacA]
-    ↑           ↑
-RNA Pol    Repressor berikatan di sini
-           (blokirtranskripsi saat ada laktosa)
+```mermaid
+flowchart TD
+    P["Promoter: tempat pengikatan RNA polimerase"] --> O["Operator: lokasi pengikatan represor LacI"]
+    O --> Z[lacZ]
+    Z --> Y[lacY]
+    Y --> A[lacA]
+    N["Tanpa inducer: LacI mengikat operator"] --> B["Transkripsi ditekan"]
+    L["Laktosa menghasilkan allolaktosa"] --> I["Allolaktosa menurunkan pengikatan LacI ke operator"]
+    I --> T["Transkripsi dimungkinkan; kuat saat glukosa rendah melalui cAMP–CAP"]
 ```
 
 ### Pada Eukariot
@@ -209,9 +199,9 @@ Perubahan pada sekuens DNA.
 | Substitusi | 1 basa diganti | A→G |
 | Insersi | Basa ditambahkan | +T |
 | Delesi | Basa dihapus | -C |
-| Inversi | Segmen terbalik | ATCG → GCTA |
+| Inversi | Segmen DNA dibalik orientasinya | Sekuens referensi 5′-ATCG-3′ menjadi 5′-CGAT-3′ pada segmen yang diinversi |
 | Translokasi | Segmen pindah kromosom | |
-| Frameshift | Insersi/delesi menggeser frame baca | |
+| Frameshift | Insersi/delesi bukan kelipatan tiga pada daerah pengode menggeser kerangka baca | +1 basa |
 
 **Akibat mutasi:**
 - **Silent:** tidak mengubah asam amino
@@ -222,14 +212,13 @@ Perubahan pada sekuens DNA.
 
 ## Relevansi dengan Bioinformatika
 
-```
-Biologi Molekuler → Bioinformatika
-
-DNA sekuens    → Sequence alignment, SNP calling
-mRNA sekuens   → RNA-seq analysis, differential expression
-Protein        → Structure prediction, functional annotation
-Regulasi gen   → ChIP-seq, ATAC-seq analysis
-Mutasi         → Variant calling, cancer genomics
+```mermaid
+flowchart LR
+    D["Sekuens DNA"] --> V["Alignment dan pemanggilan varian"]
+    R["Sekuens RNA"] --> E["RNA-seq dan ekspresi diferensial"]
+    P[Protein] --> S["Prediksi struktur dan anotasi fungsi"]
+    G["Regulasi gen"] --> C["ChIP-seq dan ATAC-seq"]
+    M[Mutasi] --> K["Interpretasi varian dan genomika kanker"]
 ```
 
 ---
@@ -244,4 +233,4 @@ Mutasi         → Variant calling, cancer genomics
 
 ---
 
-_[← Kembali: Struktur Sel](../02-Cell-Structure/README.md) | [Lanjut: Genetika →](../04-Genetics/README.md)_
+[↑ Atas](#top) · [Beranda](../../README.md) · [← Struktur Sel](../02-Cell-Structure/README.md) · [Genetika →](../04-Genetics/README.md)
