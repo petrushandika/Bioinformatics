@@ -1,16 +1,16 @@
-# Berita Terbaru — 2026-11-24
+# Berita Terbaru — 2026-11-25
 
-[Beranda](../README.md) · [Daily terbaru](../Daily/LATEST.md) · [Arsip 2026-11-24](./Archive/2026-11-24.md)
+[Beranda](../README.md) · [Update terbaru](../Daily/LATEST.md)
 
 ## Paper
 
-- [Super-speciality medicine in India: A critical review of growth referral gaps and cluster-based reform.](https://pubmed.ncbi.nlm.nih.gov/43065585/)
-  - Ghosh K · *Health policy OPEN, 2027*
-- [A large-scale genome-wide and multi-omics investigation into the causality, shared genetic architecture, and gut microbiota feature linking diabetes to iridocyclitis.](https://pubmed.ncbi.nlm.nih.gov/43065430/)
-  - Lu A, Su G, Li K et al. · *Genes & diseases, 2027*
-- [Cellular morphology emerges from polygenic, distributed transcriptional variation.](https://pubmed.ncbi.nlm.nih.gov/43061283/)
-  - Paylakhi S, Geurgas R, Yasko A et al. · *iScience, 2026*
-- [Cell type-specific transcriptomic responses to progesterone and bazedoxifene prevent estradiol-driven proliferation in the human endometrium.](https://pubmed.ncbi.nlm.nih.gov/43060629/)
-  - Dias Da Silva I, Wuidar V, Blacher S et al. · *iScience, 2026*
+- [Microbiota-Bile acid decoupling contributes to altered postnatal growth and metabolism in sFGR: a twin-paired dynamic study with FMT validation.](https://pubmed.ncbi.nlm.nih.gov/43069513/)
+  - Yang J, Wang J, Huang N et al. · *Gut microbes, 2026*
+- [Genomic and biological characterization of newly isolated jumbo phage AbIJP1 targeting carbapenem-resistant Acinetobacter baumannii: suggestive of new genus in Caudoviricetes.](https://pubmed.ncbi.nlm.nih.gov/43068157/)
+  - Ullah I, Cui S, Yan Q et al. · *Current research in microbial sciences, 2026*
+- [Integrative multi-omic mapping of urinary and intrarenal immune landscapes in lupus nephritis identifies convergent inflammatory and fibrotic programs.](https://pubmed.ncbi.nlm.nih.gov/43068017/)
+  - Casillas-Muñoz F, Chavarria-Avila E, Hernández-Flores TJ et al. · *Journal of translational autoimmunity, 2026*
+- [Clinical Interpretation of Variants in CHIP-Associated Genes Detected Using Tumor-Only Comprehensive Genomic Profiling in NSCLC.](https://pubmed.ncbi.nlm.nih.gov/43067961/)
+  - Inoue Y, Karayama M, Yasui H et al. · *JTO clinical and research reports, 2026*
 
-[Rangkuman lengkap →](./Archive/2026-11-24.md)
+[Rangkuman lengkap →](./Archive/2026-11-25.md)
