@@ -1,16 +1,16 @@
-# Berita Terbaru — 2026-11-25
+# Berita Terbaru — 2026-11-26
 
 [Beranda](../README.md) · [Update terbaru](../Daily/LATEST.md)
 
 ## Paper
 
-- [Microbiota-Bile acid decoupling contributes to altered postnatal growth and metabolism in sFGR: a twin-paired dynamic study with FMT validation.](https://pubmed.ncbi.nlm.nih.gov/43069513/)
-  - Yang J, Wang J, Huang N et al. · *Gut microbes, 2026*
-- [Genomic and biological characterization of newly isolated jumbo phage AbIJP1 targeting carbapenem-resistant Acinetobacter baumannii: suggestive of new genus in Caudoviricetes.](https://pubmed.ncbi.nlm.nih.gov/43068157/)
-  - Ullah I, Cui S, Yan Q et al. · *Current research in microbial sciences, 2026*
-- [Integrative multi-omic mapping of urinary and intrarenal immune landscapes in lupus nephritis identifies convergent inflammatory and fibrotic programs.](https://pubmed.ncbi.nlm.nih.gov/43068017/)
-  - Casillas-Muñoz F, Chavarria-Avila E, Hernández-Flores TJ et al. · *Journal of translational autoimmunity, 2026*
-- [Clinical Interpretation of Variants in CHIP-Associated Genes Detected Using Tumor-Only Comprehensive Genomic Profiling in NSCLC.](https://pubmed.ncbi.nlm.nih.gov/43067961/)
-  - Inoue Y, Karayama M, Yasui H et al. · *JTO clinical and research reports, 2026*
+- [Multi-omics analysis reveals developmental divergence and metabolic reprogramming in Coffea liberica and Coffea canephora fruits.](https://pubmed.ncbi.nlm.nih.gov/43067925/)
+  - Zhang Y, Huang L, Fang X et al. · *Food chemistry. Molecular sciences, 2026*
+- [HIV-1 reverse transcriptase interactions with the long-acting non-nucleoside reverse transcriptase inhibitor depulfavirine.](https://pubmed.ncbi.nlm.nih.gov/43078272/)
+  - Snyder AA, Kaufman IL, Couch CJ et al. · *The Journal of biological chemistry, 2026*
+- [Comparative study of the anti-inflammatory activity of hyperoside and its isomer in the treatment of diabetic retinopathy: From network pharmacology and bioinformatics analysis to experimental verification.](https://pubmed.ncbi.nlm.nih.gov/43077595/)
+  - Guo Y, Wang X, Zhang D et al. · *Acta pharmaceutica (Zagreb, Croatia), 2026*
+- [CoEVFold suite: User friendly pipelines to visually represent protein coevolution.](https://pubmed.ncbi.nlm.nih.gov/43077480/)
+  - Graham CLB, Cremona L, Little R et al. · *PLoS computational biology, 2026*
 
-[Rangkuman lengkap →](./Archive/2026-11-25.md)
+[Rangkuman lengkap →](./Archive/2026-11-26.md)
