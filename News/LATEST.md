@@ -1,16 +1,16 @@
-# Berita Terbaru — 2026-11-26
+# Berita Terbaru — 2026-11-27
 
 [Beranda](../README.md) · [Update terbaru](../Daily/LATEST.md)
 
 ## Paper
 
-- [Multi-omics analysis reveals developmental divergence and metabolic reprogramming in Coffea liberica and Coffea canephora fruits.](https://pubmed.ncbi.nlm.nih.gov/43067925/)
-  - Zhang Y, Huang L, Fang X et al. · *Food chemistry. Molecular sciences, 2026*
-- [HIV-1 reverse transcriptase interactions with the long-acting non-nucleoside reverse transcriptase inhibitor depulfavirine.](https://pubmed.ncbi.nlm.nih.gov/43078272/)
-  - Snyder AA, Kaufman IL, Couch CJ et al. · *The Journal of biological chemistry, 2026*
-- [Comparative study of the anti-inflammatory activity of hyperoside and its isomer in the treatment of diabetic retinopathy: From network pharmacology and bioinformatics analysis to experimental verification.](https://pubmed.ncbi.nlm.nih.gov/43077595/)
-  - Guo Y, Wang X, Zhang D et al. · *Acta pharmaceutica (Zagreb, Croatia), 2026*
-- [CoEVFold suite: User friendly pipelines to visually represent protein coevolution.](https://pubmed.ncbi.nlm.nih.gov/43077480/)
-  - Graham CLB, Cremona L, Little R et al. · *PLoS computational biology, 2026*
+- [Clinical and molecular analysis of patients with hypophosphatemic rickets: genetic variant spectrum.](https://pubmed.ncbi.nlm.nih.gov/43074819/)
+  - Blanco López A, Blanco Uriarte MÁ, Haces García F et al. · *Journal of the Endocrine Society, 2026*
+- [Spaceflight reshapes Alzheimer's disease-associated molecular programs in human brain organoids.](https://pubmed.ncbi.nlm.nih.gov/43084677/)
+  - Moreira NCS, Coelho LBV, Petroski LP et al. · *Science advances, 2026*
+- [Modulation of macrophage phenotype in the endometriosis niche disrupts early lesion development in a mouse model of experimental endometriosis.](https://pubmed.ncbi.nlm.nih.gov/43084987/)
+  - McIntyre I, Vasilyev V, Perrone CL et al. · *EBioMedicine, 2026*
+- [Systematic clustering alignment and feature characterization for single-cell omics using ACE-OF-Clust.](https://pubmed.ncbi.nlm.nih.gov/43084618/)
+  - Liu X, Singh R, Ramachandran S · *PLoS computational biology, 2026*
 
-[Rangkuman lengkap →](./Archive/2026-11-26.md)
+[Rangkuman lengkap →](./Archive/2026-11-27.md)

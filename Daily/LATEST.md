@@ -1,11 +1,11 @@
-# Update Terbaru — 2026-11-26
+# Update Terbaru — 2026-11-27
 
 [Beranda](../README.md) · [Berita terbaru](../News/LATEST.md)
 
 ## Materi Baru
 
-- [File I/O dalam Python](../Python/01-Basics/09-File-IO/README.md) — Python, Tahun 1 · `main.py` sudah dijalankan
+- [List & Tuple dalam Python](../Python/01-Basics/10-List-Tuple/README.md) — Python, Tahun 1 · `main.py` sudah dijalankan
 
 **Paper:** 4
 
-[Baca update lengkap](./2026-11-26.md)
+[Baca update lengkap](./2026-11-27.md)
