@@ -107,7 +107,7 @@ Terinspirasi oleh [OSSU Bioinformatics](https://github.com/ossu/bioinformatics),
 | ✅ | 💻 Python | Fungsi & Modul dalam Python | [Python/01-Basics/08-Function](./Python/01-Basics/08-Function/) |
 | ✅ | 💻 Python | File I/O dalam Python | [Python/01-Basics/09-File-IO](./Python/01-Basics/09-File-IO/) |
 | ✅ | 💻 Python | List & Tuple dalam Python | [Python/01-Basics/10-List-Tuple](./Python/01-Basics/10-List-Tuple/) |
-| 🔜 | 💻 Python | Dictionary & Set dalam Python | `Python/01-Basics/11-Dict-Set/` |
+| ✅ | 💻 Python | Dictionary & Set dalam Python | [Python/01-Basics/11-Dict-Set](./Python/01-Basics/11-Dict-Set/) |
 | 🔜 | 💻 Python | Loop (For & While) dalam Python | `Python/01-Basics/12-Loop/` |
 | 🔜 | 💻 Python | Pemrograman Berorientasi Objek (OOP) | `Python/01-Basics/13-OOP/` |
 | 🔜 | 💻 Python | Error Handling & Exception | `Python/01-Basics/14-Exception/` |
@@ -173,20 +173,20 @@ Grafik berikut menghitung **ketersediaan materi dalam manifest kurikulum**, buka
 <!-- PROGRESS:START -->
 ```mermaid
 flowchart TD
-    Total["Total: 52"] --> Selesai["Tersedia: 13"]
-    Total --> Pending["Direncanakan: 39"]
+    Total["Total: 52"] --> Selesai["Tersedia: 14"]
+    Total --> Pending["Direncanakan: 38"]
 ```
 
 | Kategori | Tersedia | Total | Progress |
 |----------|---------|-------|----------|
 | 🧬 Biologi | 10 | 11 | 91% |
-| 💻 Python | 3 | 8 | 38% |
+| 💻 Python | 4 | 8 | 50% |
 | 📊 Matematika & Statistik | 0 | 7 | 0% |
 | 🔬 Bioinformatika | 0 | 17 | 0% |
 | 🤖 Machine Learning | 0 | 5 | 0% |
 | 🖥️ Komputasi | 0 | 3 | 0% |
 | 🎓 Capstone | 0 | 1 | 0% |
-| **Total** | **13** | **52** | **25%** |
+| **Total** | **14** | **52** | **27%** |
 <!-- PROGRESS:END -->
 
 <a id="bagian-6"></a>
